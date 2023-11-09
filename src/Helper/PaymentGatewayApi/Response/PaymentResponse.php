@@ -2,10 +2,9 @@
 declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response;
 
-use A3Soft\A3PayPhpClient\Helper\Traits\ToArrayTrait;
 use Exception;
 
-class PaymentResponse extends \A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray
+class PaymentResponse extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
 {
     private string $paymentId;
     private string $redirectUrl;
@@ -53,7 +52,7 @@ class PaymentResponse extends \A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray
         if (gettype($responseArray['redirectUrl']) !== 'string') {
             throw new Exception('Array key \"redirectUrl\" type does not match string type!');
         }
-        return new static($responseArray['paymentId'], $responseArray['redirectUrl']);
+        return new PaymentResponse($responseArray['paymentId'], $responseArray['redirectUrl']);
     }
 
 }

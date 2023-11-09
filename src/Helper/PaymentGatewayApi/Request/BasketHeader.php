@@ -3,7 +3,9 @@ declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
 
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\Utils;
 
 final class BasketHeader extends AbstractToArray
 {
@@ -21,6 +23,7 @@ final class BasketHeader extends AbstractToArray
      * @param string|null $text1 Optional text no. 1
      * @param string|null $text2 Optional text no. 2
      * @param string|null $text3 Optional text no. 3
+     * @throws VariableLengthException
      */
     public function __construct(
         string $documentNumber,
@@ -31,6 +34,12 @@ final class BasketHeader extends AbstractToArray
         ?string $text3 = null
     )
     {
+        Utils::checkVariableLen($documentNumber, 'documentNumber', 20);
+        Utils::checkVariableLen($reference, 'reference', 10, true);
+        Utils::checkVariableLen($text1, 'text1', 10, true);
+        Utils::checkVariableLen($text2, 'text2', 10, true);
+        Utils::checkVariableLen($text3, 'text3', 10, true);
+
         $this->documentNumber = $documentNumber;
         $this->reference = $reference;
         $this->rounding = $rounding;

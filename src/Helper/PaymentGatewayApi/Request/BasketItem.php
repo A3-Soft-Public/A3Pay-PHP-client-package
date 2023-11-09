@@ -3,7 +3,9 @@
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
 
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\Utils;
 
 final class BasketItem extends AbstractToArray
 {
@@ -118,6 +120,7 @@ final class BasketItem extends AbstractToArray
      * @param string|null $text1 Optional text no. 1.
      * @param string|null $text1Long Optional long text no. 1.
      * @param string|null $externalUId Item external ID (from external SW).
+     * @throws VariableLengthException|\InvalidArgumentException
      */
     public function __construct(
         string $name,
@@ -139,6 +142,16 @@ final class BasketItem extends AbstractToArray
         ?string $text1Long = null
     )
     {
+        if(!in_array($measureUnit, self::MeasureUnits))
+            throw new \InvalidArgumentException("The field \"measureUnit\" is not in acceptable values -> BasketItem::MeasureUnits");
+        Utils::checkVariableLen($name, 'name', 128);
+        Utils::checkVariableLen($article, 'article', 14, true);
+        Utils::checkVariableLen($chr1, 'chr1', 20, true);
+        Utils::checkVariableLen($chr2, 'chr2', 20, true);
+        Utils::checkVariableLen($ean, 'ean', 20, true);
+        Utils::checkVariableLen($externalUId, 'externalUId', 50, true);
+        Utils::checkVariableLen($text1, 'text1', 256, true);
+
         $this->name = $name;
         $this->vatRate = $vatRate;
         $this->quantity = $quantity;

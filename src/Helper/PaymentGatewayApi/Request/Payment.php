@@ -2,7 +2,10 @@
 declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Exception\VariableNotContainsException;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\Utils;
 
 final class Payment extends AbstractToArray
 {
@@ -22,7 +25,9 @@ final class Payment extends AbstractToArray
      * 2= card payment<br>
      * 3= voucher (Probably will be used in the future)
      * @param float $value Payment value.
-     * @param string|null $description Payment description.
+     * @param string $description Payment description.
+     * @throws VariableNotContainsException
+     * @throws VariableLengthException
      */
     public function __construct(
         int $paymentId,
@@ -30,6 +35,8 @@ final class Payment extends AbstractToArray
         string $description = ''
     )
     {
+        Utils::checkValueContainsArgs($paymentId, 'paymentId', self::PaymentIdCash, self::PaymentIdCard, self::PaymentIdVoucher);
+        Utils::checkVariableLen($description, 'description', 42, true);
         $this->paymentId = $paymentId;
         $this->value = $value;
         $this->description = $description;

@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
 
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 
 final class Basket extends AbstractToArray
 {

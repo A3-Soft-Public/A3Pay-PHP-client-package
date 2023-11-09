@@ -3,13 +3,11 @@ declare(strict_types=1);
 
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response;
 
-use A3Soft\A3PayPhpClient\Helper\Traits\ToArrayTrait;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use Exception;
 
-class PaymentInfoResponse
+class PaymentInfoResponse extends AbstractToArray
 {
-    use ToArrayTrait;
-
     const StatusCreated = 'Created';
     const StatusNew = 'New';
     const StatusAuthorized = 'Authorized';
@@ -94,7 +92,7 @@ class PaymentInfoResponse
         if ($responseArray['errorMessage'] !== null && gettype($responseArray['errorMessage']) !== 'string') {
             throw new Exception('Array key \"errorMessage\" type does not match string type!');
         }
-        return new static($responseArray['status'], $responseArray['errorMessage']);
+        return new PaymentInfoResponse($responseArray['status'], $responseArray['errorMessage']);
     }
 
 }

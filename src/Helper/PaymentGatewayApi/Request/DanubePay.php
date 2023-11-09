@@ -2,7 +2,9 @@
 declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\Utils;
 
 final class DanubePay extends AbstractToArray
 {
@@ -22,12 +24,14 @@ final class DanubePay extends AbstractToArray
      * @param string $terminalId Registered Terminal ID (TID) based on provided TID range.<br>
      *  It is mandatory to first register the terminalId for e-commerce and only then request payments.
      * @param CardHolder $customer CardHolder data.
+     * @throws VariableLengthException
      */
     public function __construct(
         string $terminalId,
         CardHolder $customer
     )
     {
+        Utils::checkVariableLen($terminalId, 'terminalId', 8);
         $this->terminalId = $terminalId;
         $this->customer = $customer;
     }

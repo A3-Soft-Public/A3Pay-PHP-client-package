@@ -1,17 +1,28 @@
 {
     "name": "a3soft/a3pay-php-client",
     "description": "A3Pay payment gateway service",
-    "require": {
-        "guzzlehttp/guzzle": "^7.8"
-    },
     "autoload": {
         "psr-4": {
             "A3Soft\\A3PayPhpClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "A3Soft\\A3PayPhpClient\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
             "name": "A3Pay s.r.o"
         }
-    ]
+    ],
+    "require": {
+        "ext-curl":"*",
+        "ext-json":"*"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "10",
+        "nette/neon": "^3.4"
+    }
 }

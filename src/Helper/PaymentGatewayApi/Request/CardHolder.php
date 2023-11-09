@@ -3,7 +3,9 @@ declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
 
-final class CardHolder extends \A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray
+use A3Soft\A3PayPhpClient\Util\Utils;
+
+final class CardHolder extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
 {
     private string $cardHolderName;
     private string $billAddrLine1;
@@ -71,6 +73,28 @@ final class CardHolder extends \A3Soft\A3PayPhpClient\Helper\Util\AbstractToArra
       ?string $shipAddrLine3 = null
   )
   {
+      Utils::checkVariableLen($cardHolderName, 'cardHolderName', 50);
+
+      Utils::checkVariableLen($billAddrLine1, 'billAddrLine1', 50);
+      Utils::checkVariableLen($billAddrLine2, 'billAddrLine2', 50, true);
+      Utils::checkVariableLen($billAddrLine3, 'billAddrLine3', 50, true);
+      Utils::checkVariableLen($billAddrPostCode, 'billAddrPostCode', 16);
+      Utils::checkVariableLen($billAddrCity, 'billAddrCity', 50);
+      Utils::checkVariableLen($billAddrState, 'billAddrState', 3);
+      Utils::checkVariableLen($billAddrCountry, 'billAddrCountry', 3);
+
+      Utils::checkVariableLen($email, 'email', 256);
+
+
+      Utils::checkValueContainsArgs($addrMatch, 'addrMatch','Y', 'N', null);
+
+      Utils::checkVariableLen($shipAddrLine1, 'shipAddrLine1', 50);
+      Utils::checkVariableLen($shipAddrLine2, 'shipAddrLine2', 50, true);
+      Utils::checkVariableLen($shipAddrLine3, 'shipAddrLine3', 50, true);
+      Utils::checkVariableLen($shipAddrPostCode, 'shipAddrPostCode', 16);
+      Utils::checkVariableLen($shipAddrCity, 'shipAddrCity', 50);
+      Utils::checkVariableLen($shipAddrState, 'shipAddrState', 3);
+      Utils::checkVariableLen($shipAddrCountry, 'shipAddrCountry', 3);
 
       $this->cardHolderName = $cardHolderName;
       $this->billAddrLine1 = $billAddrLine1;

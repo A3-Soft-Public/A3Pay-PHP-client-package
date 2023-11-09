@@ -1,7 +1,7 @@
 <?php
 
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 
 final class PaymentInfoRequest extends AbstractToArray implements PaymentGatewayRequest
 {

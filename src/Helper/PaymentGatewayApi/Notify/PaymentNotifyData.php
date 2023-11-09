@@ -2,7 +2,7 @@
 
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Notify;
 
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use Exception;
 
 final class PaymentNotifyData extends AbstractToArray

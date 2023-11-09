@@ -2,7 +2,9 @@
 declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
-use A3Soft\A3PayPhpClient\Helper\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
+use A3Soft\A3PayPhpClient\Util\Utils;
 
 final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequest
 {
@@ -18,7 +20,7 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
 
     /**
      * @param string $methodId Method GUID.
-     * @param string $merchantPaymentId Merchant payment ID.
+     * @param string $merchantPaymentId Merchant payment ID GUID.
      * @param string $currency Currency in which purchase amount is expressed.<br>
      * The value is limited to 3 numeric characters and is represented by the ISO 4217 three-digit currency code, except 955-964 and 999 with currency exponent set to “2” by default.
      * @param string $amount The amount of funds requested in the currency of the source location of the transaction. Decimalization of the amount is implied by the value in the currency data element
@@ -27,6 +29,7 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
      * @param string $redirectUrl Redirect Url. Min. length 16.
      * @param DanubePay $danubePay DanubePay data.
      * @param string|null $language Used language.
+     * @throws VariableLengthException
      */
     public function __construct(
         string $methodId,
@@ -40,6 +43,12 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
         ?string $language = null
     )
     {
+        Utils::checkValueGuid($methodId, 'methodId');
+        Utils::checkValueGuid($merchantPaymentId, 'merchantPaymentId');
+        Utils::checkVariableLen($currency, 'currency', 3);
+        Utils::checkVariableLen($amount, 'amount', 12);
+        Utils::checkVariableLen($orderNo, 'orderNo', 16);
+        Utils::checkVariableLen($redirectUrl, 'redirectUrl', 1024);
 
         $this->methodId = $methodId;
         $this->merchantPaymentId = $merchantPaymentId;

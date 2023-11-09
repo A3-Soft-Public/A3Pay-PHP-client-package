@@ -1,16 +1,18 @@
 <?php
-namespace A3Soft\A3PayPhpClient\Helper\Util;
+declare(strict_types=1);
+namespace A3Soft\A3PayPhpClient\Util;
 
 use ReflectionObject;
+use stdClass;
 
 abstract class AbstractToArray
 {
     /**
      * @param bool $ignoreNull
      * @param bool $recursive
-     * @return array
+     * @return array|stdClass
      */
-    public function toArray(bool $ignoreNull = false, bool $recursive = false): array
+    public function toArray(bool $ignoreNull = false, bool $recursive = false, bool $stdClassIfEmpty = false)
     {
         $result = [];
         $reflectionObject = new \ReflectionObject($this);
@@ -25,7 +27,7 @@ abstract class AbstractToArray
                             if(is_object($reflectionPropertyValue)) {
                                 $reflectionPropertyObject = new ReflectionObject($reflectionProperty->getValue($this)[$reflectionPropertyKey]);
                                 if($reflectionPropertyObject->hasMethod('toArray') && $reflectionPropertyObject->getMethod('toArray')->isPublic()) {
-                                    $result[$reflectionProperty->getName()][$reflectionPropertyKey] = $reflectionPropertyObject->getMethod('toArray')->invoke($reflectionProperty->getValue($this)[$reflectionPropertyKey], $ignoreNull, $recursive);
+                                    $result[$reflectionProperty->getName()][$reflectionPropertyKey] = $reflectionPropertyObject->getMethod('toArray')->invoke($reflectionProperty->getValue($this)[$reflectionPropertyKey], $ignoreNull, $recursive, $stdClassIfEmpty);
                                 }
                             }
                         }
@@ -33,7 +35,7 @@ abstract class AbstractToArray
                     } elseif (is_object($reflectionProperty->getValue($this))) {
                         $reflectionPropertyObject = new ReflectionObject($reflectionProperty->getValue($this));
                         if($reflectionPropertyObject->hasMethod('toArray') && $reflectionPropertyObject->getMethod('toArray')->isPublic()) {
-                            $result[$reflectionProperty->getName()] = $reflectionPropertyObject->getMethod('toArray')->invoke($reflectionProperty->getValue($this), $ignoreNull, $recursive);
+                            $result[$reflectionProperty->getName()] = $reflectionPropertyObject->getMethod('toArray')->invoke($reflectionProperty->getValue($this), $ignoreNull, $recursive, $stdClassIfEmpty);
                             continue;
                         }
                     }
@@ -41,6 +43,10 @@ abstract class AbstractToArray
                 $result[$reflectionProperty->getName()] = $reflectionProperty->getValue($this);
             }
         }
-        return $result;
+        if($stdClassIfEmpty && empty($result)) {
+            return new stdClass();
+        }
+
+        return  $result;
     }
 }
