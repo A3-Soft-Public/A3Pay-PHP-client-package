@@ -47,16 +47,16 @@ final class PaymentNotifyData extends AbstractToArray
     public static function fromArray(array $responseArray): self
     {
         if (!array_key_exists('status', $responseArray)) {
-            throw new Exception('Array key \"Status\" missing in response data!');
+            throw new Exception('Array key \"Status\" missing in payment notify data!');
         }
         if (!array_key_exists('paymentId', $responseArray)) {
-            throw new Exception('Array key \"PaymentId\" missing in response data!');
+            throw new Exception('Array key \"PaymentId\" missing in payment notify data!');
         }
         if (gettype($responseArray['status']) !== 'string') {
-            throw new Exception('Array key \"status\" type does not match string type!');
+            throw new Exception('Array key \"status\" type does not match string type in payment notify!');
         }
         if (gettype($responseArray['paymentId']) !== 'string') {
-            throw new Exception('Array key \"PaymentId\" type does not match string type!');
+            throw new Exception('Array key \"paymentId\" type does not match string type in payment notify!');
         }
 
         return new static($responseArray['paymentId'], $responseArray['status']);
