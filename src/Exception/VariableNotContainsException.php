@@ -1,9 +1,18 @@
 <?php
-
+declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Exception;
 
+use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\Payment;
 use Throwable;
 
+/**
+ * VariableNotContainsException is thrown when there are some allowed values.
+ * For example:
+ * In Payment class, there is field paymentId.
+ * It defines type of payment from 3 allowed values.
+ * If <b>paymentId</b> does not match required value, VariableNotContainsException will be thrown
+ * @package Exception
+ */
 class VariableNotContainsException extends \Exception
 {
 

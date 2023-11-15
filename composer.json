@@ -3,7 +3,8 @@
     "description": "A3Pay payment gateway service",
     "autoload": {
         "psr-4": {
-            "A3Soft\\A3PayPhpClient\\": "src/"
+            "A3Soft\\A3PayPhpClient\\": "src/",
+            "A3Soft\\A3PayPhpClient\\Example\\": "example/"
         }
     },
     "autoload-dev": {
@@ -23,6 +24,7 @@
     "require-dev": {
         "phpstan/phpstan": "^1.10",
         "phpunit/phpunit": "10",
-        "nette/neon": "^3.4"
+        "nette/neon": "^3.4",
+        "clean/phpdoc-md": "^0.19.3"
     }
 }

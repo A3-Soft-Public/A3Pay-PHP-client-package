@@ -6,6 +6,10 @@ namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response;
 use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use Exception;
 
+/**
+ * Represents payment info response data model
+ * @package DataModel
+ */
 class PaymentInfoResponse extends AbstractToArray
 {
     const StatusCreated = 'Created';
@@ -15,6 +19,16 @@ class PaymentInfoResponse extends AbstractToArray
     const StatusReversed = 'Reversed';
     const StatusCaptured = 'Captured';
     const StatusError = 'Error';
+
+    const Statuses = [
+      self::StatusCreated,
+      self::StatusNew,
+      self::StatusAuthorized,
+      self::StatusDeclined,
+      self::StatusReversed,
+      self::StatusCaptured,
+      self::StatusError,
+    ];
     private string $status;
     private ?string $errorMessage;
 
@@ -75,7 +89,7 @@ class PaymentInfoResponse extends AbstractToArray
      * Create @param array $responseArray
      * @return self
      * @throws Exception
-     * @link PaymentInfoResponse from array
+     * PaymentInfoResponse from array
      */
     public static function fromArray(array $responseArray): self
     {

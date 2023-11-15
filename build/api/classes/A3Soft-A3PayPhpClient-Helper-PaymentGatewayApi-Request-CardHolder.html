@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+            <title>FiskalPay PHP Client Documentation</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <link rel="icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/template.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-okaidia.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
+                <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
+        <script src="js/search.js"></script>
+        <script defer src="js/searchIndex.js"></script>
+    </head>
+<body id="top">
+    <header class="phpdocumentor-header phpdocumentor-section">
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">FiskalPay PHP Client Documentation</a></h1>
+    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <label class="phpdocumentor-header__menu-icon" for="menu-button">
+        <i class="fas fa-bars"></i>
+    </label>
+    <section data-search-form class="phpdocumentor-search">
+    <label>
+        <span class="visually-hidden">Search for</span>
+        <svg class="phpdocumentor-search__icon" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="7.5" cy="7.5" r="6.5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12.4892" y1="12.2727" x2="19.1559" y2="18.9393" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+    </label>
+</section>
+
+    <nav class="phpdocumentor-topnav">
+    <ul class="phpdocumentor-topnav__menu">
+        </ul>
+</nav>
+</header>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <input class="phpdocumentor-sidebar__menu-button" type="checkbox" id="sidebar-button" name="sidebar-button" />
+<label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
+    Menu
+</label>
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
+                    <section class="phpdocumentor-sidebar__category">
+            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="guide/getting-started/index.html#getting-started" class="">Getting started</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="guide/getting-started/registration.html#registration-request" class="">Registration request</a>
+                
+            </li>
+                    <li>
+                <a href="guide/getting-started/installing.html#installation" class="">Installation</a>
+                
+            </li>
+            </ul>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="guide/example-usage/index.html#usage" class="">Usage</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="guide/example-usage/making-payment-request.html#payment-request" class="">Payment request</a>
+                
+            </li>
+                    <li>
+                <a href="guide/example-usage/making-payment-info-request.html#info-request" class="">Info request</a>
+                
+            </li>
+            </ul>
+
+                        </section>
+                <section class="phpdocumentor-sidebar__category">
+            <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="namespaces/a3soft.html" class="">A3Soft</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/a3soft-a3payphpclient.html" class="">A3PayPhpClient</a>
+                
+            </li>
+            </ul>
+
+                        </section>
+                <section class="phpdocumentor-sidebar__category">
+            <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/DataModel.html" class="">DataModel</a>
+</h4>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/Exception.html" class="">Exception</a>
+</h4>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/Interface.html" class="">Interface</a>
+</h4>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/Service.html" class="">Service</a>
+</h4>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/Util.html" class="">Util</a>
+</h4>
+
+                        </section>
+            
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="graphs/classes.html">Class Diagram</a></h3>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/a3soft.html">A3Soft</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/a3soft-a3payphpclient.html">A3PayPhpClient</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/a3soft-a3payphpclient-helper.html">Helper</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/a3soft-a3payphpclient-helper-paymentgatewayapi.html">PaymentGatewayApi</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/a3soft-a3payphpclient-helper-paymentgatewayapi-request.html">Request</a></li>
+    </ul>
+
+    <article class="phpdocumentor-element -class">
+        <h2 class="phpdocumentor-content__title">
+    CardHolder
+
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html"><abbr title="\A3Soft\A3PayPhpClient\Util\AbstractToArray">AbstractToArray</abbr></a>
+    </span>
+    
+            <div class="phpdocumentor-element__package">
+            in package
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/DataModel.html">DataModel</a></li>
+                            </ul>
+        </div>
+    
+    
+    </h2>
+
+<div class="phpdocumentor-label-line">
+
+    <div class="phpdocumentor-label phpdocumentor-label--success"><span>Final</span><span>Yes</span></div>
+
+
+</div>
+
+        <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+            <p class="phpdocumentor-summary">CardHolder represents data model of customer</p>
+
+
+
+
+
+
+<h3 id="toc">
+    Table of Contents
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h3>
+
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_addrMatch">$addrMatch</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrCity">$billAddrCity</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrCountry">$billAddrCountry</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine1">$billAddrLine1</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine2">$billAddrLine2</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine3">$billAddrLine3</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrPostCode">$billAddrPostCode</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrState">$billAddrState</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_cardHolderName">$cardHolderName</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_email">$email</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_homePhone">$homePhone</a>
+    <span>
+                        &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_mobilePhone">$mobilePhone</a>
+    <span>
+                        &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrCity">$shipAddrCity</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrCountry">$shipAddrCountry</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine1">$shipAddrLine1</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine2">$shipAddrLine2</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine3">$shipAddrLine3</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrPostCode">$shipAddrPostCode</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrState">$shipAddrState</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_workPhone">$workPhone</a>
+    <span>
+                        &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null            </span>
+</dt>
+
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getAddrMatch">getAddrMatch()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>returns if bill and ship address match, available values: null, Y, N</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrCity">getBillAddrCity()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns bill address city</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrCountry">getBillAddrCountry()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns bill address country by ISO 3166-1 numeric code</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine1">getBillAddrLine1()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns bill address line 1</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine2">getBillAddrLine2()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>returns bill address line 2, if any</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine3">getBillAddrLine3()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>returns bill address line 3, if any</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrPostCode">getBillAddrPostCode()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns bill address postcode</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrState">getBillAddrState()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns bill address state by ISO 3166-2</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getCardHolderName">getCardHolderName()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns customer/cardholder name</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getEmail">getEmail()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns customer email</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getHomePhone">getHomePhone()</a>
+    <span>
+                                &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null    </span>
+</dt>
+<dd>returns home phone number object, if any</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getMobilePhone">getMobilePhone()</a>
+    <span>
+                                &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null    </span>
+</dt>
+<dd>returns mobile phone number object, if any</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrCity">getShipAddrCity()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns ship address city</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrCountry">getShipAddrCountry()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns ship address country by ISO 3166-1 numeric code</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine1">getShipAddrLine1()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns ship address line 1</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine2">getShipAddrLine2()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>returns ship address line 2, if any</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine3">getShipAddrLine3()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>returns ship address line 3, if any</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrPostCode">getShipAddrPostCode()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns ship address postcode</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrState">getShipAddrState()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns ship address state by ISO 3166-2</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getWorkPhone">getWorkPhone()</a>
+    <span>
+                                &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null    </span>
+</dt>
+<dd>returns work phone number object, if any</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html#method_toArray">toArray()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;|<abbr title="\stdClass">stdClass</abbr>    </span>
+</dt>
+<dd>Cast class to Array using ReflectionObject, foreach all properties and append it to array.</dd>
+
+    </dl>
+
+
+
+
+        
+
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_addrMatch">
+        $addrMatch
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_addrMatch" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$addrMatch</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same. Available values : Y, N. Its optional, payment gateway does not need it.</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_billAddrCity">
+        $billAddrCity
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrCity" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$billAddrCity</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>bill address city</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_billAddrCountry">
+        $billAddrCountry
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrCountry" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$billAddrCountry</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>bill address country by ISO 3166-1 3-digit numeric code</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_billAddrLine1">
+        $billAddrLine1
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine1" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$billAddrLine1</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>bill address street with number</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_billAddrLine2">
+        $billAddrLine2
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine2" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$billAddrLine2</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>bill address line 2 if needed</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_billAddrLine3">
+        $billAddrLine3
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine3" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">50</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$billAddrLine3</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>bill address line 3 if needed</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_billAddrPostCode">
+        $billAddrPostCode
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrPostCode" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">22</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$billAddrPostCode</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>bill address postcode</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_billAddrState">
+        $billAddrState
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrState" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$billAddrState</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>bill address state by ISO 3166-2</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_cardHolderName">
+        $cardHolderName
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_cardHolderName" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">18</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$cardHolderName</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>name of customer</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_email">
+        $email
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_email" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$email</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>email address of customer</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_homePhone">
+        $homePhone
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_homePhone" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">44</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$homePhone</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>customer home phone</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_mobilePhone">
+        $mobilePhone
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_mobilePhone" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">42</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$mobilePhone</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>customer mobile phone</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shipAddrCity">
+        $shipAddrCity
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrCity" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$shipAddrCity</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>ship address city</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shipAddrCountry">
+        $shipAddrCountry
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrCountry" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$shipAddrCountry</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>ship address country by ISO 3166-1 3-digit numeric code</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shipAddrLine1">
+        $shipAddrLine1
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine1" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$shipAddrLine1</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>ship address street with number</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shipAddrLine2">
+        $shipAddrLine2
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine2" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">54</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$shipAddrLine2</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>ship address line 2 if needed</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shipAddrLine3">
+        $shipAddrLine3
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine3" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$shipAddrLine3</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>ship address line 3 if needed</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shipAddrPostCode">
+        $shipAddrPostCode
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrPostCode" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$shipAddrPostCode</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>ship address postcode</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shipAddrState">
+        $shipAddrState
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrState" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$shipAddrState</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>ship address state by ISO 3166-2</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_workPhone">
+        $workPhone
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_workPhone" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">46</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$workPhone</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>customer work phone</p>
+</section>
+
+    
+
+</article>
+            </section>
+
+            <section class="phpdocumentor-methods">
+        <h3 class="phpdocumentor-elements__header" id="methods">
+            Methods
+            <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cardHolderName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$billAddrLine1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$billAddrPostCode</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$billAddrCity</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$billAddrState</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$billAddrCountry</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$email</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$shipAddrLine1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$shipAddrPostCode</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$shipAddrCity</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$shipAddrState</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$shipAddrCountry</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mobilePhone</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$homePhone</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$workPhone</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$billAddrLine2</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$billAddrLine3</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$addrMatch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$shipAddrLine2</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$shipAddrLine3</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cardHolderName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Name of the Cardholder.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$billAddrLine1</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>First line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$billAddrPostCode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>ZIP or other postal code of the Cardholder billing address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$billAddrCity</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The city of the Cardholder billing address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$billAddrState</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The state or province of the Cardholder billing address associated with the card used for this purchase.The value should be the country subdivision code defined in ISO 3166-2.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$billAddrCountry</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The country of the Cardholder billing address associated with the card used for this purchase. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$email</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The email address associated with the account that is either entered by the Cardholder, or is on file with the 3DS Requestor. This field shall meet requirements of Section 3.4 of IETF RFC 5322.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$shipAddrLine1</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>First line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$shipAddrPostCode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>ZIP or other postal code of the shipping address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$shipAddrCity</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>City portion of the shipping address requested by the Cardholder. This field is required unless shipping information is the same as billing information.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$shipAddrState</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The state or province of the shipping address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$shipAddrCountry</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>by the Cardholder. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO. This field is required if Cardholder Shipping Address State is present and if shipping information is not the same as billing information.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mobilePhone</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The mobile phone provided by the cardholder.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$homePhone</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The home phone provided by the cardholder.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$workPhone</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The work phone provided by the cardholder.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$billAddrLine2</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Second line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$billAddrLine3</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Third line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$addrMatch</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same. Available values : Y, N</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$shipAddrLine2</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Second line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$shipAddrLine3</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Third line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method___construct#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/A3Soft-A3PayPhpClient-Exception-VariableLengthException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableLengthException">VariableLengthException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/A3Soft-A3PayPhpClient-Exception-VariableNotContainsException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableNotContainsException">VariableNotContainsException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                                            </dl>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getAddrMatch">
+        getAddrMatch()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getAddrMatch" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">307</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns if bill and ship address match, available values: null, Y, N</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getAddrMatch</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBillAddrCity">
+        getBillAddrCity()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrCity" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">181</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns bill address city</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getBillAddrCity</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBillAddrCountry">
+        getBillAddrCountry()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrCountry" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">199</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns bill address country by ISO 3166-1 numeric code</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getBillAddrCountry</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBillAddrLine1">
+        getBillAddrLine1()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine1" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">163</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns bill address line 1</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getBillAddrLine1</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBillAddrLine2">
+        getBillAddrLine2()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine2" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">289</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns bill address line 2, if any</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getBillAddrLine2</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBillAddrLine3">
+        getBillAddrLine3()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine3" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">298</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns bill address line 3, if any</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getBillAddrLine3</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBillAddrPostCode">
+        getBillAddrPostCode()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrPostCode" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">172</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns bill address postcode</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getBillAddrPostCode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBillAddrState">
+        getBillAddrState()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrState" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">190</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns bill address state by ISO 3166-2</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getBillAddrState</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getCardHolderName">
+        getCardHolderName()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getCardHolderName" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">154</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns customer/cardholder name</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getCardHolderName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getEmail">
+        getEmail()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getEmail" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">208</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns customer email</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getEmail</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getHomePhone">
+        getHomePhone()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getHomePhone" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">271</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns home phone number object, if any</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getHomePhone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getMobilePhone">
+        getMobilePhone()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getMobilePhone" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">262</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns mobile phone number object, if any</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getMobilePhone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getShipAddrCity">
+        getShipAddrCity()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrCity" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">235</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns ship address city</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getShipAddrCity</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getShipAddrCountry">
+        getShipAddrCountry()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrCountry" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">253</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns ship address country by ISO 3166-1 numeric code</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getShipAddrCountry</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getShipAddrLine1">
+        getShipAddrLine1()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine1" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">217</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns ship address line 1</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getShipAddrLine1</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getShipAddrLine2">
+        getShipAddrLine2()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine2" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">316</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns ship address line 2, if any</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getShipAddrLine2</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getShipAddrLine3">
+        getShipAddrLine3()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine3" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">325</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns ship address line 3, if any</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getShipAddrLine3</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getShipAddrPostCode">
+        getShipAddrPostCode()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrPostCode" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">226</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns ship address postcode</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getShipAddrPostCode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getShipAddrState">
+        getShipAddrState()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrState" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">244</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns ship address state by ISO 3166-2</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getShipAddrState</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getWorkPhone">
+        getWorkPhone()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getWorkPhone" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/CardHolder.php"><a href="files/src-helper-paymentgatewayapi-request-cardholder.html"><abbr title="src/Helper/PaymentGatewayApi/Request/CardHolder.php">CardHolder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">280</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns work phone number object, if any</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getWorkPhone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolderPhoneNumber.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber">CardHolderPhoneNumber</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_toArray">
+        toArray()
+        <a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html#method_toArray" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Util/AbstractToArray.php"><a href="files/src-util-abstracttoarray.html"><abbr title="src/Util/AbstractToArray.php">AbstractToArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Cast class to Array using ReflectionObject, foreach all properties and append it to array.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">toArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreNull</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stdClassIfEmpty</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|<abbr title="\stdClass">stdClass</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$ignoreNull</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>if true, will not include null props</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$recursive</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>if true, all objects and arrays will be cast to array</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$stdClassIfEmpty</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>if array has not any items, default json return empty array, this causes problems, we must include empty object</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html#method_toArray#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\ReflectionException">ReflectionException</abbr></span>
+                                                            
+                                             
+                                    </dd>
+                                            </dl>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|<abbr title="\stdClass">stdClass</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>cast class to array</p>
+</section>
+
+            </section>
+
+</article>
+            </section>
+
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Helper/PaymentGatewayApi/Request/CardHolder.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
+
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
+
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.open('GET', src, true);
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+                            Prism.highlightElement(code);
+                            return;
+                        }
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
+                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
+                    }
+                    modal.classList.add("phpdocumentor-modal__open");
+
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
+
+    </article>
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_addrMatch">$addrMatch<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrCity">$billAddrCity<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrCountry">$billAddrCountry<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine1">$billAddrLine1<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine2">$billAddrLine2<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine3">$billAddrLine3<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrPostCode">$billAddrPostCode<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrState">$billAddrState<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_cardHolderName">$cardHolderName<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_email">$email<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_homePhone">$homePhone<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_mobilePhone">$mobilePhone<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrCity">$shipAddrCity<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrCountry">$shipAddrCountry<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine1">$shipAddrLine1<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine2">$shipAddrLine2<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrLine3">$shipAddrLine3<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrPostCode">$shipAddrPostCode<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_shipAddrState">$shipAddrState<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_workPhone">$workPhone<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getAddrMatch">getAddrMatch()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrCity">getBillAddrCity()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrCountry">getBillAddrCountry()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine1">getBillAddrLine1()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine2">getBillAddrLine2()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine3">getBillAddrLine3()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrPostCode">getBillAddrPostCode()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrState">getBillAddrState()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getCardHolderName">getCardHolderName()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getEmail">getEmail()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getHomePhone">getHomePhone()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getMobilePhone">getMobilePhone()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrCity">getShipAddrCity()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrCountry">getShipAddrCountry()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine1">getShipAddrLine1()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine2">getShipAddrLine2()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrLine3">getShipAddrLine3()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrPostCode">getShipAddrPostCode()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getShipAddrState">getShipAddrState()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getWorkPhone">getWorkPhone()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html#method_toArray">toArray()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+    <section class="phpdocumentor-search-results__dialog">
+        <header class="phpdocumentor-search-results__header">
+            <h2 class="phpdocumentor-search-results__title">Search results</h2>
+            <button class="phpdocumentor-search-results__close"><i class="fas fa-times"></i></button>
+        </header>
+        <section class="phpdocumentor-search-results__body">
+            <ul class="phpdocumentor-search-results__entries"></ul>
+        </section>
+    </section>
+</section>
+        </div>
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <script>
+        cssVars({});
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+</body>
+</html>

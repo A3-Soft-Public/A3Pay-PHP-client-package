@@ -7,9 +7,14 @@ use A3Soft\A3PayPhpClient\Exception\VariableNotContainsException;
 use A3Soft\A3PayPhpClient\Exception\VariableNotGuidException;
 use A3Soft\A3PayPhpClient\Exception\VariableNotUrlException;
 
+/**
+ * Utils class
+ * @package Util
+ */
 class Utils
 {
     /**
+     * Checks for range of minimum or maximum length of characters / number
      * @param string|null|int $value
      * @param string $varName
      * @param int|null $maxLen
@@ -42,6 +47,7 @@ class Utils
 
 
     /**
+     * Checks value if is one of contains parameter values
      * @param $value
      * @param string $varName
      * @param ...$contains
@@ -54,6 +60,7 @@ class Utils
     }
 
     /**
+     * Checks value if is one of array value
      * @param $value
      * @param string $varName
      * @param array $contains
@@ -69,6 +76,7 @@ class Utils
 
 
     /**
+     * Checks if value is Guid
      * @param $value
      * @param string $varName
      * @return void
@@ -81,7 +89,13 @@ class Utils
         }
     }
 
-
+    /**
+     * Checks if value match Url structure
+     * @param $value
+     * @param string $varName
+     * @return void
+     * @throws VariableNotUrlException
+     */
     public static function checkValueUrl($value, string $varName)
     {
         if(filter_var($value, FILTER_VALIDATE_URL) === false) {

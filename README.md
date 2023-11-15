@@ -1,92 +1,112 @@
 # A3Pay PHP client package
 
+<!-- TOC -->
+* [A3Pay PHP client package](#a3pay-php-client-package)
+* [Overview](#overview)
+* [Request](#request)
+* [Installation](#installation)
+  * [Install using composer](#install-using-composer)
+  * [Getting started](#getting-started)
+    * [Package classes](#package-classes)
+      * [Request](#request-1)
+      * [Response](#response-)
+      * [Requester](#requester)
+      * [Exceptions](#exceptions)
+      * [Utils](#utils)
+  * [Collaborate with your team](#collaborate-with-your-team)
+  * [Test and Deploy](#test-and-deploy)
+* [Editing this README](#editing-this-readme)
+  * [Suggestions for a good README](#suggestions-for-a-good-readme)
+  * [Name](#name)
+  * [Description](#description)
+  * [Badges](#badges)
+  * [Visuals](#visuals)
+  * [Installation](#installation-1)
+  * [Usage](#usage)
+  * [Support](#support)
+  * [Roadmap](#roadmap)
+  * [Contributing](#contributing)
+  * [Authors and acknowledgment](#authors-and-acknowledgment)
+  * [License](#license)
+  * [Project status](#project-status)
+<!-- TOC -->
 
+# Overview
+This package provide an easy way to integrate FiskalPay payment gateway using OOP structure.
 
+You can make payment by install this library, provide necessary data, and just make request. Request will return a response with redirect url.
+
+After processing the payment, the payment gateway will redirect to given link, and notified you by provided web hook
+
+# Request
+- Before implementing this package, you will need to make a request for license
+- You will get credentials needed to fully function of this package.
+
+# Installation
+
+There are two ways of installing this package.
+
+1. If you have access to read this repository on gitlab use this [tutorial](#install-using-composer)
+2. In the other way you just download this package, and use require statement to include in your php script.
+
+## Install using composer
+- **Important! This guide can be used only in case you have read permissons on this git repository.**
+1. [Download composer](https://getcomposer.org/download/)
+2. Create your own composer.json
+3. Add repository your composer.json
+```json lines
+//composer.json
+{
+  "repositories":[
+    {
+      "type":"composer",
+      "url":"https://gitlab.a3soft.eu/api/v4/group/171/-/packages/composer/packages.json"
+    }
+  ]
+}
+```
+4. Create file called `auth.json` and write the credentials there
+```json lines
+//auth.json
+{
+  "http-basic": {
+    "gitlab.a3soft.eu": {
+      "username": "__token__",
+      "password": "YOUR_AUTH_TOKEN"
+    }
+  }
+}
+```
+5. Run command `composer require a3soft/a3pay-php-client`.
+This command will automatically install the newest version of A3 Pay client using credentials passed to `auth.json` file.
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### Package classes
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+#### Request
+- [Basket](./src/docs/Basket.md)
+- [BasketHeader](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+- [BasketItem](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+- [CardHolder](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+- [CardHolderPhoneNumber](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+- [CustomerBasket](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+- [DanubePay](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+- [Payment](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+- [PaymentInfoRequest](/src/Helper/PaymentGatewayApi/Request/Basket.php)
+#### Response 
+- [CurlResponse](/src/Helper/PaymentGatewayApi/Response/CurlResponse.php)
+- [PaymentInfoResponse](/src/Helper/PaymentGatewayApi/Response/PaymentInfoResponse.php)
+- [PaymentResponse](/src/Helper/PaymentGatewayApi/Response/PaymentResponse.php)
+#### Requester
+- [PaymentGatewayRequester](src/PaymentGatewayApi/PaymentGatewayRequester.php)
 
-## Add your files
+#### Exceptions
+- [CurlRequestException](/src/Exception/CurlRequestException.php)
+- [VariableLengthException](/src/Exception/VariableLengthException.php)
+- [VariableNotContainsException](/src/Exception/VariableNotContainsException.php)
+- [VariableNotGuidException](/src/Exception/VariableNotGuidException.php)
+- [VariableNotUrlException](/src/Exception/VariableNotUrlException.php)
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.a3soft.eu/a3-pay/a3pay-php-client-package.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.a3soft.eu/a3-pay/a3pay-php-client-package/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+#### Utils
+- [AbstractToArray](/src/Util/AbstractToArray.php)
+- [Utils](/src/Util/Utils.php)

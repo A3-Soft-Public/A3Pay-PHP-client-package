@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor
+        configVersion="3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://www.phpdoc.org"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/phpDocumentor/phpDocumentor/master/data/xsd/phpdoc.xsd"
+>
+    <title>FiskalPay PHP Client Documentation</title>
+    <paths>
+        <output>build/api</output>
+        <cache>build/cache</cache>
+    </paths>
+    <version number="3.0.0">
+        <api>
+            <examples>
+                <path>example</path>
+            </examples>
+            <default-package-name>DataModel</default-package-name>
+            <source dsn=".">
+                <path>src</path>
+            </source>
+        </api>
+        <guide>
+            <source dsn=".">
+                <path>docs</path>
+            </source>
+            <output>guide</output>
+        </guide>
+    </version>
+    <setting name="graphs.enabled" value="true"/>
+    <setting name="guides.enabled" value="true"/>
+</phpdocumentor>

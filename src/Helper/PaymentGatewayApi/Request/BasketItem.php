@@ -7,8 +7,13 @@ use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
 use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use A3Soft\A3PayPhpClient\Util\Utils;
 
+/**
+ * BasketItem represents data model of BasketItem
+ * @package DataModel
+ */
 final class BasketItem extends AbstractToArray
 {
+    /** @var string[] available measure units for measureUnit property */
     const MeasureUnits = [
         'Ks' => 'Ks',
         'L' => 'L',
@@ -171,90 +176,157 @@ final class BasketItem extends AbstractToArray
         $this->externalUId = $externalUId;
     }
 
+    /**
+     * returns name of basket item
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
     }
 
+    /**
+     * returns vat rate of basket item
+     * @return float
+     */
     public function getVatRate(): float
     {
         return $this->vatRate;
     }
 
+    /**
+     * returns quantity of basket item
+     * @return float
+     */
     public function getQuantity(): float
     {
         return $this->quantity;
     }
 
+    /**
+     * returns measure unit of basket item
+     * @return string
+     */
     public function getMeasureUnit(): string
     {
         return $this->measureUnit;
     }
 
+    /**
+     * returns original unit price before sale
+     * @return float
+     */
     public function getOriginalUnitPrice(): float
     {
         return $this->originalUnitPrice;
     }
 
+    /**
+     * returns current unit price
+     * @return float
+     */
     public function getUnitPrice(): float
     {
         return $this->unitPrice;
     }
 
+    /**
+     * returns total price of items (without vat)
+     * @return float
+     */
     public function getPriceTotal(): float
     {
         return $this->priceTotal;
     }
 
+    /**
+     * returns total vat of items
+     * @return float
+     */
     public function getPriceVatBaseTotal(): float
     {
         return $this->priceVatBaseTotal;
     }
 
+    /**
+     * returns total price of items (vat included)
+     * @return float
+     */
     public function getPriceVatTotal(): float
     {
         return $this->priceVatTotal;
     }
 
+    /**
+     * returns item rounding
+     * @return float
+     */
     public function getItemRounding(): float
     {
         return $this->itemRounding;
     }
 
+    /**
+     * returns article name
+     * @return string|null
+     */
     public function getArticle(): ?string
     {
         return $this->article;
     }
 
+    /**
+     * returns characteristics number 1, if any
+     * @return string|null
+     */
     public function getChr1(): ?string
     {
         return $this->chr1;
     }
 
+    /**
+     * returns characteristics number 2, if any
+     * @return string|null
+     */
     public function getChr2(): ?string
     {
         return $this->chr2;
     }
 
+    /**
+     * returns ean of item, if any
+     * @return string|null
+     */
     public function getEan(): ?string
     {
         return $this->ean;
     }
 
+    /**
+     * returns external uid if any
+     * @return string|null
+     */
     public function getExternalUId(): ?string
     {
         return $this->externalUId;
     }
 
+    /**
+     * returns short text, if any
+     * @return string|null
+     */
     public function getText1(): ?string
     {
         return $this->text1;
     }
 
+    /**
+     * returns long text if any
+     * @return string|null
+     */
     public function getText1Long(): ?string
     {
         return $this->text1Long;
     }
-
 
 }

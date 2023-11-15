@@ -1,9 +1,17 @@
 <?php
-
+declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Exception;
 
+use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest;
 use Throwable;
 
+/**
+ * VariableNotGuidException is thrown when variable value does not match guid regex
+ * For example:
+ * PaymentRequest class need methodId as construct parameter.
+ * If methodId is not regex, the VariableNotGuidException is thrown
+ * @package Exception
+ */
 class VariableNotGuidException extends \Exception
 {
 

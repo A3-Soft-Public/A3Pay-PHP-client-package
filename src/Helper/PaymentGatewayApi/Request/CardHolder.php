@@ -3,29 +3,56 @@ declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
 
+use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Exception\VariableNotContainsException;
+use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use A3Soft\A3PayPhpClient\Util\Utils;
 
-final class CardHolder extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
+/**
+ * CardHolder represents data model of customer
+ * @package DataModel
+ */
+final class CardHolder extends AbstractToArray
 {
+    /** @var string name of customer */
     private string $cardHolderName;
+    /** @var string bill address street with number */
     private string $billAddrLine1;
+    /** @var string bill address postcode */
     private string $billAddrPostCode;
+    /** @var string bill address city */
     private string $billAddrCity;
+    /** @var string bill address state by ISO 3166-2 */
     private string $billAddrState;
+    /** @var string bill address country by ISO 3166-1 3-digit numeric code */
     private string $billAddrCountry;
+    /** @var string email address of customer */
     private string $email;
+    /** @var string ship address street with number */
     private string $shipAddrLine1;
+    /** @var string  ship address postcode*/
     private string $shipAddrPostCode;
+    /** @var string ship address city */
     private string $shipAddrCity;
+    /** @var string ship address state by ISO 3166-2 */
     private string $shipAddrState;
+    /** @var string ship address country by ISO 3166-1 3-digit numeric code */
     private string $shipAddrCountry;
+    /** @var CardHolderPhoneNumber|null customer mobile phone */
     private ?CardHolderPhoneNumber $mobilePhone;
+    /** @var CardHolderPhoneNumber|null customer home phone */
     private ?CardHolderPhoneNumber $homePhone;
+    /** @var CardHolderPhoneNumber|null customer work phone */
     private ?CardHolderPhoneNumber $workPhone;
+    /** @var string|null bill address line 2 if needed */
     private ?string $billAddrLine2;
+    /** @var string|null bill address line 3 if needed */
     private ?string $billAddrLine3;
+    /** @var string|null Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same. Available values : Y, N. Its optional, payment gateway does not need it.*/
     private ?string $addrMatch;
+    /** @var string|null ship address line 2 if needed */
     private ?string $shipAddrLine2;
+    /** @var string|null ship address line 3 if needed */
     private ?string $shipAddrLine3;
 
     /**
@@ -49,6 +76,8 @@ final class CardHolder extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
      * @param string|null $addrMatch Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same. Available values : Y, N
      * @param string|null $shipAddrLine2 Second line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.
      * @param string|null $shipAddrLine3 Third line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.
+     * @throws VariableLengthException
+     * @throws VariableNotContainsException
      */
   public function __construct(
       string $cardHolderName,
@@ -118,101 +147,181 @@ final class CardHolder extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
       $this->shipAddrLine3 = $shipAddrLine3;
   }
 
+    /**
+     * returns customer/cardholder name
+     * @return string
+     */
     public function getCardHolderName(): string
     {
         return $this->cardHolderName;
     }
 
+    /**
+     * returns bill address line 1
+     * @return string
+     */
     public function getBillAddrLine1(): string
     {
         return $this->billAddrLine1;
     }
 
+    /**
+     * returns bill address postcode
+     * @return string
+     */
     public function getBillAddrPostCode(): string
     {
         return $this->billAddrPostCode;
     }
 
+    /**
+     * returns bill address city
+     * @return string
+     */
     public function getBillAddrCity(): string
     {
         return $this->billAddrCity;
     }
 
+    /**
+     * returns bill address state by ISO 3166-2
+     * @return string
+     */
     public function getBillAddrState(): string
     {
         return $this->billAddrState;
     }
 
+    /**
+     * returns bill address country by ISO 3166-1 numeric code
+     * @return string
+     */
     public function getBillAddrCountry(): string
     {
         return $this->billAddrCountry;
     }
 
+    /**
+     * returns customer email
+     * @return string
+     */
     public function getEmail(): string
     {
         return $this->email;
     }
 
+    /**
+     * returns ship address line 1
+     * @return string
+     */
     public function getShipAddrLine1(): string
     {
         return $this->shipAddrLine1;
     }
 
+    /**
+     * returns ship address postcode
+     * @return string
+     */
     public function getShipAddrPostCode(): string
     {
         return $this->shipAddrPostCode;
     }
 
+    /**
+     * returns ship address city
+     * @return string
+     */
     public function getShipAddrCity(): string
     {
         return $this->shipAddrCity;
     }
 
+    /**
+     * returns ship address state by ISO 3166-2
+     * @return string
+     */
     public function getShipAddrState(): string
     {
         return $this->shipAddrState;
     }
 
+    /**
+     * returns ship address country by ISO 3166-1 numeric code
+     * @return string
+     */
     public function getShipAddrCountry(): string
     {
         return $this->shipAddrCountry;
     }
 
+    /**
+     * returns mobile phone number object, if any
+     * @return CardHolderPhoneNumber|null
+     */
     public function getMobilePhone(): ?CardHolderPhoneNumber
     {
         return $this->mobilePhone;
     }
 
+    /**
+     * returns home phone number object, if any
+     * @return CardHolderPhoneNumber|null
+     */
     public function getHomePhone(): ?CardHolderPhoneNumber
     {
         return $this->homePhone;
     }
 
+    /**
+     * returns work phone number object, if any
+     * @return CardHolderPhoneNumber|null
+     */
     public function getWorkPhone(): ?CardHolderPhoneNumber
     {
         return $this->workPhone;
     }
 
+    /**
+     * returns bill address line 2, if any
+     * @return string|null
+     */
     public function getBillAddrLine2(): ?string
     {
         return $this->billAddrLine2;
     }
 
+    /**
+     * returns bill address line 3, if any
+     * @return string|null
+     */
     public function getBillAddrLine3(): ?string
     {
         return $this->billAddrLine3;
     }
 
+    /**
+     * returns if bill and ship address match, available values: null, Y, N
+     * @return string|null
+     */
     public function getAddrMatch(): ?string
     {
         return $this->addrMatch;
     }
 
+    /**
+     * returns ship address line 2, if any
+     * @return string|null
+     */
     public function getShipAddrLine2(): ?string
     {
         return $this->shipAddrLine2;
     }
 
+    /**
+     * returns ship address line 3, if any
+     * @return string|null
+     */
     public function getShipAddrLine3(): ?string
     {
         return $this->shipAddrLine3;

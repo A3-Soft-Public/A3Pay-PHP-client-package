@@ -7,16 +7,25 @@ use A3Soft\A3PayPhpClient\Exception\VariableNotContainsException;
 use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use A3Soft\A3PayPhpClient\Util\Utils;
 
+
+/**
+ * Payment represents data model for payment
+ * @package DataModel
+ */
 final class Payment extends AbstractToArray
 {
-
+    /** @var int paymentId of cash */
     const PaymentIdCash = 1;
+    /** @var int paymentId of bank card */
     const PaymentIdCard = 2;
+    /** @var int paymentId of voucher */
     const PaymentIdVoucher = 3;
 
-
+    /** @var int $paymentId id of payment method. available 1 - for cash, 2 - for bank card, 3 - for voucher */
     private int $paymentId;
+    /** @var float $value value of payment */
     private float $value;
+    /** @var string $description of payment */
     private string $description;
 
     /**
@@ -42,16 +51,28 @@ final class Payment extends AbstractToArray
         $this->description = $description;
     }
 
+    /**
+     * returns payment id
+     * @return int
+     */
     public function getPaymentId(): int
     {
         return $this->paymentId;
     }
 
+    /**
+     * returns value of payment
+     * @return float
+     */
     public function getValue(): float
     {
         return $this->value;
     }
 
+    /**
+     * returns payment description
+     * @return string
+     */
     public function getDescription(): string
     {
         return $this->description;

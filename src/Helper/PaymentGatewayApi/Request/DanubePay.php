@@ -6,6 +6,11 @@ use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
 use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use A3Soft\A3PayPhpClient\Util\Utils;
 
+/**
+ * DanubePay data model, that contains information about DanubePay request data
+ * @package DataModel
+ */
+
 final class DanubePay extends AbstractToArray
 {
 
@@ -36,17 +41,22 @@ final class DanubePay extends AbstractToArray
         $this->customer = $customer;
     }
 
+    /**
+     * returns terminalId
+     * @return string
+     */
     public function getTerminalId(): string
     {
         return $this->terminalId;
     }
 
+    /**
+     * returns customer CardHolder object
+     * @return CardHolder
+     */
     public function getCustomer(): CardHolder
     {
         return $this->customer;
     }
-
-
-
 
 }

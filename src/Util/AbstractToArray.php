@@ -2,15 +2,23 @@
 declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Util;
 
+use ReflectionException;
 use ReflectionObject;
 use stdClass;
 
+/**
+ * AbstractToArray is abstract class, that ensures toArray function for data models.
+ * @package Util
+ */
 abstract class AbstractToArray
 {
     /**
-     * @param bool $ignoreNull
-     * @param bool $recursive
-     * @return array|stdClass
+     * Cast class to Array using ReflectionObject, foreach all properties and append it to array.
+     * @param bool $ignoreNull if true, will not include null props
+     * @param bool $recursive if true, all objects and arrays will be cast to array
+     * @param bool $stdClassIfEmpty if array has not any items, default json return empty array, this causes problems, we must include empty object
+     * @return array|stdClass cast class to array
+     * @throws ReflectionException
      */
     public function toArray(bool $ignoreNull = false, bool $recursive = false, bool $stdClassIfEmpty = false)
     {

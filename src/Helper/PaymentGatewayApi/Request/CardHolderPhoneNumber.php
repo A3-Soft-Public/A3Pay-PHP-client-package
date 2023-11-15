@@ -6,9 +6,15 @@ use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
 use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use A3Soft\A3PayPhpClient\Util\Utils;
 
+/**
+ * CardHolderPhoneNumber represents data model of customer phone
+ * @package DataModel
+ */
 final class CardHolderPhoneNumber extends AbstractToArray
 {
+    /** @var string country code of the phone. Min. length 1. */
     private string $cc;
+    /** @var string subscriber section of the number. */
     private string $subscriber;
 
     /**
@@ -27,11 +33,19 @@ final class CardHolderPhoneNumber extends AbstractToArray
       $this->subscriber = $subscriber;
   }
 
+    /**
+     * returns country code section of phone number
+     * @return string
+     */
     public function getCountryCode(): string
     {
         return $this->cc;
     }
 
+    /**
+     * returns subscriber part of phone number
+     * @return string
+     */
     public function getSubscriber(): string
     {
         return $this->subscriber;

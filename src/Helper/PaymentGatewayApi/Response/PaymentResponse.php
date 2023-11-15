@@ -4,6 +4,10 @@ namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response;
 
 use Exception;
 
+/**
+ * PaymentResponse represents data model of create payment response
+ * @package DataModel
+ */
 class PaymentResponse extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
 {
     private string $paymentId;
@@ -33,7 +37,7 @@ class PaymentResponse extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
     }
 
     /**
-     * Create @link PaymentResponse from array
+     * Create PaymentResponse from array
      * @param array $responseArray
      * @return PaymentResponse
      * @throws Exception

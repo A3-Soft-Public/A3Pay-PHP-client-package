@@ -5,13 +5,21 @@ namespace A3Soft\A3PayPhpClient\PaymentGatewayApi;
 
 use A3Soft\A3PayPhpClient\Exception\CurlRequestException;
 use A3Soft\A3PayPhpClient\Exception\VariableNotUrlException;
+use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse;
 use A3Soft\A3PayPhpClient\Util\Utils;
 
+/**
+ * PaymentGatewayRequester service, which ensures requests and response to FiskalPay API
+ * @example ExamplePaymentRequest.php example use of payment gateway requester
+ * @package Service
+ */
 final class PaymentGatewayRequester
 {
 
+    /** @var string Link that request will be submitted to */
     private string $link;
+    /** @var string Secret token used in header of request. */
     private string $token;
 
     /**
@@ -30,13 +38,15 @@ final class PaymentGatewayRequester
     }
 
     /**
-     * @param $paymentGatewayRequest
+     * Makes request to FiskalPay api
+     * @param array|PaymentGatewayRequest $paymentGatewayRequest array data, or object implementing PaymentGatewayRequest interface that will be submitted to api
      * @return CurlResponse
      * @throws CurlRequestException
      */
     public function makeRequest($paymentGatewayRequest): CurlResponse
     {
         if(is_array($paymentGatewayRequest)) {
+            /** @var array $data */
             $data = $paymentGatewayRequest;
         } else {
             $data = $paymentGatewayRequest->toArray(true, true, true);
@@ -46,13 +56,13 @@ final class PaymentGatewayRequester
     }
 
     /**
-     * @param $url
-     * @param $jsonData
-     * @param $accessToken
+     * @param string $url
+     * @param array $jsonData
+     * @param string $accessToken
      * @return CurlResponse
      * @throws CurlRequestException
      */
-    private function sendPostRequest($url, $jsonData, $accessToken): CurlResponse {
+    private function sendPostRequest(string $url, array $jsonData, string $accessToken): CurlResponse {
         // Initialize cURL session
         $ch = curl_init($url);
 
