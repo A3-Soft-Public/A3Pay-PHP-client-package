@@ -20,6 +20,10 @@ use A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester;
 use Nette\Neon\Neon;
 use PHPUnit\Framework\TestCase;
 
+
+/**
+ * @package Test
+ */
 final class PaymentGatewayRequesterTest extends TestCase
 {
     const RequestConfigFile = __DIR__ . '/../../requesterTestCredentials.neon';

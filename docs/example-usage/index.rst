@@ -13,7 +13,7 @@ Constructing :php:class:`A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayR
 ==================================================================================================
 
 .. note::
-    If we want to construct `PaymentGatewayRequester` service, we need `url link` and `access token`
+    If we want to construct `PaymentGatewayRequester` service, we need **url link** and **access token**
 
 .. code-block:: php
     :caption: example.php

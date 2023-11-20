@@ -9,6 +9,9 @@ use A3Soft\A3PayPhpClient\Exception\VariableNotUrlException;
 use A3Soft\A3PayPhpClient\Util\Utils;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @package Test
+ */
 class UtilsTest extends TestCase
 {
     public string $text = "123456789"; //9 chars

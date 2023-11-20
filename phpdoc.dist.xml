@@ -18,6 +18,7 @@
             <default-package-name>DataModel</default-package-name>
             <source dsn=".">
                 <path>src</path>
+                <path>tests</path>
             </source>
         </api>
         <guide>

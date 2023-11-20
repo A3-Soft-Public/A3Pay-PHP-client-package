@@ -121,6 +121,10 @@
     <a href="packages/Util.html" class="">Util</a>
 </h4>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/Test.html" class="">Test</a>
+</h4>
+
                         </section>
             
     <section class="phpdocumentor-sidebar__category">
@@ -158,7 +162,45 @@ $paymentInfoRequester = new PaymentGatewayRequester(&#039;https://api_info_url_f
 $paymentInfoResponse = $paymentInfoRequester-&gt;makeRequest($paymentInfoRequest);
 
 $infoResponse = PaymentInfoResponse::fromArray($paymentInfoResponse-&gt;json());</code></pre>
-            <p>Vysvetliť kód.</p>
+            <hr />
+
+            <div class="section" id="approach">
+    <h2>Approach</h2>
+
+            
+
+<ul>
+    <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentInfoRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentInfoRequest">PaymentInfoRequest</abbr></a>
+.</li>
+
+    <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
+ service.</li>
+
+    <li class="dash">make request by calling <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+ and passing <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentInfoRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentInfoRequest">PaymentInfoRequest</abbr></a>
+ as parameter.</li>
+
+    <li class="dash"><code>$paymentInfoResponse</code> variable now has <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse">CurlResponse</abbr></a>
+ object type.</li>
+
+    <li class="dash">for better operating we can create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse">PaymentInfoResponse</abbr></a>
+ object by calling static method <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html#method_fromArray"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse::fromArray()">PaymentInfoResponse::fromArray()</abbr></a>
+. This method need an array as parameter.</li>
+
+    <li class="dash">an array should be easily obtained by calling <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html#method_json"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse::json()">CurlResponse::json()</abbr></a>
+ method, which will cast curl body response to array.</li>
+
+    <li class="dash">now the variable <code>$infoResponse</code> has <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse">PaymentInfoResponse</abbr></a>
+ object type.</li>
+
+    <li class="dash">so we can check for payment status by call <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html#method_getStatus"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse::getStatus()">PaymentInfoResponse::getStatus()</abbr></a>
+ method, or check if any error occurred by method <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html#method_getErrorMessage"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse::getErrorMessage()">PaymentInfoResponse::getErrorMessage()</abbr></a>
+</li>
+
+</ul>
+
+    </div>
+
     </div>
 
                             </div>
