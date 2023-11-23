@@ -3,7 +3,7 @@ Payment request
 ###############
 
 .. note::
-    This type of request is made when we want to make payment request to FiskalPay API
+    This type of request is made when we want to create payment by FiskalPay API
 
 For this type of request we have prepared :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest` data object model.
 This data model implements :php:interface:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest` interface
@@ -11,8 +11,18 @@ and extends :php:class:`A3Soft\A3PayPhpClient\Util\AbstractToArray` abstract cla
 All :php:namespace:`A3Soft\A3PayPhpClient\Helper` data models extends this class.
 That mean you can use :php:method:`A3Soft\A3PayPhpClient\Util\AbstractToArray::toArray()` method (we will need it in future).
 
-So, we are going to create :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest` instance
 
+Walkthrough
+###########
+
+- create :php:class:`A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester` service
+- create :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest` instance by passing all parameters (data models)
+- call :php:method:`A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()` method by passing :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest` instance and save it to variable
+- surround :php:method:`A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()` with try-catch block to catch :php:class:`A3Soft\A3PayPhpClient\Exception\CurlRequestException` exception when error occurred
+- parse `A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse` (returned by :php:method:`A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()`) and create :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse`
+- get link by :php:method:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse::getRedirectUrl()` and process redirection
+- when the payment will be processed your notification hook (provided in registration) will be called check :doc:`this<Handle payment notify>` to handle
+- client will be redirected back to url provided in request
 
 createPaymentGatewayRequest
 ---------------------------

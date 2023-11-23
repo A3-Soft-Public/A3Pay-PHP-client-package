@@ -152,13 +152,30 @@
     </article>
 </div>
 
-            <p>The core of this package is <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
- service.</p>
-            <p>All classes from namespace <a href="namespaces/a3soft-a3payphpclient-helper.html"><abbr title="\A3Soft\A3PayPhpClient\Helper">Helper</abbr></a>
+            <div class="phpdocumentor-admonition hint">
+                    <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <article>
+        <p>The core of this package is <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
+ service.</p><p>All classes from namespace <a href="namespaces/a3soft-a3payphpclient-helper.html"><abbr title="\A3Soft\A3PayPhpClient\Helper">Helper</abbr></a>
  are just data models required to make API request.</p>
-            <div class="section" id="constructing-php-class-a3soft-a3payphpclient-paymentgatewayapi-paymentgatewayrequester-service">
-    <h2>Constructing <a href=""></a>
- service.</h2>
+    </article>
+</div>
+
+            <div class="section" id="lifetime-cycle">
+    <h2>Lifetime cycle</h2>
+
+            <div style="text-align: center">
+            <img
+    src="guide/docs/example-usage/../images/payment_cycle.png"
+    width="500"            alt="Payment cycle"        />
+
+            </div>
+            <hr />
+
+    </div>
+
+            <div class="section" id="overview">
+    <h2>Overview</h2>
 
             <div class="phpdocumentor-admonition note">
             <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
@@ -167,17 +184,67 @@
     </article>
 </div>
 
+            <p>The <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
+ service has one purpose. Processing requests to payment api and returning responses. Once the service is created, it has only one method
+<a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+.
+Method can create payment request with provided data in array type (this can be useful, when you want to handle data on your own), or class that implements <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentGatewayRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest">PaymentGatewayRequest</abbr></a>
+
+For standard scenario we have prepared two helper classes, which implements <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentGatewayRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest">PaymentGatewayRequest</abbr></a>
+.</p>
+            
+
+<ul>
+    <li class="dash"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest">PaymentRequest</abbr></a>
+</li>
+
+    <li class="dash"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentInfoRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentInfoRequest">PaymentInfoRequest</abbr></a>
+</li>
+
+</ul>
+
+            <p>This classes extends <a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html"><abbr title="\A3Soft\A3PayPhpClient\Util\AbstractToArray">AbstractToArray</abbr></a>
+, it means they can cast all properties to array.</p>
+            <p><a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+ method returns <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse">CurlResponse</abbr></a>
+ object in case no curl error has occurred.</p>
+            <p>When a curl error has occurred, the <a href="classes/A3Soft-A3PayPhpClient-Exception-CurlRequestException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\CurlRequestException">CurlRequestException</abbr></a>
+ is thrown.
+It has <a href="classes/A3Soft-A3PayPhpClient-Exception-CurlRequestException.html#method_getCurlResponse"><abbr title="\A3Soft\A3PayPhpClient\Exception\CurlRequestException::getCurlResponse()">CurlRequestException::getCurlResponse()</abbr></a>
+ method, which retrieves <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse">CurlResponse</abbr></a>
+ object.</p>
+            <p>We can check for error message by calling <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html#method_getErrorMessage"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse::getErrorMessage()">CurlResponse::getErrorMessage()</abbr></a>
+. This method returns null if no error occurred, else error message in string.</p>
+            <p>If we want to check http response code, we need to call <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html#method_getStatusCode"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse::getStatusCode()">CurlResponse::getStatusCode()</abbr></a>
+.</p>
+            <p>In case we want to get raw body we will call <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html#method_getBody"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse::getBody()">CurlResponse::getBody()</abbr></a>
+, or its json parsed variant <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html#method_json"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse::json()">CurlResponse::json()</abbr></a>
+, which returns parsed response data in array.</p>
+            <p>In this step, we should validate response data.</p>
+            <p>For this purpose we can use Response data model classes.</p>
+            
+
+<ul>
+    <li class="dash"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse">PaymentResponse</abbr></a>
+ - represents data from PaymentRequest</li>
+
+    <li class="dash"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse">PaymentInfoResponse</abbr></a>
+ - represents data from PaymentInfoRequest</li>
+
+</ul>
+
+            <p>Both of this classes implements <code>fromArray()</code> method, so we can easy pass data from <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse">CurlResponse</abbr></a>
+ using <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html#method_json"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse::json()">CurlResponse::json()</abbr></a>
+ method.</p>
+            <div class="section" id="paymentgatewayrequester-service">
+    <h3>PaymentGatewayRequester service</h3>
+
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
         </div><pre><code class="language-php line-numbers" data-start=1>&lt;?php
 
     $paymentGatewayRequester = new PaymentGatewayRequester(&#039;https://api_url_from_registration_request&#039;, &#039;token_from_registration_request&#039;);</code></pre>
-            <p>OK, if we have <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
- service, we need to make request. Requests are made using <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
- method.</p>
-            <p>This method require array of key - value pairs, or an object implementing <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentGatewayRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest">PaymentGatewayRequest</abbr></a>
- interface.</p>
-            <p>We know two types of request:</p>
+            <p>We have implemented two types of request:</p>
             
 
 <ul>
@@ -194,11 +261,12 @@
     </div>
 
             <div class="section" id="table-of-contents">
-    <h2>Table of contents:</h2>
+    <h3>Table of contents:</h3>
 
             <div class="toc">
     <ul class="phpdocumentor-list">
     <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#payment-request">Payment request</a>        <ul class="section-level-1">
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#walkthrough">Walkthrough</a>        <ul class="section-level-2">
             <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createpaymentgatewayrequest">createPaymentGatewayRequest</a></li>
 
             <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createbasket">createBasket</a></li>
@@ -221,6 +289,8 @@
 
                     </ul></li>
 
+                    </ul></li>
+
     <li class="toc-item"><a href="guide/example-usage/making-payment-info-request.html#info-request">Info request</a>        <ul class="section-level-1">
             <li class="toc-item"><a href="guide/example-usage/making-payment-info-request.html#approach">Approach</a></li>
 
@@ -228,6 +298,8 @@
 
     </ul>
 </div>
+
+    </div>
 
     </div>
 

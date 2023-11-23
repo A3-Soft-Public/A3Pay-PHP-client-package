@@ -148,7 +148,7 @@
             <div class="phpdocumentor-admonition note">
             <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
                     <article>
-        <p>This type of request is made when we want to make payment request to FiskalPay API</p>
+        <p>This type of request is made when we want to create payment by FiskalPay API</p>
     </article>
 </div>
 
@@ -162,10 +162,42 @@ All <a href="namespaces/a3soft-a3payphpclient-helper.html"><abbr title="\A3Soft\
  data models extends this class.
 That mean you can use <a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html#method_toArray"><abbr title="\A3Soft\A3PayPhpClient\Util\AbstractToArray::toArray()">AbstractToArray::toArray()</abbr></a>
  method (we will need it in future).</p>
-            <p>So, we are going to create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest">PaymentRequest</abbr></a>
- instance</p>
+            <div class="section" id="walkthrough">
+    <h2>Walkthrough</h2>
+
+            
+
+<ul>
+    <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
+ service</li>
+
+    <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest">PaymentRequest</abbr></a>
+ instance by passing all parameters (data models)</li>
+
+    <li class="dash">call <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+ method by passing <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest">PaymentRequest</abbr></a>
+ instance and save it to variable</li>
+
+    <li class="dash">surround <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+ with try-catch block to catch <a href="classes/A3Soft-A3PayPhpClient-Exception-CurlRequestException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\CurlRequestException">CurlRequestException</abbr></a>
+ exception when error occurred</li>
+
+    <li class="dash">parse <code>A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse</code> (returned by <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+) and create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse">PaymentResponse</abbr></a>
+</li>
+
+    <li class="dash">get link by <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentResponse.html#method_getRedirectUrl"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse::getRedirectUrl()">PaymentResponse::getRedirectUrl()</abbr></a>
+ and process redirection</li>
+
+    <li class="dash">when the payment will be processed your notification hook (provided in registration) will be called check this
+ to handle</li>
+
+    <li class="dash">client will be redirected back to url provided in request</li>
+
+</ul>
+
             <div class="section" id="createpaymentgatewayrequest">
-    <h2>createPaymentGatewayRequest</h2>
+    <h3>createPaymentGatewayRequest</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -244,7 +276,7 @@ function createPaymentGatewayRequest(): PaymentRequest
     </div>
 
             <div class="section" id="createbasket">
-    <h2>createBasket</h2>
+    <h3>createBasket</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -262,7 +294,7 @@ function createBasket(BasketHeader $basketHeader, array $payments, CustomerBaske
     </div>
 
             <div class="section" id="createbasketheader">
-    <h2>createBasketHeader</h2>
+    <h3>createBasketHeader</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -288,7 +320,7 @@ function createBasketHeader(): BasketHeader
     </div>
 
             <div class="section" id="createpayments">
-    <h2>createPayments</h2>
+    <h3>createPayments</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -305,7 +337,7 @@ function createPayments(): array
     </div>
 
             <div class="section" id="createcustomerbasket">
-    <h2>createCustomerBasket</h2>
+    <h3>createCustomerBasket</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -326,7 +358,7 @@ function createCustomerBasket(): CustomerBasket
     </div>
 
             <div class="section" id="createbasketitems">
-    <h2>createBasketItems</h2>
+    <h3>createBasketItems</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -391,7 +423,7 @@ function createBasketItems(): array
     </div>
 
             <div class="section" id="createdanubepay">
-    <h2>createDanubePay</h2>
+    <h3>createDanubePay</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -407,7 +439,7 @@ function createDanubePay(): DanubePay
     </div>
 
             <div class="section" id="createcardholder">
-    <h2>createCardHolder</h2>
+    <h3>createCardHolder</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -448,7 +480,7 @@ function createCardHolder(): CardHolder
     </div>
 
             <div class="section" id="createcardholderphonenumber">
-    <h2>createCardHolderPhoneNumber</h2>
+    <h3>createCardHolderPhoneNumber</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -468,7 +500,7 @@ function createCardHolderPhoneNumber(): CardHolderPhoneNumber
     </div>
 
             <div class="section" id="full-code">
-    <h2>Full code</h2>
+    <h3>Full code</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -637,6 +669,8 @@ function createCardHolderPhoneNumber(): CardHolderPhoneNumber
         $subscriber
     );
 }</code></pre>
+    </div>
+
     </div>
 
     </div>

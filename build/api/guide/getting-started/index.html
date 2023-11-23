@@ -145,9 +145,68 @@
                                         <div class="section" id="getting-started">
     <h1>Getting started</h1>
 
-            <p>This package provide an easy way to integrate FiskalPay payment gateway using OOP structure.</p>
-            <p>You can make payment by install this library, provide necessary data, and just make request.</p>
-            <p>Request will return a response with redirect url. After processing the payment, the payment gateway will redirect to given link, and notify you by provided web hook</p>
+            <div class="section" id="overview">
+    <h2>Overview</h2>
+
+            <div class="phpdocumentor-admonition note">
+            <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    <article>
+        <p>This package provide an easy way to integrate FiskalPay payment gateway.</p><p>It consists from prepared data models for every request, response, and service which is processing a requests and returning a responses.</p>
+    </article>
+</div>
+
+            <div class="section" id="lifetime-cycle">
+    <h3>Lifetime cycle</h3>
+
+            
+    
+<ol>
+    <li>Obtain api credentials by <a href="guide/getting-started/registration.html#registration-request">submitting registration request</a>
+</li>
+
+    <li><a href="guide/getting-started/installing.html#installation">Install library</a>
+</li>
+
+    <li>Set <strong>notification callback url</strong> by portal</li>
+
+    <li>Create payment request, that responds with redirect url to payment gateway</li>
+
+    <li>Make redirect to payment gateway, fill payment fields, process payment</li>
+
+    <li><dl>
+                        <dt>In the moment, when the payment will be processed, payment gateway engine will call <strong>notifyUrl</strong> hook and some seconds later client will be redirected to <strong>redirectUrl</strong> you provided before.</dt>
+        
+        <dd>
+
+<ul>
+    <li class="dash">When notification hook is called you receive <strong>paymentId</strong> and <strong>status</strong>, but it is <strong>important</strong> to check for status by creating <a href="guide/example-usage/making-payment-info-request.html#info-request">PaymentInfoRequest</a>
+, because of security reasons.</li>
+
+    <li class="dash">Info request will return a status of payment and you can set state to your order.</li>
+
+</ul>
+</dd>    </dl>
+</li>
+
+</ol>
+
+            <hr />
+
+            <div style="text-align: center">
+            <img
+    src="guide/docs/getting-started/../images/payment_cycle.png"
+    width="500"            alt="Payment cycle"        />
+
+            </div>
+            <hr />
+
+            <div class="phpdocumentor-admonition note">
+            <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    <article>
+        <p>For usage check <a href="guide/example-usage/index.html#usage">Usage section</a></p>
+    </article>
+</div>
+
             <div class="toc">
     <ul class="phpdocumentor-list">
     <li class="toc-item"><a href="guide/getting-started/registration.html#registration-request">Registration request</a></li>
@@ -159,6 +218,10 @@
 
     </ul>
 </div>
+
+    </div>
+
+    </div>
 
     </div>
 
