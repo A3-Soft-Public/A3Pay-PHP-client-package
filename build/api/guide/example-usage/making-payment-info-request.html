@@ -26,8 +26,14 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">FiskalPay PHP Client Documentation</a></h1>
-    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <h1 class="phpdocumentor-title">
+    <a href="" class="phpdocumentor-title__link">
+        <div style="padding-right: .5rem; display: flex; align-items: center;">
+            <img src="images/favicon.ico" alt="logo">
+        </div>
+        FiskalPay PHP Client Documentation
+    </a>
+</h1>    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
     </label>
@@ -81,6 +87,10 @@
             </li>
                     <li>
                 <a href="guide/example-usage/making-payment-info-request.html#info-request" class="">Info request</a>
+                
+            </li>
+                    <li>
+                <a href="guide/example-usage/payment-notify-handling.html#payment-notification-handling" class="">Payment notification handling</a>
                 
             </li>
             </ul>
@@ -152,18 +162,6 @@
     </article>
 </div>
 
-                    <div class="code-block-caption">
-            <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-$paymentInfoRequest = new PaymentInfoRequest(&#039;paymentId-from-payment-response&#039;);
-$paymentInfoRequester = new PaymentGatewayRequester(&#039;https://api_info_url_from_registration_request&#039;, &#039;token_from_registration_request&#039;);
-
-$paymentInfoResponse = $paymentInfoRequester-&gt;makeRequest($paymentInfoRequest);
-
-$infoResponse = PaymentInfoResponse::fromArray($paymentInfoResponse-&gt;json());</code></pre>
-            <hr />
-
             <div class="section" id="approach">
     <h2>Approach</h2>
 
@@ -173,8 +171,9 @@ $infoResponse = PaymentInfoResponse::fromArray($paymentInfoResponse-&gt;json());
     <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentInfoRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentInfoRequest">PaymentInfoRequest</abbr></a>
 .</li>
 
-    <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
- service.</li>
+    <li class="dash"><p>create <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
+ service.</p><blockquote><p>As parameter we pass payment info url, not payment create url</p></blockquote>
+</li>
 
     <li class="dash">make request by calling <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
  and passing <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentInfoRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentInfoRequest">PaymentInfoRequest</abbr></a>
@@ -183,9 +182,10 @@ $infoResponse = PaymentInfoResponse::fromArray($paymentInfoResponse-&gt;json());
     <li class="dash"><code>$paymentInfoResponse</code> variable now has <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse">CurlResponse</abbr></a>
  object type.</li>
 
-    <li class="dash">for better operating we can create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse">PaymentInfoResponse</abbr></a>
+    <li class="dash"><p>for better operating we can create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse">PaymentInfoResponse</abbr></a>
  object by calling static method <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html#method_fromArray"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse::fromArray()">PaymentInfoResponse::fromArray()</abbr></a>
-. This method need an array as parameter.</li>
+.</p><blockquote><p>This method need an array as parameter.</p></blockquote>
+</li>
 
     <li class="dash">an array should be easily obtained by calling <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html#method_json"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse::json()">CurlResponse::json()</abbr></a>
  method, which will cast curl body response to array.</li>
@@ -198,6 +198,42 @@ $infoResponse = PaymentInfoResponse::fromArray($paymentInfoResponse-&gt;json());
 </li>
 
 </ul>
+
+                    <div class="code-block-caption">
+            <span class="caption-text">example.php</span>
+        </div><pre><code class="language-php">&lt;?php
+require_once(__DIR__ . &#039;/vendor/autoload.php&#039;);
+
+$paymentInfoRequest = new PaymentInfoRequest(&#039;paymentId-from-payment-response&#039;);
+$paymentInfoRequester = new PaymentGatewayRequester(&#039;https://api_info_url_from_registration_request&#039;, &#039;token_from_registration_request&#039;);
+
+try {
+    $paymentInfoResponse = $paymentInfoRequester-&gt;makeRequest($paymentInfoRequest);
+} catch(\A3Soft\A3PayPhpClient\Exception\CurlRequestException $curlRequestException) {
+    //log curl request exception, also we can check for $curlRequestException-&gt;getCurlResponse()
+}
+
+try {
+    $infoResponse = PaymentInfoResponse::fromArray($paymentInfoResponse-&gt;json());
+} catch(\JsonException $jsonException) {
+    //log json exception
+}
+
+//we may check if any error message was responded by
+$infoResponse-&gt;getErrorMessage();
+
+//and check if payment status was changed by comparing old status vs new one
+if($oldStatus !== $infoResponse-&gt;getStatus()) {
+    //do stuff
+}</code></pre>
+            <hr />
+
+            <div class="phpdocumentor-admonition hint">
+                    <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <article>
+        <p>And it is all, we can that easily verify payment status</p>
+    </article>
+</div>
 
     </div>
 

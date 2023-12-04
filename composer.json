@@ -1,5 +1,6 @@
 {
     "name": "a3soft/a3pay-php-client",
+    "version":"1.2",
     "description": "A3Pay payment gateway service",
     "autoload": {
         "psr-4": {

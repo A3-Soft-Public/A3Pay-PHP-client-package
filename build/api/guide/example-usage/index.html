@@ -26,8 +26,14 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">FiskalPay PHP Client Documentation</a></h1>
-    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <h1 class="phpdocumentor-title">
+    <a href="" class="phpdocumentor-title__link">
+        <div style="padding-right: .5rem; display: flex; align-items: center;">
+            <img src="images/favicon.ico" alt="logo">
+        </div>
+        FiskalPay PHP Client Documentation
+    </a>
+</h1>    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
     </label>
@@ -81,6 +87,10 @@
             </li>
                     <li>
                 <a href="guide/example-usage/making-payment-info-request.html#info-request" class="">Info request</a>
+                
+            </li>
+                    <li>
+                <a href="guide/example-usage/payment-notify-handling.html#payment-notification-handling" class="">Payment notification handling</a>
                 
             </li>
             </ul>
@@ -189,7 +199,7 @@
 <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
 .
 Method can create payment request with provided data in array type (this can be useful, when you want to handle data on your own), or class that implements <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentGatewayRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest">PaymentGatewayRequest</abbr></a>
-
+.
 For standard scenario we have prepared two helper classes, which implements <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentGatewayRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest">PaymentGatewayRequest</abbr></a>
 .</p>
             
@@ -266,24 +276,36 @@ It has <a href="classes/A3Soft-A3PayPhpClient-Exception-CurlRequestException.htm
             <div class="toc">
     <ul class="phpdocumentor-list">
     <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#payment-request">Payment request</a>        <ul class="section-level-1">
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#walkthrough">Walkthrough</a>        <ul class="section-level-2">
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createpaymentgatewayrequest">createPaymentGatewayRequest</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#walkthrough">Walkthrough</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createbasket">createBasket</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#code">Code</a>        <ul class="section-level-2">
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#1-create-paymentgatewayrequester-service">1. Create PaymentGatewayRequester service</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createbasketheader">createBasketHeader</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-create-paymentgatewayrequest">2. Create PaymentGatewayRequest</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createpayments">createPayments</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-1-createbasket">2.1 CreateBasket</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createcustomerbasket">createCustomerBasket</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-2-create-basketheader">2.2 Create BasketHeader</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createbasketitems">createBasketItems</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-3-createpayments">2.3 CreatePayments</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createdanubepay">createDanubePay</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-4-create-customerbasket">2.4 Create CustomerBasket</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createcardholder">createCardHolder</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-5-create-basketitems">2.5 Create BasketItems</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#createcardholderphonenumber">createCardHolderPhoneNumber</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-6-create-danubepay">2.6 Create DanubePay</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-7-create-cardholder">2.7 Create CardHolder</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-8-create-cardholderphonenumber">2.8 Create CardHolderPhoneNumber</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#3-make-request">3. Make request</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#4-surround-makerequest-with-try-catch">4. Surround makeRequest with try-catch</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#5-parse-data-and-create-paymentresponse">5. Parse data and create PaymentResponse</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#6-get-link-and-redirect">6. Get link and redirect</a></li>
 
             <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#full-code">Full code</a></li>
 
@@ -293,6 +315,31 @@ It has <a href="classes/A3Soft-A3PayPhpClient-Exception-CurlRequestException.htm
 
     <li class="toc-item"><a href="guide/example-usage/making-payment-info-request.html#info-request">Info request</a>        <ul class="section-level-1">
             <li class="toc-item"><a href="guide/example-usage/making-payment-info-request.html#approach">Approach</a></li>
+
+                    </ul></li>
+
+    <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#payment-notification-handling">Payment notification handling</a>        <ul class="section-level-1">
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#payment-statuses">Payment statuses</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#1-creating-file">1. Creating file</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#2-retrieve-parameters-from-request">2. Retrieve parameters from request</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#3-create-paymentgatewayrequester-service">3. Create PaymentGatewayRequester service</a>        <ul class="section-level-2">
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#arguments"><code>Arguments</code></a></li>
+
+                    </ul></li>
+
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#4-create-inforequest">4. Create InfoRequest</a>        <ul class="section-level-2">
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#arguments"><code>Arguments</code></a></li>
+
+                    </ul></li>
+
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#6-make-paymentinforequest">6. Make PaymentInfoRequest</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#6-parse-paymentinforequest">6. Parse PaymentInfoRequest</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/payment-notify-handling.html#7-update-order-payment-status">7. Update order payment status</a></li>
 
                     </ul></li>
 

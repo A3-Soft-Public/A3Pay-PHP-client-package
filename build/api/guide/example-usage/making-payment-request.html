@@ -26,8 +26,14 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">FiskalPay PHP Client Documentation</a></h1>
-    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <h1 class="phpdocumentor-title">
+    <a href="" class="phpdocumentor-title__link">
+        <div style="padding-right: .5rem; display: flex; align-items: center;">
+            <img src="images/favicon.ico" alt="logo">
+        </div>
+        FiskalPay PHP Client Documentation
+    </a>
+</h1>    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
     </label>
@@ -81,6 +87,10 @@
             </li>
                     <li>
                 <a href="guide/example-usage/making-payment-info-request.html#info-request" class="">Info request</a>
+                
+            </li>
+                    <li>
+                <a href="guide/example-usage/payment-notify-handling.html#payment-notification-handling" class="">Payment notification handling</a>
                 
             </li>
             </ul>
@@ -145,6 +155,49 @@
                                         <div class="section" id="payment-request">
     <h1>Payment request</h1>
 
+            <div class="toc">
+    <ul class="phpdocumentor-list">
+    <li class="toc-item current active"><a href="guide/example-usage/making-payment-request.html#payment-request">Payment request</a>        <ul class="section-level-1">
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#walkthrough">Walkthrough</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#code">Code</a>        <ul class="section-level-2">
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#1-create-paymentgatewayrequester-service">1. Create PaymentGatewayRequester service</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-create-paymentgatewayrequest">2. Create PaymentGatewayRequest</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-1-createbasket">2.1 CreateBasket</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-2-create-basketheader">2.2 Create BasketHeader</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-3-createpayments">2.3 CreatePayments</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-4-create-customerbasket">2.4 Create CustomerBasket</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-5-create-basketitems">2.5 Create BasketItems</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-6-create-danubepay">2.6 Create DanubePay</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-7-create-cardholder">2.7 Create CardHolder</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-8-create-cardholderphonenumber">2.8 Create CardHolderPhoneNumber</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#3-make-request">3. Make request</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#4-surround-makerequest-with-try-catch">4. Surround makeRequest with try-catch</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#5-parse-data-and-create-paymentresponse">5. Parse data and create PaymentResponse</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#6-get-link-and-redirect">6. Get link and redirect</a></li>
+
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#full-code">Full code</a></li>
+
+                    </ul></li>
+
+                    </ul></li>
+
+    </ul>
+</div>
+
             <div class="phpdocumentor-admonition note">
             <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
                     <article>
@@ -166,44 +219,92 @@ That mean you can use <a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArra
     <h2>Walkthrough</h2>
 
             
-
-<ul>
-    <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
+    
+<ol>
+    <li>create <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester">PaymentGatewayRequester</abbr></a>
  service</li>
 
-    <li class="dash">create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest">PaymentRequest</abbr></a>
+    <li>create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest">PaymentRequest</abbr></a>
  instance by passing all parameters (data models)</li>
 
-    <li class="dash">call <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+    <li>call <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
  method by passing <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest">PaymentRequest</abbr></a>
- instance and save it to variable</li>
+ instance and save the <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-CurlResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse">CurlResponse</abbr></a>
+ result into a variable</li>
 
-    <li class="dash">surround <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+    <li>surround <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
  with try-catch block to catch <a href="classes/A3Soft-A3PayPhpClient-Exception-CurlRequestException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\CurlRequestException">CurlRequestException</abbr></a>
  exception when error occurred</li>
 
-    <li class="dash">parse <code>A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse</code> (returned by <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
+    <li>parse <code>A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse</code> (returned by <a href="classes/A3Soft-A3PayPhpClient-PaymentGatewayApi-PaymentGatewayRequester.html#method_makeRequest"><abbr title="\A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()">PaymentGatewayRequester::makeRequest()</abbr></a>
 ) and create <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentResponse.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse">PaymentResponse</abbr></a>
 </li>
 
-    <li class="dash">get link by <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentResponse.html#method_getRedirectUrl"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse::getRedirectUrl()">PaymentResponse::getRedirectUrl()</abbr></a>
+    <li>get link by <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentResponse.html#method_getRedirectUrl"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse::getRedirectUrl()">PaymentResponse::getRedirectUrl()</abbr></a>
  and process redirection</li>
 
-    <li class="dash">when the payment will be processed your notification hook (provided in registration) will be called check this
- to handle</li>
+    <li>when the payment will be processed your notification hook (provided in registration) will be called, click <a href="guide/example-usage/payment-notify-handling.html#payment-notification-handling">here</a>
+ to see example</li>
 
-    <li class="dash">client will be redirected back to url provided in request</li>
+    <li>client will be redirected back to url provided in request</li>
 
-</ul>
+</ol>
 
-            <div class="section" id="createpaymentgatewayrequest">
-    <h3>createPaymentGatewayRequest</h3>
+    </div>
+
+            <div class="section" id="code">
+    <h2>Code</h2>
+
+            <div class="section" id="1-create-paymentgatewayrequester-service">
+    <h3>1. Create PaymentGatewayRequester service</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
         </div><pre><code class="language-php">&lt;?php
+require_once __DIR__ &#039;/vendor/autoload.php&#039;;
 
-function createPaymentGatewayRequest(): PaymentRequest
+$paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_from_registration_request&quot;, &#039;token_from_registration_request&#039;);</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            
+
+<ul>
+    <li><dl>
+                        <dt>url  - url where the request may be send.</dt>
+        
+        <dd>
+
+<ul>
+    <li>in this case we need to pass url for payment create request, not for payment info request</li>
+
+</ul>
+</dd>    </dl>
+</li>
+
+    <li>access token - to verify if you have authority to proceed payments</li>
+
+</ul>
+
+            <div class="phpdocumentor-admonition note">
+            <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    <article>
+        <p>Both of this values are obtained from <em>registration form</em>.</p>
+    </article>
+</div>
+
+            <hr />
+
+    </div>
+
+    </div>
+
+            <div class="section" id="2-create-paymentgatewayrequest">
+    <h3>2. Create PaymentGatewayRequest</h3>
+
+                    <div class="code-block-caption">
+            <span class="caption-text">example.php</span>
+        </div><pre><code class="language-php">function createPaymentGatewayRequest(): PaymentRequest
 {
     /** merchantPaymentId is just your identification of payment, it should be random generated Guid */
     $merchantPaymentId = &#039;476a8fc5-23db-4a5e-85ca-ed31b61a5a9d&#039;; // random generated
@@ -211,7 +312,7 @@ function createPaymentGatewayRequest(): PaymentRequest
     $currency = &#039;EUR&#039;;
     /** amount is string without floating point, but last 2 digits are floating point. For example if we have amount 123, we want to pay 1.23 */
     $amount = &#039;123&#039;;
-    /** this number will we visible in portal zone */
+    /** order id */
     $orderNumber = &#039;9999&#039;;
     /** to this url will be client redirected by payment gateway after processing */
     $redirectUrl = &#039;https://www.redirecturl.com&#039;;
@@ -235,12 +336,29 @@ function createPaymentGatewayRequest(): PaymentRequest
         $language
     );
 }</code></pre>
-            <hr />
+            <div class="phpdocumentor-admonition note">
+            <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    <article>
+        <p>If we want to easy generate an Guid, we can use <a href="https://github.com/ramsey/uuid">this library</a></p>
+    </article>
+</div>
 
-            <p>As we can see, we need to create instances of:</p>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
             
 
 <ul>
+    <li>methodId -  is an guid value, you will get after submitting registration request</li>
+
+    <li>merchantPaymentId - it is random generated guid, it can be useful when some error occurred, to identify payment</li>
+
+    <li>currency - currency code in <a href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(List_One)">ISO 4217</a> for example CZK, EUR, USD, AUD ...</li>
+
+    <li>amount - it is price, but in string without decimal point. it means the last two digits are cents (1224 -&gt; 12.24, 5 -&gt; 0.05, 75 -&gt; 0.75, 10000 -&gt; 100.00)</li>
+
+    <li>orderNumber - the order identification, we can use database id for example</li>
+
     <li><p><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-Basket.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\Basket">Basket</abbr></a>
  instance</p><blockquote>
 
@@ -268,21 +386,39 @@ function createPaymentGatewayRequest(): PaymentRequest
 </blockquote>
 </li>
 
+    <li>redirectUrl - this url will be used after submitting payment, there are two cases what can happens. Success, or fail. This url is called in both.</li>
+
     <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a>
  instance</li>
 
+    <li><dl>
+                        <dt>language - the language in <code>language code</code>-<code>country code</code> for example (sk-SK, cz-CZ, en-US, en-GB)</dt>
+        
+        <dd>
+
+<ul>
+    <li>language code following <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard</li>
+
+    <li>country code following <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 Alpha-2</a>  standard</li>
+
 </ul>
+</dd>    </dl>
+</li>
+
+</ul>
+
+            <hr />
 
     </div>
 
-            <div class="section" id="createbasket">
-    <h3>createBasket</h3>
+    </div>
+
+            <div class="section" id="2-1-createbasket">
+    <h3>2.1 CreateBasket</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-function createBasket(BasketHeader $basketHeader, array $payments, CustomerBasket $customerBasket, array $basketItems): Basket
+        </div><pre><code class="language-php">function createBasket(BasketHeader $basketHeader, array $payments, CustomerBasket $customerBasket, array $basketItems): Basket
 {
     return new Basket(
         $basketHeader,
@@ -291,16 +427,28 @@ function createBasket(BasketHeader $basketHeader, array $payments, CustomerBaske
         $basketItems
     );
 }</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            
+
+<ul>
+    <li>We just pass parameters we have got in arguments.</li>
+
+</ul>
+
+            <hr />
+
     </div>
 
-            <div class="section" id="createbasketheader">
-    <h3>createBasketHeader</h3>
+    </div>
+
+            <div class="section" id="2-2-create-basketheader">
+    <h3>2.2 Create BasketHeader</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-function createBasketHeader(): BasketHeader
+        </div><pre><code class="language-php">function createBasketHeader(): BasketHeader
 {
     $documentNumber = &quot;orderId&quot;; // id of order
     $reference = &#039;REFERENCE&#039;;
@@ -317,33 +465,75 @@ function createBasketHeader(): BasketHeader
         $text3
     );
 }</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            
+
+<ul>
+    <li>documentNumber - it is the id of order (for example database primary key)</li>
+
+    <li>reference - order reference</li>
+
+    <li>rounding - will be explained</li>
+
+    <li>text1 - description text no. 1 (optional)</li>
+
+    <li>text2 - description text no. 2 (optional)</li>
+
+    <li>text3 - description text no. 3 (optional)</li>
+
+</ul>
+
+            <hr />
+
     </div>
 
-            <div class="section" id="createpayments">
-    <h3>createPayments</h3>
+    </div>
+
+            <div class="section" id="2-3-createpayments">
+    <h3>2.3 CreatePayments</h3>
+
+            <div class="phpdocumentor-admonition error">
+                        <article>
+        <p>This feature was not implemented yet. It is recommended to return an empty array.</p>
+    </article>
+</div>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-function createPayments(): array
+        </div><pre><code class="language-php">function createPayments(): array
 {
     return [new Payment(
-        Payment::PaymentIdCard, //Payment identifier -&gt; card payment
+        Payment::PaymentIdVoucher, //Payment identifier -&gt; voucher payment
         1.23, //paid amount
         &#039;Payment description sent to portal&#039; // description of payment will be displayed on portal
     )];
 }</code></pre>
+            <div class="phpdocumentor-admonition note">
+            <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    <article>
+        <p>We will return payment in array list only if we want to pay part of price by voucher for example</p>
+    </article>
+</div>
+
+            <div class="phpdocumentor-admonition warning">
+                <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                <article>
+        <p>No other payment methods than card are possible. It means we can pass null or return an empty array. This future will be implemented soon</p>
+    </article>
+</div>
+
+            <hr />
+
     </div>
 
-            <div class="section" id="createcustomerbasket">
-    <h3>createCustomerBasket</h3>
+            <div class="section" id="2-4-create-customerbasket">
+    <h3>2.4 Create CustomerBasket</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-function createCustomerBasket(): CustomerBasket
+        </div><pre><code class="language-php">function createCustomerBasket(): CustomerBasket
 {
     /** optional field, id of customer */
     $customerNumber = null;
@@ -355,16 +545,39 @@ function createCustomerBasket(): CustomerBasket
         $externalUid
     );
 }</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            
+
+<ul>
+    <li>customerNumber - customer identification (optional)</li>
+
+    <li>cardNumber - this will be useful for remembered payments (optional)</li>
+
+    <li>externalUid - this field should be filled when you have more customer ids (for example in external system) (optional)</li>
+
+</ul>
+
+            <hr />
+
     </div>
 
-            <div class="section" id="createbasketitems">
-    <h3>createBasketItems</h3>
+    </div>
+
+            <div class="section" id="2-5-create-basketitems">
+    <h3>2.5 Create BasketItems</h3>
+
+            <div class="phpdocumentor-admonition note">
+            <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    <article>
+        <p>We can create as much BasketItems as we want. This items will be sent to portal for report.</p>
+    </article>
+</div>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-/**
+        </div><pre><code class="language-php">/**
     This function create just one basket item for demonstration, we can create as much as we want.
 */
 function createBasketItems(): array
@@ -373,7 +586,7 @@ function createBasketItems(): array
     $name = &#039;TestItem&#039;;
     $vatRate = 20.0;
     $quantity = 1;
-    /** measure unit must be from available constatnts in BasketItem::MeasureUnits array */
+    /** measure unit must be from available constants in BasketItem::MeasureUnits array */
     $measureUnit = BasketItem::MeasureUnits[&#039;Ks&#039;];
     /** price without vat, before discount per unit */
     $originalUnitPrice = 2.0;
@@ -420,32 +633,90 @@ function createBasketItems(): array
             $text1Long
         )];
 }</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            
+
+<ul>
+    <li>name - name of basket item (product)</li>
+
+    <li>vatRate - vat rate when realizing order</li>
+
+    <li>quantity - count of measureUnit</li>
+
+    <li>measureUnit - measure unit must be from available constants in <a href=""></a>
+ array</li>
+
+    <li>originalUnitPrice - price without vat, before discount per unit</li>
+
+    <li>priceTotal - total price without vat</li>
+
+    <li>priceVatBaseTotal - vat base for total price</li>
+
+    <li>priceVatTotal - total price incl. vat</li>
+
+    <li>itemRounding - will be explained</li>
+
+    <li>article - the name of product (send to portal)</li>
+
+    <li>chr1 - it should be for example size (S, M, L, XL, ...) - (optional) field, should be filled only if product have attributes</li>
+
+    <li>chr2 - it should be for example color (red, blue, ...) - (optional) field, should be filled only if product have attributes</li>
+
+    <li>ean - ean of product / product variant</li>
+
+    <li>externalUId - external uid is used when we take product from 3rd party system</li>
+
+    <li>text1 - short text product description</li>
+
+    <li>text1Long - long text product description</li>
+
+</ul>
+
+            <hr />
+
     </div>
 
-            <div class="section" id="createdanubepay">
-    <h3>createDanubePay</h3>
+    </div>
+
+            <div class="section" id="2-6-create-danubepay">
+    <h3>2.6 Create DanubePay</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-function createDanubePay(): DanubePay
+        </div><pre><code class="language-php">function createDanubePay(): DanubePay
 {
     return new DanubePay(
         $this-&gt;danubeTerminalId,
         $this-&gt;createCardHolder()
     );
 }</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            
+
+<ul>
+    <li>danubeTerminalId - id of terminal for danube payments. It is obtained from registration form.</li>
+
+    <li>cardHolder - it is <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a>
+ instance</li>
+
+</ul>
+
+            <hr />
+
     </div>
 
-            <div class="section" id="createcardholder">
-    <h3>createCardHolder</h3>
+    </div>
+
+            <div class="section" id="2-7-create-cardholder">
+    <h3>2.7 Create CardHolder</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">&lt;?php
-
-function createCardHolder(): CardHolder
+        </div><pre><code class="language-php">function createCardHolder(): CardHolder
 {
     /** Name of customer */
     $cardHolderName = &#039;Test Test&#039;;
@@ -477,14 +748,36 @@ function createCardHolder(): CardHolder
         $this-&gt;createCardHolderPhoneNumber(),
     );
 }</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            <dl>
+                        <dt>/** Name of customer */</dt>
+        
+        <dd>$cardHolderName = &#039;Test Test&#039;;
+/<strong> Bill and ship addresses of customer */
+$billAddrLine1 = $shipAddrLine1 = &#039;Továrenská&#039;;
+$billAddrPostCode = $shipAddrPostCode = &#039;020 01&#039;;
+$billAddrCity = $shipAddrCity = &#039;Púchov&#039;;
+/</strong> State code by ISO 3166-2 <em>/
+$billAddrState = $shipAddrState = &#039;ZI&#039;;
+/** State code by ISO 3166-1 numeric value </em>/
+$billAddrCountry = $shipAddrCountry = &#039;703&#039;;
+$email = &#039;<a href="mailto:admin@a3soft.sk">admin@a3soft.sk</a>&#039;;</dd>    </dl>
+
+            <hr />
+
     </div>
 
-            <div class="section" id="createcardholderphonenumber">
-    <h3>createCardHolderPhoneNumber</h3>
+    </div>
+
+            <div class="section" id="2-8-create-cardholderphonenumber">
+    <h3>2.8 Create CardHolderPhoneNumber</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
         </div><pre><code class="language-php">&lt;?php
+require_once __DIR__ &#039;/vendor/autoload.php&#039;;
 
 function createCardHolderPhoneNumber(): CardHolderPhoneNumber
 {
@@ -497,6 +790,135 @@ function createCardHolderPhoneNumber(): CardHolderPhoneNumber
         $subscriber
     );
 }</code></pre>
+            <div class="section" id="arguments">
+    <h4><code>Arguments</code></h4>
+
+            
+
+<ul>
+    <li>countryCode -</li>
+
+    <li>subscriber -</li>
+
+</ul>
+
+            <hr />
+
+    </div>
+
+    </div>
+
+            <div class="section" id="3-make-request">
+    <h3>3. Make request</h3>
+
+                    <div class="code-block-caption">
+            <span class="caption-text">example.php</span>
+        </div><pre><code class="language-php">&lt;?php
+require_once __DIR__ &#039;/vendor/autoload.php&#039;;
+
+$paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_from_registration_request&quot;, &#039;token_from_registration_request&#039;);
+$paymentGatewayRequest = createPaymentGatewayRequest();
+$curlResponse = $paymentGatewayRequester-&gt;makeRequest($paymentGatewayRequest);</code></pre>
+    </div>
+
+            <div class="section" id="4-surround-makerequest-with-try-catch">
+    <h3>4. Surround makeRequest with try-catch</h3>
+
+                    <div class="code-block-caption">
+            <span class="caption-text">example.php</span>
+        </div><pre><code class="language-php">&lt;?php
+require_once __DIR__ &#039;/vendor/autoload.php&#039;;
+
+$paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_from_registration_request&quot;, &#039;token_from_registration_request&#039;);
+$paymentGatewayRequest = createPaymentGatewayRequest();
+try {
+    $curlResponse = $paymentGatewayRequester-&gt;makeRequest($paymentGatewayRequest);
+} catch(\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse $curlResponse) {
+    LogError($curlResponse-&gt;getCurlResponse()-&gt;getErrorMessage());
+    die;
+}
+
+echo &quot;Request responseCode: {$curlResponse-&gt;getStatusCode()}&quot; . PHP_EOL;
+echo &quot;Request raw body: {$curlResponse-&gt;getBody()}&quot; . PHP_EOL;
+try {
+    echo &quot;Request parsed data: {$curlResponse-&gt;json()}&quot; . PHP_EOL;
+} catch(\JsonException $jsonException) {
+    echo &quot;Json could not be parsed!&quot; . $jsonException-&gt;getMessage() . PHP_EOL;
+}</code></pre>
+    </div>
+
+            <div class="section" id="5-parse-data-and-create-paymentresponse">
+    <h3>5. Parse data and create PaymentResponse</h3>
+
+                    <div class="code-block-caption">
+            <span class="caption-text">example.php</span>
+        </div><pre><code class="language-php">&lt;?php
+require_once __DIR__ &#039;/vendor/autoload.php&#039;;
+
+$paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_from_registration_request&quot;, &#039;token_from_registration_request&#039;);
+$paymentGatewayRequest = createPaymentGatewayRequest();
+try {
+    $curlResponse = $paymentGatewayRequester-&gt;makeRequest($paymentGatewayRequest);
+} catch(\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse $curlResponse) {
+    LogError($curlResponse-&gt;getCurlResponse()-&gt;getErrorMessage());
+    die;
+}
+
+echo &quot;Request responseCode: {$curlResponse-&gt;getStatusCode()}&quot; . PHP_EOL;
+echo &quot;Request raw body: {$curlResponse-&gt;getBody()}&quot; . PHP_EOL;
+try {
+    $parsedPaymentResponseData = $curlResponse-&gt;json();
+} catch(\JsonException $jsonException) {
+    echo &quot;Json could not be parsed!&quot; . $jsonException-&gt;getMessage() . PHP_EOL;
+    die;
+}
+
+try {
+    $paymentResponse = PaymentResponse::fromArray($parsedPaymentResponseData);
+} catch(\Exception $exception) {
+    //Exception is thrown when parsed data does not match data object.
+    echo $exception-&gt;getMessage() . PHP_EOL;
+}</code></pre>
+    </div>
+
+            <div class="section" id="6-get-link-and-redirect">
+    <h3>6. Get link and redirect</h3>
+
+                    <div class="code-block-caption">
+            <span class="caption-text">example.php</span>
+        </div><pre><code class="language-php">&lt;?php
+require_once __DIR__ &#039;/vendor/autoload.php&#039;;
+
+$paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_from_registration_request&quot;, &#039;token_from_registration_request&#039;);
+$paymentGatewayRequest = createPaymentGatewayRequest();
+try {
+    $curlResponse = $paymentGatewayRequester-&gt;makeRequest($paymentGatewayRequest);
+} catch(\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse $curlResponse) {
+    LogError($curlResponse-&gt;getCurlResponse()-&gt;getErrorMessage());
+    die;
+}
+
+echo &quot;Request responseCode: {$curlResponse-&gt;getStatusCode()}&quot; . PHP_EOL;
+echo &quot;Request raw body: {$curlResponse-&gt;getBody()}&quot; . PHP_EOL;
+try {
+    $parsedPaymentResponseData = $curlResponse-&gt;json();
+} catch(\JsonException $jsonException) {
+    echo &quot;Json could not be parsed!&quot; . $jsonException-&gt;getMessage() . PHP_EOL;
+    die;
+}
+
+try {
+    $paymentResponse = PaymentResponse::fromArray($parsedPaymentResponseData);
+} catch(\Exception $exception) {
+    //Exception is thrown when parsed data does not match data object.
+    echo $exception-&gt;getMessage() . PHP_EOL;
+}
+// we need to save paymentId, it should be paired with `merchantPaymentId`, from step 2 (for example new table with: id (primary), id of order, merchantPaymentId, and paymentId from payment request)
+$paymentId = $paymentResponse-&gt;getPaymentId();
+//createPaymentOrderRecord($orderId, $merchantPaymentId, $paymentId);
+
+//and at the end, redirect to payment gateway
+header(&quot;Location: ${$paymentResponse-&gt;getRedirectUrl()}&quot;);</code></pre>
     </div>
 
             <div class="section" id="full-code">
@@ -505,9 +927,40 @@ function createCardHolderPhoneNumber(): CardHolderPhoneNumber
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
         </div><pre><code class="language-php">&lt;?php
+require_once __DIR__ &#039;/vendor/autoload.php&#039;;
 
 $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_from_registration_request&quot;, &#039;token_from_registration_request&#039;);
+$paymentGatewayRequest = createPaymentGatewayRequest();
+try {
+    $curlResponse = $paymentGatewayRequester-&gt;makeRequest($paymentGatewayRequest);
+} catch(\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\CurlResponse $curlResponse) {
+    LogError($curlResponse-&gt;getCurlResponse()-&gt;getErrorMessage());
+    die;
+}
 
+echo &quot;Request responseCode: {$curlResponse-&gt;getStatusCode()}&quot; . PHP_EOL;
+echo &quot;Request raw body: {$curlResponse-&gt;getBody()}&quot; . PHP_EOL;
+try {
+    $parsedPaymentResponseData = $curlResponse-&gt;json();
+} catch(\JsonException $jsonException) {
+    echo &quot;Json could not be parsed!&quot; . $jsonException-&gt;getMessage() . PHP_EOL;
+    die;
+}
+
+try {
+    $paymentResponse = PaymentResponse::fromArray($parsedPaymentResponseData);
+} catch(\Exception $exception) {
+    //Exception is thrown when parsed data does not match data object.
+    echo $exception-&gt;getMessage() . PHP_EOL;
+}
+// we need to save paymentId, it should be paired with `merchantPaymentId`, from step 2 (for example new table with: id (primary), id of order, merchantPaymentId, and paymentId from payment request)
+$paymentId = $paymentResponse-&gt;getPaymentId();
+//createPaymentOrderRecord($orderId, $merchantPaymentId, $paymentId);
+
+//and at the end, redirect to payment gateway
+header(&quot;Location: ${$paymentResponse-&gt;getRedirectUrl()}&quot;);
+
+/** Function definition */
 function createPaymentGatewayRequest(): PaymentRequest
 {
     $merchantPaymentId = &#039;476a8fc5-23db-4a5e-85ca-ed31b61a5a9d&#039;; // random generated
@@ -563,11 +1016,8 @@ function createBasketHeader(): BasketHeader
 
 function createPayments(): array
 {
-    return [new Payment(
-        Payment::PaymentIdCard,
-        1.23,
-        &#039;Payment description sent to portal&#039;
-    )];
+    /** If we want to pay all the load by card, we must return an empty array */
+    return [];
 }
 
 
@@ -669,6 +1119,9 @@ function createCardHolderPhoneNumber(): CardHolderPhoneNumber
         $subscriber
     );
 }</code></pre>
+            <hr />
+
+            <p>Next article is <a href="guide/example-usage/payment-notify-handling.html#payment-notification-handling">Payment notification handling</a></p>
     </div>
 
     </div>

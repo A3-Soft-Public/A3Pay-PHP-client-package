@@ -33,7 +33,7 @@ Overview
 
 The :php:class:`A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester` service has one purpose. Processing requests to payment api and returning responses. Once the service is created, it has only one method
 :php:method:`A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester::makeRequest()`.
-Method can create payment request with provided data in array type (this can be useful, when you want to handle data on your own), or class that implements :php:interface:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest`
+Method can create payment request with provided data in array type (this can be useful, when you want to handle data on your own), or class that implements :php:interface:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest`.
 For standard scenario we have prepared two helper classes, which implements :php:interface:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentGatewayRequest`.
 
 - :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest`
@@ -83,7 +83,8 @@ Table of contents:
 ==================
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
 
     making-payment-request
     making-payment-info-request
+    payment-notify-handling

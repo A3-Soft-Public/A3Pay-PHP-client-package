@@ -54,7 +54,7 @@ class Utils
      * @return void
      * @throws VariableNotContainsException
      */
-    public static function checkValueContainsArgs($value, string $varName, ...$contains)
+    public static function checkValueContainsArgs($value, string $varName, ...$contains): void
     {
         Utils::checkValueContains($value, $varName, $contains);
     }
@@ -67,7 +67,7 @@ class Utils
      * @return void
      * @throws VariableNotContainsException
      */
-    public static function checkValueContains($value, string $varName, array $contains)
+    public static function checkValueContains($value, string $varName, array $contains): void
     {
         if(!in_array($value, $contains)) {
             throw new VariableNotContainsException($value, $varName, $contains);
@@ -82,7 +82,7 @@ class Utils
      * @return void
      * @throws VariableNotGuidException
      */
-    public static function checkValueGuid($value, string $varName)
+    public static function checkValueGuid($value, string $varName): void
     {
         if (!preg_match('/^\{?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}\}?$/', $value)) {
             throw new VariableNotGuidException($value, $varName);
@@ -96,7 +96,7 @@ class Utils
      * @return void
      * @throws VariableNotUrlException
      */
-    public static function checkValueUrl($value, string $varName)
+    public static function checkValueUrl($value, string $varName): void
     {
         if(filter_var($value, FILTER_VALIDATE_URL) === false) {
             throw new VariableNotUrlException($value, $varName);
