@@ -22,7 +22,13 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
     private string $merchantPaymentId;
 
 
-    /** @var string The amount of funds requested in the currency of the source location of the transaction. Decimalization of the amount is implied by the value in the currency data element */
+    /** @var string The amount of funds requested in the
+    currency of the source location of the
+    transaction.
+    Decimalization of the amount is implied
+    by the value in the currency data element.
+    The amount is shown in the smallest
+    currency units - 1,50 is presented as 150. */
     private string $amount;
 
     /** @var string Order number */
@@ -43,12 +49,23 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
 
 
     private ?string $paymentReferenceType;
+
+    /** @var int|null Ttl for paymentTypeemail in sec.
+    Max value is 31 days. */
     private ?int $emailTtl;
+
+    /** @var string|null Custom message for client. */
     private ?string $message;
 
     /**
      * @param string $merchantPaymentId Merchant payment ID.
-     * @param string $amount The amount of funds requested in the currency of the source location of the transaction. Decimalization of the amount is implied by the value in the currency data element
+     * @param string $amount The amount of funds requested in the
+     * currency of the source location of the
+     * transaction.
+     * Decimalization of the amount is implied
+     * by the value in the currency data element.
+     * The amount is shown in the smallest
+     * currency units - 1,50 is presented as 150.
      * @param string $orderNo Order number.
      * @param Basket $basket Customer basket data.
      * @param CardHolder $customer {@link CardHolder} data
@@ -56,9 +73,14 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
      * customer after payment is completed.
      * Min. length 16.
      * @param string|null $language Used language.
-     * @param string|null $paymentReferenceType
-     * @param int|null $emailTtl
-     * @param string|null $message
+     * @param string|null $paymentReferenceType PaymentReferenceType
+     * Available values:
+     * Direct - default, direct link to payment
+     * Email - deferred link
+     * Test - test the payment and validity. Payment will not be deposited.
+     * @param int|null $emailTtl Ttl for paymentType email in sec.
+     * Max value is 31 days.
+     * @param string|null $message Custom message for client.
      * @throws VariableLengthException
      * @throws VariableNotContainsException
      * @throws VariableNotInRangeException
