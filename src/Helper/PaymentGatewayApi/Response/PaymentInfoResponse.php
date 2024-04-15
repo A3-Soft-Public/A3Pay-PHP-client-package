@@ -34,10 +34,12 @@ class PaymentInfoResponse extends AbstractToArray
 
     /**
      * @param string $status Merchant payment status. Available values :<br>
-     *  Created<br>
-     *  Processing<br>
-     *  Authenticated<br>
-     *  Done<br>
+     *  Created,<br>
+     *  New,<br>
+     *  Authorized,<br>
+     *  Declined,<br>
+     *  Reversed,<br>
+     *  Captured,<br>
      *  Error
      * @param string|null $errorMessage Error message if exists.
      * @throws Exception

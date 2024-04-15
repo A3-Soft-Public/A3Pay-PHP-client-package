@@ -150,6 +150,7 @@ final class BasketItem extends AbstractToArray
         if(!in_array($measureUnit, self::MeasureUnits))
             throw new \InvalidArgumentException("The field \"measureUnit\" is not in acceptable values -> BasketItem::MeasureUnits");
         Utils::checkVariableLen($name, 'name', 128);
+
         Utils::checkVariableLen($article, 'article', 14, true);
         Utils::checkVariableLen($chr1, 'chr1', 20, true);
         Utils::checkVariableLen($chr2, 'chr2', 20, true);

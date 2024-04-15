@@ -47,9 +47,9 @@ final class BasketHeader extends AbstractToArray
     {
         Utils::checkVariableLen($documentNumber, 'documentNumber', 20);
         Utils::checkVariableLen($reference, 'reference', 10, true);
-        Utils::checkVariableLen($text1, 'text1', 10, true);
-        Utils::checkVariableLen($text2, 'text2', 10, true);
-        Utils::checkVariableLen($text3, 'text3', 10, true);
+        Utils::checkVariableLen($text1, 'text1', 200, true);
+        Utils::checkVariableLen($text2, 'text2', 200, true);
+        Utils::checkVariableLen($text3, 'text3', 200, true);
 
         $this->documentNumber = $documentNumber;
         $this->reference = $reference;

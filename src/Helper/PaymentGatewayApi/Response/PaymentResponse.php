@@ -8,7 +8,7 @@ use Exception;
  * PaymentResponse represents data model of create payment response
  * @package DataModel
  */
-class PaymentResponse extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
+final class PaymentResponse extends \A3Soft\A3PayPhpClient\Util\AbstractToArray
 {
     private string $paymentId;
     private string $redirectUrl;

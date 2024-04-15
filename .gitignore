@@ -2,3 +2,4 @@
 /vendor/
 /build/cache
 requesterTestCredentials.neon
+/.phpunit.result.cache

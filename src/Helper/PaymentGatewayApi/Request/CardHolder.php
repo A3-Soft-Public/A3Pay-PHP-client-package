@@ -14,116 +14,263 @@ use A3Soft\A3PayPhpClient\Util\Utils;
  */
 final class CardHolder extends AbstractToArray
 {
-    /** @var string name of customer */
+    /** @var string Name of the Cardholder. */
     private string $cardHolderName;
-    /** @var string bill address street with number */
-    private string $billAddrLine1;
-    /** @var string bill address postcode */
-    private string $billAddrPostCode;
-    /** @var string bill address city */
-    private string $billAddrCity;
-    /** @var string bill address state by ISO 3166-2 */
-    private string $billAddrState;
-    /** @var string bill address country by ISO 3166-1 3-digit numeric code */
-    private string $billAddrCountry;
-    /** @var string email address of customer */
+
+    /** @var string The email address associated with the
+     * account that is either entered by the
+     * Cardholder, or is on file with the 3DS
+     * Requestor. This field shall meet
+     * requirements of Section 3.4 of IETF RFC
+     * 5322. */
     private string $email;
-    /** @var string ship address street with number */
-    private string $shipAddrLine1;
-    /** @var string  ship address postcode*/
-    private string $shipAddrPostCode;
-    /** @var string ship address city */
-    private string $shipAddrCity;
-    /** @var string ship address state by ISO 3166-2 */
-    private string $shipAddrState;
-    /** @var string ship address country by ISO 3166-1 3-digit numeric code */
-    private string $shipAddrCountry;
-    /** @var CardHolderPhoneNumber|null customer mobile phone */
+
+    /** @var string|null First line of the street address or
+    equivalent local portion of the Cardholder
+    billing address associated with the card
+    used for this purchase. This field is
+    optional, but recommended to include. */
+    private ?string $billAddrLine1;
+
+    /** @var string|null ZIP or other postal code of the Cardholder
+    billing address associated with the card
+    used for this purchase. This field is
+    optional, but recommended to include. */
+    private ?string $billAddrPostCode;
+
+    /** @var string|null The city of the Cardholder billing address
+     * associated with the card used for this
+     * purchase. This field is optional, but
+     * recommended to include. */
+    private ?string $billAddrCity;
+
+    /** @var string|null The state or province of the Cardholder
+    billing address associated with the card
+    used for this purchase.
+    The value should be the country
+    subdivision code defined in ISO 3166-2.
+    This field is optional, but recommended
+    to include. */
+    private ?string $billAddrState;
+
+    /** @var string|null The country of the Cardholder billing
+    address associated with the card used for
+    this purchase.
+    This value shall be the ISO 3166-1
+    numeric country code, except values from
+    range 901 - 999 which are reserved by
+    ISO. This field is optional, but
+    recommended to include. */
+    private ?string $billAddrCountry;
+
+    /** @var string|null First line of the street address or
+     * equivalent local portion of the shipping
+     * address associated with the card used for
+     * this purchase. This field is optional, but
+     * recommended to include. */
+    private ?string $shipAddrLine1;
+
+    /** @var string|null ZIP or other postal code of the shipping
+    address associated with the card used for
+    this purchase. This field is optional, but
+    recommended to include. */
+    private ?string $shipAddrPostCode;
+
+    /** @var string|null City portion of the shipping address
+    requested by the Cardholder.
+    This field is required unless shipping
+    information is the same as billing
+    information. This field is optional, but
+    recommended to include. */
+    private ?string $shipAddrCity;
+
+    /** @var string|null The state or province of the shipping
+    address associated with the card used for
+    this purchase. */
+    private ?string $shipAddrState;
+
+    /** @var string|null Country of the shipping address requested
+    by the Cardholder. This value shall be the ISO 3166-1
+    numeric country code, except values from
+    range 901 - 999 which are reserved by
+    ISO.
+    This field is required if Cardholder
+    Shipping Address State is present and if
+    shipping information is not the same as
+    billing information. This field is optional,
+    but recommended to include. */
+    private ?string $shipAddrCountry;
+
+    /** @var CardHolderPhoneNumber|null The mobile phone provided by the
+    cardholder. CardHolderPhoneNumber */
     private ?CardHolderPhoneNumber $mobilePhone;
-    /** @var CardHolderPhoneNumber|null customer home phone */
+
+    /** @var CardHolderPhoneNumber|null The home phone provided by the
+    cardholder. CardHolderPhoneNumber */
     private ?CardHolderPhoneNumber $homePhone;
-    /** @var CardHolderPhoneNumber|null customer work phone */
+
+    /** @var CardHolderPhoneNumber|null The work phone provided by the
+    cardholder. CardHolderPhoneNumber */
     private ?CardHolderPhoneNumber $workPhone;
-    /** @var string|null bill address line 2 if needed */
+
+    /** @var string|null Second line of the street address or
+    equivalent local portion of the Cardholder
+    billing address associated with the card
+    used for this purchase. */
     private ?string $billAddrLine2;
-    /** @var string|null bill address line 3 if needed */
+
+    /** @var string|null Third line of the street address or
+    equivalent local portion of the Cardholder
+    billing address associated with the card
+    used for this purchase. */
     private ?string $billAddrLine3;
+
     /** @var string|null Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same. Available values : Y, N. Its optional, payment gateway does not need it.*/
     private ?string $addrMatch;
-    /** @var string|null ship address line 2 if needed */
+
+    /** @var string|null Second line of the street address or
+    equivalent local portion of the shipping
+    address associated with the card used for
+    this purchase. */
     private ?string $shipAddrLine2;
-    /** @var string|null ship address line 3 if needed */
+
+    /** @var string|null Third line of the street address or
+    equivalent local portion of the shipping
+    address associated with the card used for
+    this purchase. */
     private ?string $shipAddrLine3;
 
     /**
      * @param string $cardHolderName Name of the Cardholder.
-     * @param string $billAddrLine1 First line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.
-     * @param string $billAddrPostCode ZIP or other postal code of the Cardholder billing address associated with the card used for this purchase.
-     * @param string $billAddrCity The city of the Cardholder billing address associated with the card used for this purchase.
-     * @param string $billAddrState The state or province of the Cardholder billing address associated with the card used for this purchase.The value should be the country subdivision code defined in ISO 3166-2.
-     * @param string $billAddrCountry The country of the Cardholder billing address associated with the card used for this purchase. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO.
-     * @param string $email The email address associated with the account that is either entered by the Cardholder, or is on file with the 3DS Requestor. This field shall meet requirements of Section 3.4 of IETF RFC 5322.
-     * @param string $shipAddrLine1 First line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.
-     * @param string $shipAddrPostCode ZIP or other postal code of the shipping address associated with the card used for this purchase.
-     * @param string $shipAddrCity City portion of the shipping address requested by the Cardholder. This field is required unless shipping information is the same as billing information.
-     * @param string $shipAddrState The state or province of the shipping address associated with the card used for this purchase.
-     * @param string $shipAddrCountry by the Cardholder. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO. This field is required if Cardholder Shipping Address State is present and if shipping information is not the same as billing information.
-     * @param CardHolderPhoneNumber|null $mobilePhone The mobile phone provided by the cardholder.
-     * @param CardHolderPhoneNumber|null $homePhone The home phone provided by the cardholder.
-     * @param CardHolderPhoneNumber|null $workPhone The work phone provided by the cardholder.
-     * @param string|null $billAddrLine2 Second line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.
-     * @param string|null $billAddrLine3 Third line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.
-     * @param string|null $addrMatch Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same. Available values : Y, N
-     * @param string|null $shipAddrLine2 Second line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.
-     * @param string|null $shipAddrLine3 Third line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.
+     * @param string $email The email address associated with the
+     * account that is either entered by the
+     * Cardholder, or is on file with the 3DS Requestor.
+     * This field shall meet
+     * requirements of Section 3.4 of IETF RFC
+     * 5322.
+     * @param CardHolderPhoneNumber|null $mobilePhone The mobile phone provided by the
+     * cardholder. CardHolderPhoneNumber
+     * @param CardHolderPhoneNumber|null $homePhone The home phone provided by the
+     * cardholder. CardHolderPhoneNumber
+     * @param CardHolderPhoneNumber|null $workPhone The work phone provided by the
+     * cardholder. CardHolderPhoneNumber
+     * @param string|null $billAddrLine1 First line of the street address or
+     * equivalent local portion of the Cardholder
+     * billing address associated with the card
+     * used for this purchase. This field is
+     * optional, but recommended to include.
+     * @param string|null $billAddrLine2 Second line of the street address or
+     * equivalent local portion of the Cardholder
+     * billing address associated with the card
+     * used for this purchase.
+     * @param string|null $billAddrLine3 Third line of the street address or
+     * equivalent local portion of the Cardholder
+     * billing address associated with the card
+     * used for this purchase.
+     * @param string|null $billAddrPostCode ZIP or other postal code of the Cardholder
+     * billing address associated with the card
+     * used for this purchase. This field is
+     * optional, but recommended to include.
+     * @param string|null $billAddrCity The city of the Cardholder billing address
+     * associated with the card used for this
+     * purchase. This field is optional, but
+     * recommended to include.
+     * @param string|null $billAddrState The state or province of the Cardholder
+     * billing address associated with the card
+     * used for this purchase.
+     * The value should be the country
+     * subdivision code defined in ISO 3166-2.
+     * This field is optional, but recommended
+     * to include.
+     * @param string|null $billAddrCountry The country of the Cardholder billing
+     * address associated with the card used for
+     * this purchase.
+     * This value shall be the ISO 3166-1
+     * numeric country code, except values from
+     * range 901 - 999 which are reserved by
+     * ISO. This field is optional, but
+     * recommended to include.
+     * @param string|null $shipAddrLine1 First line of the street address or
+     * equivalent local portion of the shipping
+     * address associated with the card used for
+     * this purchase. This field is optional, but
+     * recommended to include.
+     * @param string|null $shipAddrLine2 Second line of the street address or
+     * equivalent local portion of the shipping
+     * address associated with the card used for
+     * this purchase.
+     * @param string|null $shipAddrLine3 Third line of the street address or
+     * equivalent local portion of the shipping
+     * address associated with the card used for
+     * this purchase.
+     * @param string|null $shipAddrPostCode ZIP or other postal code of the shipping
+     * address associated with the card used for
+     * this purchase. This field is optional, but
+     * recommended to include.
+     * @param string|null $shipAddrCity City portion of the shipping address
+     * requested by the Cardholder.
+     * This field is required unless shipping
+     * information is the same as billing
+     * information. This field is optional, but
+     * recommended to include.
+     * @param string|null $shipAddrCountry The state or province of the shipping
+     * address associated with the card used for
+     * this purchase.
+     * @param string|null $shipAddrState Country of the shipping address requested
+     * by the Cardholder.
+     * This value shall be the ISO 3166-1
+     * numeric country code, except values from
+     * range 901 - 999 which are reserved by
+     * ISO.
+     * This field is required if Cardholder
+     * Shipping Address State is present and if
+     * shipping information is not the same as
+     * billing information. This field is optional,
+     * but recommended to include.
      * @throws VariableLengthException
-     * @throws VariableNotContainsException
      */
   public function __construct(
       string $cardHolderName,
-      string $billAddrLine1,
-      string $billAddrPostCode,
-      string $billAddrCity,
-      string $billAddrState,
-      string $billAddrCountry,
       string $email,
-      string $shipAddrLine1,
-      string $shipAddrPostCode,
-      string $shipAddrCity,
-      string $shipAddrState,
-      string $shipAddrCountry,
       ?CardHolderPhoneNumber $mobilePhone = null,
       ?CardHolderPhoneNumber $homePhone = null,
       ?CardHolderPhoneNumber $workPhone = null,
+      ?string $billAddrLine1 = null,
       ?string $billAddrLine2 = null,
       ?string $billAddrLine3 = null,
-      ?string $addrMatch = null,
+      ?string $billAddrPostCode = null,
+      ?string $billAddrCity = null,
+      ?string $billAddrState = null,
+      ?string $billAddrCountry = null,
+      ?string $shipAddrLine1 = null,
       ?string $shipAddrLine2 = null,
-      ?string $shipAddrLine3 = null
+      ?string $shipAddrLine3 = null,
+      ?string $shipAddrPostCode = null,
+      ?string $shipAddrCity = null,
+      ?string $shipAddrCountry = null,
+      ?string $shipAddrState = null
   )
   {
       Utils::checkVariableLen($cardHolderName, 'cardHolderName', 50);
-
-      Utils::checkVariableLen($billAddrLine1, 'billAddrLine1', 50);
-      Utils::checkVariableLen($billAddrLine2, 'billAddrLine2', 50, true);
-      Utils::checkVariableLen($billAddrLine3, 'billAddrLine3', 50, true);
-      Utils::checkVariableLen($billAddrPostCode, 'billAddrPostCode', 16);
-      Utils::checkVariableLen($billAddrCity, 'billAddrCity', 50);
-      Utils::checkVariableLen($billAddrState, 'billAddrState', 3);
-      Utils::checkVariableLen($billAddrCountry, 'billAddrCountry', 3);
-
       Utils::checkVariableLen($email, 'email', 256);
 
 
-      Utils::checkValueContainsArgs($addrMatch, 'addrMatch','Y', 'N', null);
+      Utils::checkVariableLen($billAddrLine1, 'billAddrLine1', 50, true);
+      Utils::checkVariableLen($billAddrLine2, 'billAddrLine2', 50, true);
+      Utils::checkVariableLen($billAddrLine3, 'billAddrLine3', 50, true);
+      Utils::checkVariableLen($billAddrPostCode, 'billAddrPostCode', 16, true);
+      Utils::checkVariableLen($billAddrCity, 'billAddrCity', 50, true);
+      Utils::checkVariableLen($billAddrState, 'billAddrState', 3, true);
+      Utils::checkVariableLen($billAddrCountry, 'billAddrCountry', 3, true);
 
-      Utils::checkVariableLen($shipAddrLine1, 'shipAddrLine1', 50);
+
+      Utils::checkVariableLen($shipAddrLine1, 'shipAddrLine1', 50, true);
       Utils::checkVariableLen($shipAddrLine2, 'shipAddrLine2', 50, true);
       Utils::checkVariableLen($shipAddrLine3, 'shipAddrLine3', 50, true);
-      Utils::checkVariableLen($shipAddrPostCode, 'shipAddrPostCode', 16);
-      Utils::checkVariableLen($shipAddrCity, 'shipAddrCity', 50);
-      Utils::checkVariableLen($shipAddrState, 'shipAddrState', 3);
-      Utils::checkVariableLen($shipAddrCountry, 'shipAddrCountry', 3);
+      Utils::checkVariableLen($shipAddrPostCode, 'shipAddrPostCode', 16, true);
+      Utils::checkVariableLen($shipAddrCity, 'shipAddrCity', 50, true);
+      Utils::checkVariableLen($shipAddrState, 'shipAddrState', 3, true);
+      Utils::checkVariableLen($shipAddrCountry, 'shipAddrCountry', 3, true);
 
       $this->cardHolderName = $cardHolderName;
       $this->billAddrLine1 = $billAddrLine1;
@@ -142,7 +289,6 @@ final class CardHolder extends AbstractToArray
       $this->workPhone = $workPhone;
       $this->billAddrLine2 = $billAddrLine2;
       $this->billAddrLine3 = $billAddrLine3;
-      $this->addrMatch = $addrMatch;
       $this->shipAddrLine2 = $shipAddrLine2;
       $this->shipAddrLine3 = $shipAddrLine3;
   }
@@ -298,15 +444,6 @@ final class CardHolder extends AbstractToArray
     public function getBillAddrLine3(): ?string
     {
         return $this->billAddrLine3;
-    }
-
-    /**
-     * returns if bill and ship address match, available values: null, Y, N
-     * @return string|null
-     */
-    public function getAddrMatch(): ?string
-    {
-        return $this->addrMatch;
     }
 
     /**

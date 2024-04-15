@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 namespace A3Soft\A3PayPhpClient\Util;
 
 use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
@@ -25,23 +26,23 @@ class Utils
      */
     public static function checkVariableLen($value, string $varName, ?int $maxLen = null, bool $checkIfNull = false, ?int $minLen = null)
     {
-        if(gettype($value) === 'integer')
+        if (gettype($value) === 'integer')
             $value = (string)$value;
         $throw = false;
-        if($checkIfNull && $value === null)
+        if ($checkIfNull && $value === null)
             return;
-        if($minLen !== null && $maxLen !== null) {
-            if(strlen($value) < $minLen || strlen($value) > $maxLen)
+        if ($minLen !== null && $maxLen !== null) {
+            if (strlen($value) < $minLen || strlen($value) > $maxLen)
                 $throw = true;
         } elseif ($minLen !== null) {
-            if(strlen($value) < $minLen)
+            if (strlen($value) < $minLen)
                 $throw = true;
         } else {
-            if(strlen($value) > $maxLen)
+            if (strlen($value) > $maxLen)
                 $throw = true;
         }
 
-        if($throw)
+        if ($throw)
             throw new VariableLengthException($varName, $maxLen, $minLen);
     }
 
@@ -69,7 +70,7 @@ class Utils
      */
     public static function checkValueContains($value, string $varName, array $contains): void
     {
-        if(!in_array($value, $contains)) {
+        if (!in_array($value, $contains)) {
             throw new VariableNotContainsException($value, $varName, $contains);
         }
     }
@@ -95,10 +96,17 @@ class Utils
      * @param string $varName
      * @return void
      * @throws VariableNotUrlException
+     * @throws VariableLengthException
      */
-    public static function checkValueUrl($value, string $varName): void
+    public static function checkValueUrl($value, string $varName, ?int $minLength = null, ?int $maxLength = null): void
     {
-        if(filter_var($value, FILTER_VALIDATE_URL) === false) {
+        if ($minLength !== null || $maxLength !== null) {
+            $varLen = strlen($value);
+            if ($varLen < $minLength || $varLen > $maxLength) {
+                throw new VariableLengthException($varName, $minLength, $maxLength);
+            }
+        }
+        if (filter_var($value, FILTER_VALIDATE_URL) === false) {
             throw new VariableNotUrlException($value, $varName);
         }
     }

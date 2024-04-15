@@ -2,89 +2,122 @@
 declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
+
 use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Exception\VariableNotContainsException;
 use A3Soft\A3PayPhpClient\Exception\VariableNotGuidException;
+use A3Soft\A3PayPhpClient\Exception\VariableNotInRangeException;
+use A3Soft\A3PayPhpClient\Exception\VariableNotUrlException;
 use A3Soft\A3PayPhpClient\Util\AbstractToArray;
 use A3Soft\A3PayPhpClient\Util\Utils;
-
 /**
  * PaymentRequest represents data model of data needed for payment create request
  * @package DataModel
  */
 final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequest
 {
-    /** @var string Method GUID. */
-    private string $methodId;
+
+
     /** @var string Merchant payment ID GUID. */
     private string $merchantPaymentId;
-    /** @var string Currency in which purchase amount is expressed.<br>
-     * The value is limited to 3 numeric characters and is represented by the ISO 4217 three-digit currency code, except 955-964 and 999 with currency exponent set to “2” by default.
-     */
-    private string $currency;
+
+
     /** @var string The amount of funds requested in the currency of the source location of the transaction. Decimalization of the amount is implied by the value in the currency data element */
     private string $amount;
+
     /** @var string Order number */
     private string $orderNo;
     /** @var Basket Customer basket data */
     private Basket $basket;
-    /** @var string Redirect Url. Min. length 16 */
+
+    /** @var CardHolder Cardholder data. */
+    private CardHolder $customer;
+
+    /** @var string Redirect Url address for redirecting the
+    customer after payment is completed.
+    Min. length 16. */
     private string $redirectUrl;
+
     /** @var string|null Used language */
     private ?string $language;
-    /** @var DanubePay DanubePay data */
-    private DanubePay $danubePay;
+
+
+    private ?string $paymentReferenceType;
+    private ?int $emailTtl;
+    private ?string $message;
 
     /**
-     * @param string $methodId Method GUID.
-     * @param string $merchantPaymentId Merchant payment ID GUID.
-     * @param string $currency Currency in which purchase amount is expressed.<br>
-     * The value is limited to 3 numeric characters and is represented by the ISO 4217 three-digit currency code, except 955-964 and 999 with currency exponent set to “2” by default.
+     * @param string $merchantPaymentId Merchant payment ID.
      * @param string $amount The amount of funds requested in the currency of the source location of the transaction. Decimalization of the amount is implied by the value in the currency data element
      * @param string $orderNo Order number.
      * @param Basket $basket Customer basket data.
-     * @param string $redirectUrl Redirect Url. Min. length 16.
-     * @param DanubePay $danubePay DanubePay data.
+     * @param CardHolder $customer {@link CardHolder} data
+     * @param string $redirectUrl Redirect Url address for redirecting the
+     * customer after payment is completed.
+     * Min. length 16.
      * @param string|null $language Used language.
-     * @throws VariableLengthException|VariableNotGuidException
+     * @param string|null $paymentReferenceType
+     * @param int|null $emailTtl
+     * @param string|null $message
+     * @throws VariableLengthException
+     * @throws VariableNotContainsException
+     * @throws VariableNotInRangeException
+     * @throws VariableNotUrlException
      */
     public function __construct(
-        string $methodId,
         string $merchantPaymentId,
-        string $currency,
         string $amount,
         string $orderNo,
         Basket $basket,
+        CardHolder $customer,
         string $redirectUrl,
-        DanubePay $danubePay,
-        ?string $language = null
+        ?string $language = null,
+        ?string $paymentReferenceType = PaymentReferenceType::Direct,
+        ?int $emailTtl = null,
+        ?string $message = null
     )
     {
-        Utils::checkValueGuid($methodId, 'methodId');
-        Utils::checkValueGuid($merchantPaymentId, 'merchantPaymentId');
-        Utils::checkVariableLen($currency, 'currency', 3);
+
+        Utils::checkVariableLen($merchantPaymentId, 'merchantPaymentId', 36);
         Utils::checkVariableLen($amount, 'amount', 12);
         Utils::checkVariableLen($orderNo, 'orderNo', 16);
-        Utils::checkVariableLen($redirectUrl, 'redirectUrl', 1024);
+        Utils::checkValueUrl($redirectUrl, 'redirectUrl', 16, 1024);
 
-        $this->methodId = $methodId;
+        Utils::checkVariableLen($language, 'language', 36, true);
+
+
+        if ($paymentReferenceType !== null) {
+            switch ($paymentReferenceType) {
+                case PaymentReferenceType::Direct:
+                case PaymentReferenceType::Email:
+                case PaymentReferenceType::Test:
+                {
+                    break;
+                }
+                default: throw new VariableNotContainsException($paymentReferenceType, 'paymentReferenceType', [PaymentReferenceType::Direct, PaymentReferenceType::Email, PaymentReferenceType::Test]);
+
+            }
+        }
+
+        /** if emailTtl is not null and is bigger than 31 days in seconds ... */
+        if ($emailTtl !== null && $emailTtl > 2678400) {
+            throw new VariableNotInRangeException($emailTtl, 'emailTtl', null, 2678400);
+        }
+
+        Utils::checkVariableLen($message, 'message', 128, true);
+
         $this->merchantPaymentId = $merchantPaymentId;
-        $this->currency = $currency;
         $this->amount = $amount;
         $this->orderNo = $orderNo;
         $this->basket = $basket;
-        $this->redirectUrl = $redirectUrl;
-        $this->danubePay = $danubePay;
         $this->language = $language;
+        $this->customer = $customer;
+        $this->redirectUrl = $redirectUrl;
+        $this->paymentReferenceType = $paymentReferenceType;
+        $this->emailTtl = $emailTtl;
+        $this->message = $message;
     }
 
-    /**
-     * returns method id
-     * @return string
-     */
-    public function getMethodId(): string
-    {
-        return $this->methodId;
-    }
 
     /**
      * returns merchant id of payment
@@ -95,14 +128,6 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
         return $this->merchantPaymentId;
     }
 
-    /**
-     * returns currency
-     * @return string
-     */
-    public function getCurrency(): string
-    {
-        return $this->currency;
-    }
 
     /**
      * returns amount
@@ -149,12 +174,27 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
         return $this->language;
     }
 
-    /**
-     * returns DanubePay data
-     * @return DanubePay
-     */
-    public function getDanubePay(): DanubePay
+    public function getCustomer(): CardHolder
     {
-        return $this->danubePay;
+        return $this->customer;
     }
+
+    public function getPaymentReferenceType(): ?string
+    {
+        return $this->paymentReferenceType;
+    }
+
+    public function getEmailTtl(): ?int
+    {
+        return $this->emailTtl;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+
+
+
 }

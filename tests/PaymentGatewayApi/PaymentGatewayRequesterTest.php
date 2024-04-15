@@ -10,9 +10,9 @@ use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\BasketItem;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolderPhoneNumber;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CustomerBasket;
-use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\Payment;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentInfoRequest;
+use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse;
@@ -30,7 +30,7 @@ final class PaymentGatewayRequesterTest extends TestCase
     private string $requestLink;
     private string $requestInfoLink;
     private string $requestToken;
-    private string $methodId;
+    private string $merchantPaymentId;
     private string $danubeTerminalId;
 
     public function __construct(string $name)
@@ -46,16 +46,13 @@ final class PaymentGatewayRequesterTest extends TestCase
             throw new \Exception("The field \"requestInfoLink\" in File \"{$configFile}\" does not exist");
         if (!isset($data['requestToken']))
             throw new \Exception("The field \"requestToken\" in File \"{$configFile}\" does not exist");
-        if (!isset($data['methodId']))
-            throw new \Exception("The field \"methodId\" in File \"{$configFile}\" does not exist");
-        if (!isset($data['danubeTerminalId']))
-            throw new \Exception("The field \"danubeTerminalId\" in File \"{$configFile}\" does not exist");
+        if (!isset($data['merchantPaymentId']))
+            throw new \Exception("The field \"merchantPaymentId\" in File \"{$configFile}\" does not exist");
 
         $this->requestLink = $data['requestLink'];
         $this->requestInfoLink = $data['requestInfoLink'];
         $this->requestToken = $data['requestToken'];
-        $this->methodId = $data['methodId'];
-        $this->danubeTerminalId = $data['danubeTerminalId'];
+        $this->merchantPaymentId = $data['merchantPaymentId'];
     }
 
     public function testCurlException()
@@ -111,17 +108,15 @@ final class PaymentGatewayRequesterTest extends TestCase
 
     private function createPaymentGatewayRequest(): PaymentRequest
     {
-        $merchantPaymentId = '476a8fc5-23db-4a5e-85ca-ed31b61a5a9d'; // random generated
-        $currency = 'EUR';
         $amount = '123';
         $orderNumber = '9999';
         $redirectUrl = 'https://www.redirecturl.com';
         $language = 'sk-sk';
+        $email = null; // only when type is Email
+        $message = null;
 
         return new PaymentRequest(
-            $this->methodId,
-            $merchantPaymentId,
-            $currency,
+            $this->merchantPaymentId,
             $amount,
             $orderNumber,
             $this->createBasket(
@@ -130,9 +125,12 @@ final class PaymentGatewayRequesterTest extends TestCase
                 $this->createCustomerBasket(),
                 $this->createBasketItems()
             ),
+            $this->createCardHolder(),
             $redirectUrl,
-            $this->createDanubePay(),
-            $language
+            $language,
+            PaymentReferenceType::Test,
+            $email,
+            $message
         );
     }
 
@@ -176,11 +174,13 @@ final class PaymentGatewayRequesterTest extends TestCase
      */
     private function createPayments(): array
     {
-        return [new Payment(
+        /*new Payment(
             Payment::PaymentIdCard,
             1.23,
             'Payment description sent to portal'
-        )];
+        )*/
+        /** This should return values only if there's any other type for example voucher. */
+        return [];
     }
 
 
@@ -236,13 +236,13 @@ final class PaymentGatewayRequesterTest extends TestCase
             )];
     }
 
-    private function createDanubePay(): DanubePay
+    /*private function createDanubePay(): DanubePay
     {
         return new DanubePay(
             $this->danubeTerminalId,
             $this->createCardHolder()
         );
-    }
+    }*/
 
     private function createCardHolder(): CardHolder
     {
@@ -250,26 +250,29 @@ final class PaymentGatewayRequesterTest extends TestCase
         $billAddrLine1 = $shipAddrLine1 = 'Továrenská';
         $billAddrPostCode = $shipAddrPostCode = '020 01';
         $billAddrCity = $shipAddrCity = 'Púchov';
-        $billAddrState = $shipAddrState = 'ZI';
         $billAddrCountry = $shipAddrCountry = '703';
         $email = 'admin@a3soft.sk';
 
         return new CardHolder(
             $cardHolderName,
+            $email,
+            $this->createCardHolderPhoneNumber(),
+            $this->createCardHolderPhoneNumber(),
+            $this->createCardHolderPhoneNumber(),
             $billAddrLine1,
+            null,
+            null,
             $billAddrPostCode,
             $billAddrCity,
-            $billAddrState,
+            null,
             $billAddrCountry,
-            $email,
             $shipAddrLine1,
+            null,
+            null,
             $shipAddrPostCode,
             $shipAddrCity,
-            $shipAddrState,
             $shipAddrCountry,
-            $this->createCardHolderPhoneNumber(),
-            $this->createCardHolderPhoneNumber(),
-            $this->createCardHolderPhoneNumber(),
+            $shipAddrState,
         );
     }
 
