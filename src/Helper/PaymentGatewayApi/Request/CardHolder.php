@@ -125,9 +125,6 @@ final class CardHolder extends AbstractToArray
     used for this purchase. */
     private ?string $billAddrLine3;
 
-    /** @var string|null Indicates whether the Cardholder Shipping Address and Cardholder Billing Address are the same. Available values : Y, N. Its optional, payment gateway does not need it.*/
-    private ?string $addrMatch;
-
     /** @var string|null Second line of the street address or
     equivalent local portion of the shipping
     address associated with the card used for
@@ -149,11 +146,11 @@ final class CardHolder extends AbstractToArray
      * requirements of Section 3.4 of IETF RFC
      * 5322.
      * @param CardHolderPhoneNumber|null $mobilePhone The mobile phone provided by the
-     * cardholder. CardHolderPhoneNumber
+     * cardholder.
      * @param CardHolderPhoneNumber|null $homePhone The home phone provided by the
-     * cardholder. CardHolderPhoneNumber
+     * cardholder.
      * @param CardHolderPhoneNumber|null $workPhone The work phone provided by the
-     * cardholder. CardHolderPhoneNumber
+     * cardholder.
      * @param string|null $billAddrLine1 First line of the street address or
      * equivalent local portion of the Cardholder
      * billing address associated with the card

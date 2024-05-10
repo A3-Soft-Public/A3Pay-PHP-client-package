@@ -1,0 +1,1 @@
+docker run --rm -v "C:\Projects\A3Pay\a3pay-php-client-package:/data" "phpdoc/phpdoc:3"

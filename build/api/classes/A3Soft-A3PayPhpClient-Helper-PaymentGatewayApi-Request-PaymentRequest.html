@@ -191,7 +191,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -242,15 +242,15 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_currency">$currency</a>
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_customer">$customer</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_danubePay">$danubePay</a>
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_emailTtl">$emailTtl</a>
     <span>
-                        &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a>            </span>
+                        &nbsp;: int|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -266,15 +266,21 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_methodId">$methodId</a>
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_message">$message</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_orderNo">$orderNo</a>
     <span>
                         &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_paymentReferenceType">$paymentReferenceType</a>
+    <span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -312,18 +318,16 @@
 <dd>returns customer basket data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCurrency">getCurrency()</a>
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCustomer">getCustomer()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a>    </span>
 </dt>
-<dd>returns currency</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getDanubePay">getDanubePay()</a>
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getEmailTtl">getEmailTtl()</a>
     <span>
-                                &nbsp;: <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a>    </span>
+                                &nbsp;: int|null    </span>
 </dt>
-<dd>returns DanubePay data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getLanguage">getLanguage()</a>
@@ -340,11 +344,10 @@
 <dd>returns merchant id of payment</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMethodId">getMethodId()</a>
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMessage">getMessage()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: string|null    </span>
 </dt>
-<dd>returns method id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getOrderNo">getOrderNo()</a>
@@ -352,6 +355,12 @@
                                 &nbsp;: string    </span>
 </dt>
 <dd>returns order number</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getPaymentReferenceType">getPaymentReferenceType()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getRedirectUrl">getRedirectUrl()</a>
@@ -398,7 +407,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -410,7 +419,13 @@
     </code>
 
     
-        <section class="phpdocumentor-description"><p>The amount of funds requested in the currency of the source location of the transaction. Decimalization of the amount is implied by the value in the currency data element</p>
+        <section class="phpdocumentor-description"><p>The amount of funds requested in the
+currency of the source location of the
+transaction.
+Decimalization of the amount is implied
+by the value in the currency data element.
+The amount is shown in the smallest
+currency units - 1,50 is presented as 150.</p>
 </section>
 
     
@@ -433,7 +448,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -458,9 +473,9 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_currency">
-        $currency
-        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_currency" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_customer">
+        $customer
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_customer" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -468,20 +483,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$currency</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$customer</span>
     </code>
 
     
-        <section class="phpdocumentor-description"><p>Currency in which purchase amount is expressed.<br>
-The value is limited to 3 numeric characters and is represented by the ISO 4217 three-digit currency code, except 955-964 and 999 with currency exponent set to “2” by default.</p>
+        <section class="phpdocumentor-description"><p>Cardholder data.</p>
 </section>
 
     
@@ -494,9 +508,9 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_danubePay">
-        $danubePay
-        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_danubePay" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_emailTtl">
+        $emailTtl
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_emailTtl" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -504,19 +518,20 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$danubePay</span>
+        <span class="phpdocumentor-signature__type">int|null</span>
+    <span class="phpdocumentor-signature__name">$emailTtl</span>
     </code>
 
     
-        <section class="phpdocumentor-description"><p>DanubePay data</p>
+        <section class="phpdocumentor-description"><p>Ttl for paymentTypeemail in sec.
+Max value is 31 days.</p>
 </section>
 
     
@@ -539,7 +554,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -574,7 +589,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -599,9 +614,9 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_methodId">
-        $methodId
-        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_methodId" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_message">
+        $message
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_message" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -609,19 +624,19 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$methodId</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$message</span>
     </code>
 
     
-        <section class="phpdocumentor-description"><p>Method GUID.</p>
+        <section class="phpdocumentor-description"><p>Custom message for client.</p>
 </section>
 
     
@@ -644,7 +659,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -669,6 +684,39 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_paymentReferenceType">
+        $paymentReferenceType
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_paymentReferenceType" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$paymentReferenceType</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_redirectUrl">
         $redirectUrl
         <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_redirectUrl" class="headerlink"><i class="fas fa-link"></i></a>
@@ -679,7 +727,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -691,7 +739,9 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     </code>
 
     
-        <section class="phpdocumentor-description"><p>Redirect Url. Min. length 16</p>
+        <section class="phpdocumentor-description"><p>Redirect Url address for redirecting the
+customer after payment is completed.
+Min. length 16.</p>
 </section>
 
     
@@ -719,14 +769,14 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$methodId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$merchantPaymentId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$currency</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$amount</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$orderNo</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-Basket.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\Basket">Basket</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$basket</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$redirectUrl</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$danubePay</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$language</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$merchantPaymentId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$amount</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$orderNo</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-Basket.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\Basket">Basket</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$basket</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customer</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$redirectUrl</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$language</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$paymentReferenceType</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">PaymentReferenceType::Direct</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$emailTtl</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -734,30 +784,11 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$methodId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Method GUID.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$merchantPaymentId</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Merchant payment ID GUID.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$currency</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Currency in which purchase amount is expressed.<br>
-The value is limited to 3 numeric characters and is represented by the ISO 4217 three-digit currency code, except 955-964 and 999 with currency exponent set to “2” by default.</p>
+                    <section class="phpdocumentor-description"><p>Merchant payment ID.</p>
 </section>
 
             </dd>
@@ -766,7 +797,13 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The amount of funds requested in the currency of the source location of the transaction. Decimalization of the amount is implied by the value in the currency data element</p>
+                    <section class="phpdocumentor-description"><p>The amount of funds requested in the
+currency of the source location of the
+transaction.
+Decimalization of the amount is implied
+by the value in the currency data element.
+The amount is shown in the smallest
+currency units - 1,50 is presented as 150.</p>
 </section>
 
             </dd>
@@ -789,20 +826,22 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$redirectUrl</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-signature__argument__name">$customer</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Redirect Url. Min. length 16.</p>
+                    <section class="phpdocumentor-description"><p><a href="CardHolder"></a> data</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$danubePay</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$redirectUrl</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>DanubePay data.</p>
+                    <section class="phpdocumentor-description"><p>Redirect Url address for redirecting the
+customer after payment is completed.
+Min. length 16.</p>
 </section>
 
             </dd>
@@ -812,6 +851,38 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Used language.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$paymentReferenceType</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">PaymentReferenceType::Direct</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>PaymentReferenceType
+Available values:
+Direct - default, direct link to payment
+Email - deferred link
+Test - test the payment and validity. Payment will not be deposited.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$emailTtl</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Ttl for paymentType email in sec.
+Max value is 31 days.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$message</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Custom message for client.</p>
 </section>
 
             </dd>
@@ -828,7 +899,31 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/A3Soft-A3PayPhpClient-Exception-VariableLengthException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableLengthException">VariableLengthException</abbr></a>|<a href="classes/A3Soft-A3PayPhpClient-Exception-VariableNotGuidException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableNotGuidException">VariableNotGuidException</abbr></a></span>
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/A3Soft-A3PayPhpClient-Exception-VariableLengthException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableLengthException">VariableLengthException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/A3Soft-A3PayPhpClient-Exception-VariableNotContainsException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableNotContainsException">VariableNotContainsException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/A3Soft-A3PayPhpClient-Exception-VariableNotInRangeException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableNotInRangeException">VariableNotInRangeException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/A3Soft-A3PayPhpClient-Exception-VariableNotUrlException.html"><abbr title="\A3Soft\A3PayPhpClient\Exception\VariableNotUrlException">VariableNotUrlException</abbr></a></span>
                                                             
                                              
                                     </dd>
@@ -850,7 +945,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 
     </aside>
 
@@ -886,7 +981,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 
     </aside>
 
@@ -914,23 +1009,22 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getCurrency">
-        getCurrency()
-        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCurrency" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getCustomer">
+        getCustomer()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCustomer" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">returns currency</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCurrency</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getCustomer</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -940,7 +1034,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a></span>
             </section>
 
 </article>
@@ -950,23 +1044,22 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getDanubePay">
-        getDanubePay()
-        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getDanubePay" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getEmailTtl">
+        getEmailTtl()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getEmailTtl" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">returns DanubePay data</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getDanubePay</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">getEmailTtl</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -976,7 +1069,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type">int|null</span>
             </section>
 
 </article>
@@ -994,7 +1087,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 
     </aside>
 
@@ -1030,7 +1123,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -1058,23 +1151,22 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getMethodId">
-        getMethodId()
-        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMethodId" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getMessage">
+        getMessage()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMessage" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">returns method id</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getMethodId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getMessage</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1084,7 +1176,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
             </section>
 
 </article>
@@ -1102,7 +1194,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 
@@ -1130,6 +1222,41 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getPaymentReferenceType">
+        getPaymentReferenceType()
+        <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getPaymentReferenceType" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">204</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getPaymentReferenceType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getRedirectUrl">
         getRedirectUrl()
         <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getRedirectUrl" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1138,7 +1265,7 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php"><a href="files/src-helper-paymentgatewayapi-request-paymentrequest.html"><abbr title="src/Helper/PaymentGatewayApi/Request/PaymentRequest.php">PaymentRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 
     </aside>
 
@@ -1360,12 +1487,13 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
                     <ul class="phpdocumentor-list -clean">
                                                     <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_amount">$amount<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
                                                     <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_basket">$basket<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
-                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_currency">$currency<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
-                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_danubePay">$danubePay<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_customer">$customer<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_emailTtl">$emailTtl<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
                                                     <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_language">$language<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
                                                     <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_merchantPaymentId">$merchantPaymentId<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
-                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_methodId">$methodId<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_message">$message<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
                                                     <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_orderNo">$orderNo<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
+                                                    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_paymentReferenceType">$paymentReferenceType<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
                                                     <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_redirectUrl">$redirectUrl<a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html"></li>
                                             </ul>
                 </li>
@@ -1376,12 +1504,13 @@ The value is limited to 3 numeric characters and is represented by the ISO 4217 
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method___construct">__construct()</a></li>
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getAmount">getAmount()</a></li>
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getBasket">getBasket()</a></li>
-                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCurrency">getCurrency()</a></li>
-                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getDanubePay">getDanubePay()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCustomer">getCustomer()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getEmailTtl">getEmailTtl()</a></li>
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getLanguage">getLanguage()</a></li>
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMerchantPaymentId">getMerchantPaymentId()</a></li>
-                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMethodId">getMethodId()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMessage">getMessage()</a></li>
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getOrderNo">getOrderNo()</a></li>
+                                            <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getPaymentReferenceType">getPaymentReferenceType()</a></li>
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getRedirectUrl">getRedirectUrl()</a></li>
                                             <li><a href="classes/A3Soft-A3PayPhpClient-Util-AbstractToArray.html#method_toArray">toArray()</a></li>
                                     </ul>

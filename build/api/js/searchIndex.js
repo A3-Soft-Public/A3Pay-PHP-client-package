@@ -51,6 +51,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableNotGuidException.html#method___construct"
         },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableNotInRangeException",
+            "name": "VariableNotInRangeException",
+            "summary": "VariableNotUrlException\u0020is\u0020thrown\u0020when\u0020variable\u0020value\u0020does\u0020not\u0020match\u0020Url\u0020structure.",
+            "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableNotInRangeException.html"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableNotInRangeException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableNotInRangeException.html#method___construct"
+        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableNotUrlException",
             "name": "VariableNotUrlException",
             "summary": "VariableNotUrlException\u0020is\u0020thrown\u0020when\u0020variable\u0020value\u0020does\u0020not\u0020match\u0020Url\u0020structure.",
@@ -496,11 +506,6 @@ Search.appendIndex(
             "summary": "returns\u0020bill\u0020address\u0020line\u00203,\u0020if\u0020any",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getBillAddrLine3"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003AgetAddrMatch\u0028\u0029",
-            "name": "getAddrMatch",
-            "summary": "returns\u0020if\u0020bill\u0020and\u0020ship\u0020address\u0020match,\u0020available\u0020values\u003A\u0020null,\u0020Y,\u0020N",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#method_getAddrMatch"
-        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003AgetShipAddrLine2\u0028\u0029",
             "name": "getShipAddrLine2",
             "summary": "returns\u0020ship\u0020address\u0020line\u00202,\u0020if\u0020any",
@@ -515,6 +520,11 @@ Search.appendIndex(
             "name": "cardHolderName",
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_cardHolderName"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003A\u0024email",
+            "name": "email",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_email"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003A\u0024billAddrLine1",
             "name": "billAddrLine1",
@@ -540,11 +550,6 @@ Search.appendIndex(
             "name": "billAddrCountry",
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrCountry"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003A\u0024email",
-            "name": "email",
-            "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_email"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003A\u0024shipAddrLine1",
             "name": "shipAddrLine1",
@@ -595,11 +600,6 @@ Search.appendIndex(
             "name": "billAddrLine3",
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_billAddrLine3"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003A\u0024addrMatch",
-            "name": "addrMatch",
-            "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html#property_addrMatch"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\CardHolder\u003A\u003A\u0024shipAddrLine2",
             "name": "shipAddrLine2",
@@ -680,36 +680,6 @@ Search.appendIndex(
             "name": "externalUId",
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CustomerBasket.html#property_externalUId"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\DanubePay",
-            "name": "DanubePay",
-            "summary": "DanubePay\u0020data\u0020model,\u0020that\u0020contains\u0020information\u0020about\u0020DanubePay\u0020request\u0020data",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\DanubePay\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html#method___construct"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\DanubePay\u003A\u003AgetTerminalId\u0028\u0029",
-            "name": "getTerminalId",
-            "summary": "returns\u0020terminalId",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html#method_getTerminalId"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\DanubePay\u003A\u003AgetCustomer\u0028\u0029",
-            "name": "getCustomer",
-            "summary": "returns\u0020customer\u0020CardHolder\u0020object",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html#method_getCustomer"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\DanubePay\u003A\u003A\u0024terminalId",
-            "name": "terminalId",
-            "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html#property_terminalId"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\DanubePay\u003A\u003A\u0024customer",
-            "name": "customer",
-            "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html#property_customer"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\Payment",
             "name": "Payment",
@@ -796,6 +766,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentInfoRequest.html#property_paymentId"
         },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentReferenceType",
+            "name": "PaymentReferenceType",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentReferenceType.html"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentReferenceType\u003A\u003ADirect",
+            "name": "Direct",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentReferenceType.html#constant_Direct"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentReferenceType\u003A\u003AEmail",
+            "name": "Email",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentReferenceType.html#constant_Email"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentReferenceType\u003A\u003ATest",
+            "name": "Test",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentReferenceType.html#constant_Test"
+        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest",
             "name": "PaymentRequest",
             "summary": "PaymentRequest\u0020represents\u0020data\u0020model\u0020of\u0020data\u0020needed\u0020for\u0020payment\u0020create\u0020request",
@@ -806,20 +796,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method___construct"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetMethodId\u0028\u0029",
-            "name": "getMethodId",
-            "summary": "returns\u0020method\u0020id",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMethodId"
-        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetMerchantPaymentId\u0028\u0029",
             "name": "getMerchantPaymentId",
             "summary": "returns\u0020merchant\u0020id\u0020of\u0020payment",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMerchantPaymentId"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetCurrency\u0028\u0029",
-            "name": "getCurrency",
-            "summary": "returns\u0020currency",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCurrency"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetAmount\u0028\u0029",
             "name": "getAmount",
@@ -846,25 +826,30 @@ Search.appendIndex(
             "summary": "returns\u0020language",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getLanguage"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetDanubePay\u0028\u0029",
-            "name": "getDanubePay",
-            "summary": "returns\u0020DanubePay\u0020data",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getDanubePay"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024methodId",
-            "name": "methodId",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetCustomer\u0028\u0029",
+            "name": "getCustomer",
             "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_methodId"
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getCustomer"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetPaymentReferenceType\u0028\u0029",
+            "name": "getPaymentReferenceType",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getPaymentReferenceType"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetEmailTtl\u0028\u0029",
+            "name": "getEmailTtl",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getEmailTtl"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetMessage\u0028\u0029",
+            "name": "getMessage",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMessage"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024merchantPaymentId",
             "name": "merchantPaymentId",
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_merchantPaymentId"
-        },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024currency",
-            "name": "currency",
-            "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_currency"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024amount",
             "name": "amount",
@@ -881,6 +866,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_basket"
         },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024customer",
+            "name": "customer",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_customer"
+        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024redirectUrl",
             "name": "redirectUrl",
             "summary": "",
@@ -891,10 +881,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_language"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024danubePay",
-            "name": "danubePay",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024paymentReferenceType",
+            "name": "paymentReferenceType",
             "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_danubePay"
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_paymentReferenceType"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024emailTtl",
+            "name": "emailTtl",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_emailTtl"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024message",
+            "name": "message",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_message"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Response\\CurlResponse",
             "name": "CurlResponse",
@@ -1201,11 +1201,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_createBasketItems"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AcreateDanubePay\u0028\u0029",
-            "name": "createDanubePay",
-            "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_createDanubePay"
-        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AcreateCardHolder\u0028\u0029",
             "name": "createCardHolder",
             "summary": "",
@@ -1236,10 +1231,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#property_requestToken"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003A\u0024methodId",
-            "name": "methodId",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003A\u0024merchantPaymentId",
+            "name": "merchantPaymentId",
             "summary": "",
-            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#property_methodId"
+            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#property_merchantPaymentId"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003A\u0024danubeTerminalId",
             "name": "danubeTerminalId",

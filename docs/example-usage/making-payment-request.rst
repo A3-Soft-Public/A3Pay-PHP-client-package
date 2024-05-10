@@ -68,21 +68,20 @@ Code
     {
         /** merchantPaymentId is just your identification of payment, it should be random generated Guid */
         $merchantPaymentId = '476a8fc5-23db-4a5e-85ca-ed31b61a5a9d'; // random generated
-        /** Three character currency code by ISO 4217 */
-        $currency = 'EUR';
         /** amount is string without floating point, but last 2 digits are floating point. For example if we have amount 123, we want to pay 1.23 */
         $amount = '123';
         /** order id */
         $orderNumber = '9999';
         /** to this url will be client redirected by payment gateway after processing */
         $redirectUrl = 'https://www.redirecturl.com';
-        /** language used in paymant gateway interface if has translation */
+        /** language used in payment gateway interface if has translation */
         $language = 'sk-sk';
 
+        $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+        $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+
         return new PaymentRequest(
-            'guid_methodId_from_registration_request', //methodId obtained from registration request
             $merchantPaymentId,
-            $currency,
             $amount,
             $orderNumber,
             $this->createBasket(
@@ -91,9 +90,12 @@ Code
                 $this->createCustomerBasket(),
                 $this->createBasketItems()
             ),
+            $this->createCardHolder(),
             $redirectUrl,
-            $this->createDanubePay(),
-            $language
+            $language,
+            PaymentReferenceType::Direct,
+            $email,
+            $message
         );
     }
 
@@ -104,9 +106,7 @@ Code
 `Arguments`
 ************
 
-* methodId -  is an guid value, you will get after submitting registration request
 * merchantPaymentId - it is random generated guid, it can be useful when some error occurred, to identify payment
-* currency - currency code in `ISO 4217<https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(List_One)>`_ for example CZK, EUR, USD, AUD ...
 * amount - it is price, but in string without decimal point. it means the last two digits are cents (1224 -> 12.24, 5 -> 0.05, 75 -> 0.75, 10000 -> 100.00)
 * orderNumber - the order identification, we can use database id for example
 * :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\Basket` instance
@@ -120,11 +120,14 @@ Code
         * :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CustomerBasket` instance
 
         * array of :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\BasketItem` instances
+* :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder` instance
 * redirectUrl - this url will be used after submitting payment, there are two cases what can happens. Success, or fail. This url is called in both.
-* :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay` instance
 * language - the language in `language code`-`country code` for example (sk-SK, cz-CZ, en-US, en-GB)
     * language code following `ISO 639-1<http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`_ standard
     * country code following `ISO 3166-1 Alpha-2<http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_  standard
+* :php:variable:`\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType` constant
+* email - null or email address where the document will be send, just valid when :php:variable:`\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType` has been set to Email
+* message - null or string, body of email, just valid when :php:variable:`\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType` has been set to Email
 
 -------
 
@@ -335,30 +338,7 @@ Code
 
 ------------
 
-2.6 Create DanubePay
-====================
-
-.. code-block:: php
-    :caption: example.php
-    :lineos:
-
-    function createDanubePay(): DanubePay
-    {
-        return new DanubePay(
-            $this->danubeTerminalId,
-            $this->createCardHolder()
-        );
-    }
-
-`Arguments`
-************
-
-* danubeTerminalId - id of terminal for danube payments. It is obtained from registration form.
-* cardHolder - it is :php:class:`A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder` instance
-
--------------
-
-2.7 Create CardHolder
+2.6 Create CardHolder
 ======================
 
 .. code-block:: php
@@ -373,49 +353,58 @@ Code
         $billAddrLine1 = $shipAddrLine1 = 'Továrenská';
         $billAddrPostCode = $shipAddrPostCode = '020 01';
         $billAddrCity = $shipAddrCity = 'Púchov';
-        /** State code by ISO 3166-2 */
-        $billAddrState = $shipAddrState = 'ZI';
+        /** State code by ISO 3166-2 or null (optional)*/
+        $billAddrState = $shipAddrState = null;
         /** State code by ISO 3166-1 numeric value */
         $billAddrCountry = $shipAddrCountry = '703';
         $email = 'admin@a3soft.sk';
 
         return new CardHolder(
             $cardHolderName,
+            $email,
+            $this->createCardHolderPhoneNumber(),
+            $this->createCardHolderPhoneNumber(),
+            $this->createCardHolderPhoneNumber(),
             $billAddrLine1,
+            null,
+            null,
             $billAddrPostCode,
             $billAddrCity,
-            $billAddrState,
+            null,
             $billAddrCountry,
-            $email,
             $shipAddrLine1,
+            null,
+            null,
             $shipAddrPostCode,
             $shipAddrCity,
-            $shipAddrState,
             $shipAddrCountry,
-            $this->createCardHolderPhoneNumber(),
-            $this->createCardHolderPhoneNumber(),
-            $this->createCardHolderPhoneNumber(),
+            $shipAddrState
         );
     }
 
 `Arguments`
 ************
+* string $cardHolderName - Name of the Cardholder
+* string $email - The email address associated with the account that is either entered by the Cardholder, or is on file with the 3DS Requestor.
+* CardHolderPhoneNumber|null $mobilePhone - The mobile phone provided by the cardholder.
+* CardHolderPhoneNumber|null $homePhone - The home phone provided by the cardholder.
+* CardHolderPhoneNumber|null $workPhone - The work phone provided by the cardholder.
+* string|null $billAddrLine1  - First line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase. This field is optional, but recommended to include.
+* string|null $billAddrLine2  - Second line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.
+* string|null $billAddrLine3  - Third line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.
+* string|null $billAddrPostCode  - ZIP or other postal code of the Cardholder billing address associated with the card used for this purchase. This field is optional, but recommended to include.
+* string|null $billAddrCity  - The city of the Cardholder billing address associated with the card used for this purchase. This field is optional, but recommended to include.
+* string|null $billAddrState  - The state or province of the Cardholder billing address associated with the card used for this purchase. The value should be the country subdivision code defined in ISO 3166-2. This field is optional, but recommended to include.
+* string|null $billAddrCountry  - The country of the Cardholder billing address associated with the card used for this purchase. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO. This field is optional, but recommended to include.
+* string|null $shipAddrLine1  - First line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase. This field is optional, but recommended to include.
+* string|null $shipAddrLine2  - Second line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.
+* string|null $shipAddrLine3  - Third line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.
+* string|null $shipAddrPostCode  - ZIP or other postal code of the shipping address associated with the card used for this purchase. This field is optional, but recommended to include.
+* string|null $shipAddrCity  - City portion of the shipping address requested by the Cardholder. This field is required unless shipping information is the same as billing information. This field is optional, but recommended to include.
+* string|null $shipAddrCountry  - The state or province of the shipping address associated with the card used for this purchase.
+* string|null $shipAddrState  - Country of the shipping address requested by the Cardholder. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO. This field is required if Cardholder Shipping Address State is present and if shipping information is not the same as billing information. This field is optional, but recommended to include.
 
-/** Name of customer */
-        $cardHolderName = 'Test Test';
-        /** Bill and ship addresses of customer */
-        $billAddrLine1 = $shipAddrLine1 = 'Továrenská';
-        $billAddrPostCode = $shipAddrPostCode = '020 01';
-        $billAddrCity = $shipAddrCity = 'Púchov';
-        /** State code by ISO 3166-2 */
-        $billAddrState = $shipAddrState = 'ZI';
-        /** State code by ISO 3166-1 numeric value */
-        $billAddrCountry = $shipAddrCountry = '703';
-        $email = 'admin@a3soft.sk';
-
--------------
-
-2.8 Create CardHolderPhoneNumber
+2.7 Create CardHolderPhoneNumber
 =================================
 
 .. code-block:: php
@@ -440,8 +429,8 @@ Code
 `Arguments`
 ************
 
-* countryCode -
-* subscriber -
+* countryCode - country code of the phone. Min. length 1
+* subscriber - subscriber section of the number
 
 --------
 
@@ -605,31 +594,39 @@ Full code
 
     /** Function definition */
     function createPaymentGatewayRequest(): PaymentRequest
-    {
-        $merchantPaymentId = '476a8fc5-23db-4a5e-85ca-ed31b61a5a9d'; // random generated
-        $currency = 'EUR';
-        $amount = '123';
-        $orderNumber = '9999';
-        $redirectUrl = 'https://www.redirecturl.com';
-        $language = 'sk-sk';
+        {
+            /** merchantPaymentId is just your identification of payment, it should be random generated Guid */
+            $merchantPaymentId = '476a8fc5-23db-4a5e-85ca-ed31b61a5a9d'; // random generated
+            /** amount is string without floating point, but last 2 digits are floating point. For example if we have amount 123, we want to pay 1.23 */
+            $amount = '123';
+            /** order id */
+            $orderNumber = '9999';
+            /** to this url will be client redirected by payment gateway after processing */
+            $redirectUrl = 'https://www.redirecturl.com';
+            /** language used in payment gateway interface if has translation */
+            $language = 'sk-sk';
 
-        return new PaymentRequest(
-            'guid_methodId_from_registration_request',
-            $merchantPaymentId,
-            $currency,
-            $amount,
-            $orderNumber,
-            $this->createBasket(
-                $this->createBasketHeader(),
-                $this->createPayments(),
-                $this->createCustomerBasket(),
-                $this->createBasketItems()
-            ),
-            $redirectUrl,
-            $this->createDanubePay(),
-            $language
-        );
-    }
+            $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+            $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+
+            return new PaymentRequest(
+                $merchantPaymentId,
+                $amount,
+                $orderNumber,
+                $this->createBasket(
+                    $this->createBasketHeader(),
+                    $this->createPayments(),
+                    $this->createCustomerBasket(),
+                    $this->createBasketItems()
+                ),
+                $this->createCardHolder(),
+                $redirectUrl,
+                $language,
+                PaymentReferenceType::Direct,
+                $email,
+                $message
+            );
+        }
 
     function createBasket(BasketHeader $basketHeader, array $payments, CustomerBasket $customerBasket, array $basketItems): Basket
     {
@@ -716,40 +713,40 @@ Full code
             )];
     }
 
-    function createDanubePay(): DanubePay
-    {
-        return new DanubePay(
-            $this->danubeTerminalId,
-            $this->createCardHolder()
-        );
-    }
-
     function createCardHolder(): CardHolder
     {
+        /** Name of customer */
         $cardHolderName = 'Test Test';
+        /** Bill and ship addresses of customer */
         $billAddrLine1 = $shipAddrLine1 = 'Továrenská';
         $billAddrPostCode = $shipAddrPostCode = '020 01';
         $billAddrCity = $shipAddrCity = 'Púchov';
-        $billAddrState = $shipAddrState = 'ZI';
+        /** State code by ISO 3166-2 or null (optional)*/
+        $billAddrState = $shipAddrState = null;
+        /** State code by ISO 3166-1 numeric value */
         $billAddrCountry = $shipAddrCountry = '703';
         $email = 'admin@a3soft.sk';
 
         return new CardHolder(
             $cardHolderName,
+            $email,
+            $this->createCardHolderPhoneNumber(),
+            $this->createCardHolderPhoneNumber(),
+            $this->createCardHolderPhoneNumber(),
             $billAddrLine1,
+            null,
+            null,
             $billAddrPostCode,
             $billAddrCity,
-            $billAddrState,
+            null,
             $billAddrCountry,
-            $email,
             $shipAddrLine1,
+            null,
+            null,
             $shipAddrPostCode,
             $shipAddrCity,
-            $shipAddrState,
             $shipAddrCountry,
-            $this->createCardHolderPhoneNumber(),
-            $this->createCardHolderPhoneNumber(),
-            $this->createCardHolderPhoneNumber(),
+            $shipAddrState
         );
     }
 

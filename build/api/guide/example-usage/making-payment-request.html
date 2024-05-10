@@ -175,11 +175,9 @@
 
             <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-5-create-basketitems">2.5 Create BasketItems</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-6-create-danubepay">2.6 Create DanubePay</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-6-create-cardholder">2.6 Create CardHolder</a></li>
 
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-7-create-cardholder">2.7 Create CardHolder</a></li>
-
-            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-8-create-cardholderphonenumber">2.8 Create CardHolderPhoneNumber</a></li>
+            <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#2-7-create-cardholderphonenumber">2.7 Create CardHolderPhoneNumber</a></li>
 
             <li class="toc-item"><a href="guide/example-usage/making-payment-request.html#3-make-request">3. Make request</a></li>
 
@@ -308,21 +306,20 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
 {
     /** merchantPaymentId is just your identification of payment, it should be random generated Guid */
     $merchantPaymentId = &#039;476a8fc5-23db-4a5e-85ca-ed31b61a5a9d&#039;; // random generated
-    /** Three character currency code by ISO 4217 */
-    $currency = &#039;EUR&#039;;
     /** amount is string without floating point, but last 2 digits are floating point. For example if we have amount 123, we want to pay 1.23 */
     $amount = &#039;123&#039;;
     /** order id */
     $orderNumber = &#039;9999&#039;;
     /** to this url will be client redirected by payment gateway after processing */
     $redirectUrl = &#039;https://www.redirecturl.com&#039;;
-    /** language used in paymant gateway interface if has translation */
+    /** language used in payment gateway interface if has translation */
     $language = &#039;sk-sk&#039;;
 
+    $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+    $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+
     return new PaymentRequest(
-        &#039;guid_methodId_from_registration_request&#039;, //methodId obtained from registration request
         $merchantPaymentId,
-        $currency,
         $amount,
         $orderNumber,
         $this-&gt;createBasket(
@@ -331,9 +328,12 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
             $this-&gt;createCustomerBasket(),
             $this-&gt;createBasketItems()
         ),
+        $this-&gt;createCardHolder(),
         $redirectUrl,
-        $this-&gt;createDanubePay(),
-        $language
+        $language,
+        PaymentReferenceType::Direct,
+        $email,
+        $message
     );
 }</code></pre>
             <div class="phpdocumentor-admonition note">
@@ -349,11 +349,7 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
             
 
 <ul>
-    <li>methodId -  is an guid value, you will get after submitting registration request</li>
-
     <li>merchantPaymentId - it is random generated guid, it can be useful when some error occurred, to identify payment</li>
-
-    <li>currency - currency code in <a href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(List_One)">ISO 4217</a> for example CZK, EUR, USD, AUD ...</li>
 
     <li>amount - it is price, but in string without decimal point. it means the last two digits are cents (1224 -&gt; 12.24, 5 -&gt; 0.05, 75 -&gt; 0.75, 10000 -&gt; 100.00)</li>
 
@@ -386,10 +382,10 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
 </blockquote>
 </li>
 
-    <li>redirectUrl - this url will be used after submitting payment, there are two cases what can happens. Success, or fail. This url is called in both.</li>
-
-    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-DanubePay.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\DanubePay">DanubePay</abbr></a>
+    <li><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a>
  instance</li>
+
+    <li>redirectUrl - this url will be used after submitting payment, there are two cases what can happens. Success, or fail. This url is called in both.</li>
 
     <li><dl>
                         <dt>language - the language in <code>language code</code>-<code>country code</code> for example (sk-SK, cz-CZ, en-US, en-GB)</dt>
@@ -404,6 +400,12 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
 </ul>
 </dd>    </dl>
 </li>
+
+    <li><code class="php:variable">A3SoftA3PayPhpClientHelperPaymentGatewayApiRequestPaymentReferenceType</code> constant</li>
+
+    <li>email - null or email address where the document will be send, just valid when <code class="php:variable">A3SoftA3PayPhpClientHelperPaymentGatewayApiRequestPaymentReferenceType</code> has been set to Email</li>
+
+    <li>message - null or string, body of email, just valid when <code class="php:variable">A3SoftA3PayPhpClientHelperPaymentGatewayApiRequestPaymentReferenceType</code> has been set to Email</li>
 
 </ul>
 
@@ -680,39 +682,8 @@ function createBasketItems(): array
 
     </div>
 
-            <div class="section" id="2-6-create-danubepay">
-    <h3>2.6 Create DanubePay</h3>
-
-                    <div class="code-block-caption">
-            <span class="caption-text">example.php</span>
-        </div><pre><code class="language-php">function createDanubePay(): DanubePay
-{
-    return new DanubePay(
-        $this-&gt;danubeTerminalId,
-        $this-&gt;createCardHolder()
-    );
-}</code></pre>
-            <div class="section" id="arguments">
-    <h4><code>Arguments</code></h4>
-
-            
-
-<ul>
-    <li>danubeTerminalId - id of terminal for danube payments. It is obtained from registration form.</li>
-
-    <li>cardHolder - it is <a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-CardHolder.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\CardHolder">CardHolder</abbr></a>
- instance</li>
-
-</ul>
-
-            <hr />
-
-    </div>
-
-    </div>
-
-            <div class="section" id="2-7-create-cardholder">
-    <h3>2.7 Create CardHolder</h3>
+            <div class="section" id="2-6-create-cardholder">
+    <h3>2.6 Create CardHolder</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -724,55 +695,86 @@ function createBasketItems(): array
     $billAddrLine1 = $shipAddrLine1 = &#039;Továrenská&#039;;
     $billAddrPostCode = $shipAddrPostCode = &#039;020 01&#039;;
     $billAddrCity = $shipAddrCity = &#039;Púchov&#039;;
-    /** State code by ISO 3166-2 */
-    $billAddrState = $shipAddrState = &#039;ZI&#039;;
+    /** State code by ISO 3166-2 or null (optional)*/
+    $billAddrState = $shipAddrState = null;
     /** State code by ISO 3166-1 numeric value */
     $billAddrCountry = $shipAddrCountry = &#039;703&#039;;
     $email = &#039;admin@a3soft.sk&#039;;
 
     return new CardHolder(
         $cardHolderName,
+        $email,
+        $this-&gt;createCardHolderPhoneNumber(),
+        $this-&gt;createCardHolderPhoneNumber(),
+        $this-&gt;createCardHolderPhoneNumber(),
         $billAddrLine1,
+        null,
+        null,
         $billAddrPostCode,
         $billAddrCity,
-        $billAddrState,
+        null,
         $billAddrCountry,
-        $email,
         $shipAddrLine1,
+        null,
+        null,
         $shipAddrPostCode,
         $shipAddrCity,
-        $shipAddrState,
         $shipAddrCountry,
-        $this-&gt;createCardHolderPhoneNumber(),
-        $this-&gt;createCardHolderPhoneNumber(),
-        $this-&gt;createCardHolderPhoneNumber(),
+        $shipAddrState
     );
 }</code></pre>
             <div class="section" id="arguments">
     <h4><code>Arguments</code></h4>
 
-            <dl>
-                        <dt>/** Name of customer */</dt>
-        
-        <dd>$cardHolderName = &#039;Test Test&#039;;
-/<strong> Bill and ship addresses of customer */
-$billAddrLine1 = $shipAddrLine1 = &#039;Továrenská&#039;;
-$billAddrPostCode = $shipAddrPostCode = &#039;020 01&#039;;
-$billAddrCity = $shipAddrCity = &#039;Púchov&#039;;
-/</strong> State code by ISO 3166-2 <em>/
-$billAddrState = $shipAddrState = &#039;ZI&#039;;
-/** State code by ISO 3166-1 numeric value </em>/
-$billAddrCountry = $shipAddrCountry = &#039;703&#039;;
-$email = &#039;<a href="mailto:admin@a3soft.sk">admin@a3soft.sk</a>&#039;;</dd>    </dl>
+            
 
-            <hr />
+<ul>
+    <li>string $cardHolderName - Name of the Cardholder</li>
+
+    <li>string $email - The email address associated with the account that is either entered by the Cardholder, or is on file with the 3DS Requestor.</li>
+
+    <li>CardHolderPhoneNumber|null $mobilePhone - The mobile phone provided by the cardholder.</li>
+
+    <li>CardHolderPhoneNumber|null $homePhone - The home phone provided by the cardholder.</li>
+
+    <li>CardHolderPhoneNumber|null $workPhone - The work phone provided by the cardholder.</li>
+
+    <li>string|null $billAddrLine1  - First line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase. This field is optional, but recommended to include.</li>
+
+    <li>string|null $billAddrLine2  - Second line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.</li>
+
+    <li>string|null $billAddrLine3  - Third line of the street address or equivalent local portion of the Cardholder billing address associated with the card used for this purchase.</li>
+
+    <li>string|null $billAddrPostCode  - ZIP or other postal code of the Cardholder billing address associated with the card used for this purchase. This field is optional, but recommended to include.</li>
+
+    <li>string|null $billAddrCity  - The city of the Cardholder billing address associated with the card used for this purchase. This field is optional, but recommended to include.</li>
+
+    <li>string|null $billAddrState  - The state or province of the Cardholder billing address associated with the card used for this purchase. The value should be the country subdivision code defined in ISO 3166-2. This field is optional, but recommended to include.</li>
+
+    <li>string|null $billAddrCountry  - The country of the Cardholder billing address associated with the card used for this purchase. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO. This field is optional, but recommended to include.</li>
+
+    <li>string|null $shipAddrLine1  - First line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase. This field is optional, but recommended to include.</li>
+
+    <li>string|null $shipAddrLine2  - Second line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.</li>
+
+    <li>string|null $shipAddrLine3  - Third line of the street address or equivalent local portion of the shipping address associated with the card used for this purchase.</li>
+
+    <li>string|null $shipAddrPostCode  - ZIP or other postal code of the shipping address associated with the card used for this purchase. This field is optional, but recommended to include.</li>
+
+    <li>string|null $shipAddrCity  - City portion of the shipping address requested by the Cardholder. This field is required unless shipping information is the same as billing information. This field is optional, but recommended to include.</li>
+
+    <li>string|null $shipAddrCountry  - The state or province of the shipping address associated with the card used for this purchase.</li>
+
+    <li>string|null $shipAddrState  - Country of the shipping address requested by the Cardholder. This value shall be the ISO 3166-1 numeric country code, except values from range 901 - 999 which are reserved by ISO. This field is required if Cardholder Shipping Address State is present and if shipping information is not the same as billing information. This field is optional, but recommended to include.</li>
+
+</ul>
 
     </div>
 
     </div>
 
-            <div class="section" id="2-8-create-cardholderphonenumber">
-    <h3>2.8 Create CardHolderPhoneNumber</h3>
+            <div class="section" id="2-7-create-cardholderphonenumber">
+    <h3>2.7 Create CardHolderPhoneNumber</h3>
 
                     <div class="code-block-caption">
             <span class="caption-text">example.php</span>
@@ -796,9 +798,9 @@ function createCardHolderPhoneNumber(): CardHolderPhoneNumber
             
 
 <ul>
-    <li>countryCode -</li>
+    <li>countryCode - country code of the phone. Min. length 1</li>
 
-    <li>subscriber -</li>
+    <li>subscriber - subscriber section of the number</li>
 
 </ul>
 
@@ -962,31 +964,39 @@ header(&quot;Location: ${$paymentResponse-&gt;getRedirectUrl()}&quot;);
 
 /** Function definition */
 function createPaymentGatewayRequest(): PaymentRequest
-{
-    $merchantPaymentId = &#039;476a8fc5-23db-4a5e-85ca-ed31b61a5a9d&#039;; // random generated
-    $currency = &#039;EUR&#039;;
-    $amount = &#039;123&#039;;
-    $orderNumber = &#039;9999&#039;;
-    $redirectUrl = &#039;https://www.redirecturl.com&#039;;
-    $language = &#039;sk-sk&#039;;
+    {
+        /** merchantPaymentId is just your identification of payment, it should be random generated Guid */
+        $merchantPaymentId = &#039;476a8fc5-23db-4a5e-85ca-ed31b61a5a9d&#039;; // random generated
+        /** amount is string without floating point, but last 2 digits are floating point. For example if we have amount 123, we want to pay 1.23 */
+        $amount = &#039;123&#039;;
+        /** order id */
+        $orderNumber = &#039;9999&#039;;
+        /** to this url will be client redirected by payment gateway after processing */
+        $redirectUrl = &#039;https://www.redirecturl.com&#039;;
+        /** language used in payment gateway interface if has translation */
+        $language = &#039;sk-sk&#039;;
 
-    return new PaymentRequest(
-        &#039;guid_methodId_from_registration_request&#039;,
-        $merchantPaymentId,
-        $currency,
-        $amount,
-        $orderNumber,
-        $this-&gt;createBasket(
-            $this-&gt;createBasketHeader(),
-            $this-&gt;createPayments(),
-            $this-&gt;createCustomerBasket(),
-            $this-&gt;createBasketItems()
-        ),
-        $redirectUrl,
-        $this-&gt;createDanubePay(),
-        $language
-    );
-}
+        $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+        $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+
+        return new PaymentRequest(
+            $merchantPaymentId,
+            $amount,
+            $orderNumber,
+            $this-&gt;createBasket(
+                $this-&gt;createBasketHeader(),
+                $this-&gt;createPayments(),
+                $this-&gt;createCustomerBasket(),
+                $this-&gt;createBasketItems()
+            ),
+            $this-&gt;createCardHolder(),
+            $redirectUrl,
+            $language,
+            PaymentReferenceType::Direct,
+            $email,
+            $message
+        );
+    }
 
 function createBasket(BasketHeader $basketHeader, array $payments, CustomerBasket $customerBasket, array $basketItems): Basket
 {
@@ -1073,40 +1083,40 @@ function createBasketItems(): array
         )];
 }
 
-function createDanubePay(): DanubePay
-{
-    return new DanubePay(
-        $this-&gt;danubeTerminalId,
-        $this-&gt;createCardHolder()
-    );
-}
-
 function createCardHolder(): CardHolder
 {
+    /** Name of customer */
     $cardHolderName = &#039;Test Test&#039;;
+    /** Bill and ship addresses of customer */
     $billAddrLine1 = $shipAddrLine1 = &#039;Továrenská&#039;;
     $billAddrPostCode = $shipAddrPostCode = &#039;020 01&#039;;
     $billAddrCity = $shipAddrCity = &#039;Púchov&#039;;
-    $billAddrState = $shipAddrState = &#039;ZI&#039;;
+    /** State code by ISO 3166-2 or null (optional)*/
+    $billAddrState = $shipAddrState = null;
+    /** State code by ISO 3166-1 numeric value */
     $billAddrCountry = $shipAddrCountry = &#039;703&#039;;
     $email = &#039;admin@a3soft.sk&#039;;
 
     return new CardHolder(
         $cardHolderName,
+        $email,
+        $this-&gt;createCardHolderPhoneNumber(),
+        $this-&gt;createCardHolderPhoneNumber(),
+        $this-&gt;createCardHolderPhoneNumber(),
         $billAddrLine1,
+        null,
+        null,
         $billAddrPostCode,
         $billAddrCity,
-        $billAddrState,
+        null,
         $billAddrCountry,
-        $email,
         $shipAddrLine1,
+        null,
+        null,
         $shipAddrPostCode,
         $shipAddrCity,
-        $shipAddrState,
         $shipAddrCountry,
-        $this-&gt;createCardHolderPhoneNumber(),
-        $this-&gt;createCardHolderPhoneNumber(),
-        $this-&gt;createCardHolderPhoneNumber(),
+        $shipAddrState
     );
 }
 

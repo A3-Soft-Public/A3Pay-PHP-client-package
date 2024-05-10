@@ -235,15 +235,6 @@ final class PaymentGatewayRequesterTest extends TestCase
                 $text1Long
             )];
     }
-
-    /*private function createDanubePay(): DanubePay
-    {
-        return new DanubePay(
-            $this->danubeTerminalId,
-            $this->createCardHolder()
-        );
-    }*/
-
     private function createCardHolder(): CardHolder
     {
         $cardHolderName = 'Test Test';
@@ -272,7 +263,7 @@ final class PaymentGatewayRequesterTest extends TestCase
             $shipAddrPostCode,
             $shipAddrCity,
             $shipAddrCountry,
-            $shipAddrState,
+            null,
         );
     }
 

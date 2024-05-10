@@ -4,9 +4,8 @@
     <meta charset="utf-8">
             <title>FiskalPay PHP Client Documentation</title>
     
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="../../">
+    <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
@@ -26,8 +25,14 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">FiskalPay PHP Client Documentation</a></h1>
-    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <h1 class="phpdocumentor-title">
+    <a href="" class="phpdocumentor-title__link">
+        <div style="padding-right: .5rem; display: flex; align-items: center;">
+            <img src="images/favicon.ico" alt="logo">
+        </div>
+        FiskalPay PHP Client Documentation
+    </a>
+</h1>    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
     </label>
@@ -74,6 +79,20 @@
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/example-usage/index.html#usage" class="">Usage</a>
 </h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="guide/example-usage/making-payment-request.html#payment-request" class="">Payment request</a>
+                
+            </li>
+                    <li>
+                <a href="guide/example-usage/making-payment-info-request.html#info-request" class="">Info request</a>
+                
+            </li>
+                    <li>
+                <a href="guide/example-usage/payment-notify-handling.html#payment-notification-handling" class="">Payment notification handling</a>
+                
+            </li>
+            </ul>
 
                         </section>
                 <section class="phpdocumentor-sidebar__category">
@@ -111,6 +130,10 @@
     <a href="packages/Util.html" class="">Util</a>
 </h4>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/Test.html" class="">Test</a>
+</h4>
+
                         </section>
             
     <section class="phpdocumentor-sidebar__category">
@@ -128,73 +151,160 @@
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="installation">
-    <h1>Installation</h1>
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
+    </ul>
 
-            <p>There are two ways of installing this package.</p>
-            
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">PaymentReferenceType.php</h2>
 
-<ul>
-    <li class="dash">If you have access to read this repository on gitlab use this <a href="guide/getting-started/installing.html#install-using-composer">Install using composer</a></li>
+        
 
-    <li class="dash">In the other way you just download this package, and use require statement to include in your php script.</li>
 
-</ul>
 
-            <div class="section" id="install-using-composer">
-    <h2>Install using composer</h2>
 
-            <div class="phpdocumentor-admonition tip">
-                    <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            <article>
-        <p><strong>Important!</strong></p><p>This guide can be used only in case you have read permissions on this git repository.</p>
-    </article>
+
+<h3 id="toc">
+    Table of Contents
+    <a href="files/src-helper-paymentgatewayapi-request-paymentreferencetype.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h3>
+
+
+
+
+    <h4 id="toc-classes">
+        Classes
+        <a href="files/src-helper-paymentgatewayapi-request-paymentreferencetype.html#toc-classes" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentReferenceType.html"><abbr title="\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType">PaymentReferenceType</abbr></a></dt>    </dl>
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Helper/PaymentGatewayApi/Request/PaymentReferenceType.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
 </div>
 
+    <script type="text/javascript">
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
+
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
+
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.open('GET', src, true);
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+                            Prism.highlightElement(code);
+                            return;
+                        }
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
+                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
+                    }
+                    modal.classList.add("phpdocumentor-modal__open");
+
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
+
+    </article>
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                            
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                                                                        <li><a href="files/src-helper-paymentgatewayapi-request-paymentreferencetype.html#toc-classes">Classes</a></li>
+                                                                                                                    </ul>
+            </li>
+
             
-    
-<ol>
-    <li><a href="https://getcomposer.org/download/">Download composer</a></li>
+                    </ul>
+    </section>
 
-    <li>Create your own <code>composer.json</code> file</li>
-
-    <li>Add repository your <code>composer.json</code></li>
-
-</ol>
-
-                    <div class="code-block-caption">
-            <span class="caption-text">composer.json</span>
-        </div><pre><code class="language-json line-numbers" data-start=1>{
-  &quot;repositories&quot;:[
-    {
-      &quot;type&quot;:&quot;composer&quot;,
-      &quot;url&quot;:&quot;https://gitlab.a3soft.eu/api/v4/group/171/-/packages/composer/packages.json&quot;
-    }
-  ]
-}</code></pre>
-            
-    
-<ol>
-    <li>Create file called <code>auth.json</code> and write the credentials there</li>
-
-</ol>
-
-                    <div class="code-block-caption">
-            <span class="caption-text">auth.json</span>
-        </div><pre><code class="language-json line-numbers" data-start=1>{
-  &quot;http-basic&quot;: {
-    &quot;gitlab.a3soft.eu&quot;: {
-      &quot;username&quot;: &quot;__token__&quot;,
-      &quot;password&quot;: &quot;YOUR_AUTH_TOKEN&quot;
-    }
-  }
-}</code></pre>
-            <p>5. Run command <code>composer require a3soft/a3pay-php-client</code>.
-This command will automatically install the newest version of A3 Pay client using credentials passed to <code>auth.json</code> file.</p>
-    </div>
-
-    </div>
-
+                </section>
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
@@ -208,7 +318,7 @@ This command will automatically install the newest version of A3 Pay client usin
     </section>
 </section>
         </div>
-        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="files/src-helper-paymentgatewayapi-request-paymentreferencetype.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
