@@ -32,9 +32,9 @@ final class CustomerBasket extends AbstractToArray
         ?string $externalUId = null
     )
     {
-        Utils::checkVariableLen($customerNumber, 'customerNumber', 20, true, 1);
-        Utils::checkVariableLen($cardNumber, 'cardNumber', 32, true, 1);
-        Utils::checkVariableLen($externalUId, 'externalUId', 40, true, 1);
+        Utils::CheckVariableLen($customerNumber, 'customerNumber', 20, true, 1);
+        Utils::CheckVariableLen($cardNumber, 'cardNumber', 32, true, 1);
+        Utils::CheckVariableLen($externalUId, 'externalUId', 40, true, 1);
         $this->customerNumber = $customerNumber;
         $this->cardNumber = $cardNumber;
         $this->externalUId = $externalUId;

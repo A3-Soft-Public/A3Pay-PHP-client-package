@@ -25,7 +25,7 @@ final class PaymentInfoRequest extends AbstractToArray implements PaymentGateway
     {
         $this->paymentId = $paymentId;
 
-        Utils::checkValueGuid($paymentId, 'paymentId');
+        Utils::CheckValueGuid($paymentId, 'paymentId');
     }
 
 

@@ -100,12 +100,12 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
     )
     {
 
-        Utils::checkVariableLen($merchantPaymentId, 'merchantPaymentId', 36);
-        Utils::checkVariableLen($amount, 'amount', 12);
-        Utils::checkVariableLen($orderNo, 'orderNo', 16);
-        Utils::checkValueUrl($redirectUrl, 'redirectUrl', 16, 1024);
+        Utils::CheckVariableLen($merchantPaymentId, 'merchantPaymentId', 36);
+        Utils::CheckVariableLen($amount, 'amount', 12);
+        Utils::CheckVariableLen($orderNo, 'orderNo', 16);
+        Utils::CheckValueUrl($redirectUrl, 'redirectUrl', 16, 1024);
 
-        Utils::checkVariableLen($language, 'language', 36, true);
+        Utils::CheckVariableLen($language, 'language', 36, true);
 
 
         if ($paymentReferenceType !== null) {
@@ -126,7 +126,7 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
             throw new VariableNotInRangeException($emailTtl, 'emailTtl', null, 2678400);
         }
 
-        Utils::checkVariableLen($message, 'message', 128, true);
+        Utils::CheckVariableLen($message, 'message', 128, true);
 
         $this->merchantPaymentId = $merchantPaymentId;
         $this->amount = $amount;

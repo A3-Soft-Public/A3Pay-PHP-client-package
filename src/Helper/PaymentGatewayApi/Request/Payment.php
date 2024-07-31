@@ -44,8 +44,8 @@ final class Payment extends AbstractToArray
         string $description = ''
     )
     {
-        Utils::checkValueContainsArgs($paymentId, 'paymentId', self::PaymentIdCash, self::PaymentIdCard, self::PaymentIdVoucher);
-        Utils::checkVariableLen($description, 'description', 42, true);
+        Utils::CheckValueContainsArgs($paymentId, 'paymentId', self::PaymentIdCash, self::PaymentIdCard, self::PaymentIdVoucher);
+        Utils::ClearAndTruncateVariableLen($description, 'description', 42, true);
         $this->paymentId = $paymentId;
         $this->value = $value;
         $this->description = $description;

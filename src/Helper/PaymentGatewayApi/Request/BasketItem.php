@@ -149,14 +149,14 @@ final class BasketItem extends AbstractToArray
     {
         if(!in_array($measureUnit, self::MeasureUnits))
             throw new \InvalidArgumentException("The field \"measureUnit\" is not in acceptable values -> BasketItem::MeasureUnits");
-        Utils::checkVariableLen($name, 'name', 128);
+        Utils::ClearAndTruncateVariableLen($name, 'name', 128);
 
-        Utils::checkVariableLen($article, 'article', 14, true);
-        Utils::checkVariableLen($chr1, 'chr1', 20, true);
-        Utils::checkVariableLen($chr2, 'chr2', 20, true);
-        Utils::checkVariableLen($ean, 'ean', 20, true);
-        Utils::checkVariableLen($externalUId, 'externalUId', 50, true);
-        Utils::checkVariableLen($text1, 'text1', 256, true);
+        Utils::ClearAndTruncateVariableLen($article, 'article', 14, true);
+        Utils::ClearAndTruncateVariableLen($chr1, 'chr1', 20, true);
+        Utils::ClearAndTruncateVariableLen($chr2, 'chr2', 20, true);
+        Utils::ClearAndTruncateVariableLen($ean, 'ean', 20, true);
+        Utils::ClearAndTruncateVariableLen($externalUId, 'externalUId', 50, true);
+        Utils::ClearAndTruncateVariableLen($text1, 'text1', 256, true);
 
         $this->name = $name;
         $this->vatRate = $vatRate;

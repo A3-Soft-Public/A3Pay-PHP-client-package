@@ -27,8 +27,8 @@ final class CardHolderPhoneNumber extends AbstractToArray
       string $subscriber
   )
   {
-      Utils::checkVariableLen($countryCode, 'countryCode', 3, true);
-      Utils::checkVariableLen($subscriber, 'subscriber',  15, true);
+      Utils::CheckVariableLen($countryCode, 'countryCode', 3, true);
+      Utils::CheckVariableLen($subscriber, 'subscriber',  15, true);
       $this->cc = $countryCode;
       $this->subscriber = $subscriber;
   }

@@ -4,6 +4,9 @@ declare(strict_types=1);
 namespace A3Soft\A3PayPhpClient\Tests\PaymentGatewayApi;
 
 use A3Soft\A3PayPhpClient\Exception\CurlRequestException;
+use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
+use A3Soft\A3PayPhpClient\Exception\VariableMaxLengthException;
+use A3Soft\A3PayPhpClient\Exception\VariableMinLengthException;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\Basket;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\BasketHeader;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\BasketItem;
@@ -17,6 +20,7 @@ use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentRequest;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentInfoResponse;
 use A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Response\PaymentResponse;
 use A3Soft\A3PayPhpClient\PaymentGatewayApi\PaymentGatewayRequester;
+use A3Soft\A3PayPhpClient\Util\Utils;
 use Nette\Neon\Neon;
 use PHPUnit\Framework\TestCase;
 
@@ -70,6 +74,62 @@ final class PaymentGatewayRequesterTest extends TestCase
         $response = $paymentGatewayRequester->makeRequest($paymentGatewayRequest);
         $this->assertSame(401, $response->getStatusCode());
     }
+
+    /**
+     * @throws VariableMaxLengthException
+     */
+    public function testVariableMinLengthException() {
+        $text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+        $this->expectException(VariableMinLengthException::class);
+
+        Utils::CheckVariableLen($text, "text", null, true, 100);
+    }
+
+    public function testVariableMaxLengthException() {
+        $text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam consequuntur culpa debitis distinctio eaque enim eos esse hic impedit iusto laboriosam laudantium mollitia necessitatibus nesciunt nisi nobis obcaecati odit placeat possimus praesentium quaerat quas quisquam rem soluta temporibus, ullam voluptatibus. Eligendi est facilis nisi possimus quisquam reiciendis rem voluptatibus?';
+        $this->expectException(VariableMaxLengthException::class);
+
+        Utils::CheckVariableLen($text, "text", 50, true, null);
+    }
+
+    public function testVariableLengthException()
+    {
+        $text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam consequuntur culpa debitis distinctio eaque enim eos esse hic impedit iusto laboriosam laudantium mollitia necessitatibus nesciunt nisi nobis obcaecati odit placeat possimus praesentium quaerat quas quisquam rem soluta temporibus, ullam voluptatibus. Eligendi est facilis nisi possimus quisquam reiciendis rem voluptatibus?';
+        $this->expectException(VariableLengthException::class);
+
+        Utils::CheckVariableLen($text, "text", 50, true, 200);
+
+    }
+
+    public function testVariableHtmlCleanAndTruncate()
+    {
+        $text1 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus atque doloribus eum expedita laborum magni natus nesciunt numquam saepe? Laborum magni quaerat quas qui quis ratione repudiandae vel vitae.";
+        $text2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea illo in nisi similique tempore. Amet consequatur delectus enim eos itaque necessitatibus odio sunt vel? Animi explicabo inventore reprehenderit tempore? Ab aliquid assumenda atque ducimus error, facere nesciunt quisquam saepe tenetur voluptas. Consectetur doloribus eveniet facilis in necessitatibus obcaecati repellat voluptatibus?";
+        $text = <<<HTML
+        <div>$text1</div>
+        <span><b>$text2</b></span>
+        HTML;
+
+        Utils::ClearAndTruncateVariableLen($text, "text", 50, true, null);
+
+        $this->assertSame(50, strlen($text), $text);
+    }
+
+    public function testVariableMinHtmlCleanAndTruncateException()
+    {
+        $text1 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus atque doloribus eum expedita laborum magni natus nesciunt numquam saepe? Laborum magni quaerat quas qui quis ratione repudiandae vel vitae.";
+        $text2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea illo in nisi similique tempore. Amet consequatur delectus enim eos itaque necessitatibus odio sunt vel? Animi explicabo inventore reprehenderit tempore? Ab aliquid assumenda atque ducimus error, facere nesciunt quisquam saepe tenetur voluptas. Consectetur doloribus eveniet facilis in necessitatibus obcaecati repellat voluptatibus?";
+        $text = <<<HTML
+        <div>$text1</div>
+        <span><b>$text2</b></span>
+        HTML;
+
+        $this->expectException(VariableMinLengthException::class);
+
+        Utils::ClearAndTruncateVariableLen($text, "text", 50, true, 60);
+    }
+
+
     public function testPaymentGatewayRequest()
     {
         $paymentGatewayRequester = new PaymentGatewayRequester($this->requestLink, $this->requestToken);
