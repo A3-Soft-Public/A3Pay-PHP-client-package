@@ -248,26 +248,26 @@ final class CardHolder extends AbstractToArray
       ?string $shipAddrState = null
   )
   {
-      Utils::checkVariableLen($cardHolderName, 'cardHolderName', 50);
-      Utils::checkVariableLen($email, 'email', 256);
+      Utils::CheckVariableLen($cardHolderName, 'cardHolderName', 50);
+      Utils::CheckVariableLen($email, 'email', 256);
 
 
-      Utils::checkVariableLen($billAddrLine1, 'billAddrLine1', 50, true);
-      Utils::checkVariableLen($billAddrLine2, 'billAddrLine2', 50, true);
-      Utils::checkVariableLen($billAddrLine3, 'billAddrLine3', 50, true);
-      Utils::checkVariableLen($billAddrPostCode, 'billAddrPostCode', 16, true);
-      Utils::checkVariableLen($billAddrCity, 'billAddrCity', 50, true);
-      Utils::checkVariableLen($billAddrState, 'billAddrState', 3, true);
-      Utils::checkVariableLen($billAddrCountry, 'billAddrCountry', 3, true);
+      Utils::CheckVariableLen($billAddrLine1, 'billAddrLine1', 50, true);
+      Utils::CheckVariableLen($billAddrLine2, 'billAddrLine2', 50, true);
+      Utils::CheckVariableLen($billAddrLine3, 'billAddrLine3', 50, true);
+      Utils::CheckVariableLen($billAddrPostCode, 'billAddrPostCode', 16, true);
+      Utils::CheckVariableLen($billAddrCity, 'billAddrCity', 50, true);
+      Utils::CheckVariableLen($billAddrState, 'billAddrState', 3, true);
+      Utils::CheckVariableLen($billAddrCountry, 'billAddrCountry', 3, true);
 
 
-      Utils::checkVariableLen($shipAddrLine1, 'shipAddrLine1', 50, true);
-      Utils::checkVariableLen($shipAddrLine2, 'shipAddrLine2', 50, true);
-      Utils::checkVariableLen($shipAddrLine3, 'shipAddrLine3', 50, true);
-      Utils::checkVariableLen($shipAddrPostCode, 'shipAddrPostCode', 16, true);
-      Utils::checkVariableLen($shipAddrCity, 'shipAddrCity', 50, true);
-      Utils::checkVariableLen($shipAddrState, 'shipAddrState', 3, true);
-      Utils::checkVariableLen($shipAddrCountry, 'shipAddrCountry', 3, true);
+      Utils::CheckVariableLen($shipAddrLine1, 'shipAddrLine1', 50, true);
+      Utils::CheckVariableLen($shipAddrLine2, 'shipAddrLine2', 50, true);
+      Utils::CheckVariableLen($shipAddrLine3, 'shipAddrLine3', 50, true);
+      Utils::CheckVariableLen($shipAddrPostCode, 'shipAddrPostCode', 16, true);
+      Utils::CheckVariableLen($shipAddrCity, 'shipAddrCity', 50, true);
+      Utils::CheckVariableLen($shipAddrState, 'shipAddrState', 3, true);
+      Utils::CheckVariableLen($shipAddrCountry, 'shipAddrCountry', 3, true);
 
       $this->cardHolderName = $cardHolderName;
       $this->billAddrLine1 = $billAddrLine1;

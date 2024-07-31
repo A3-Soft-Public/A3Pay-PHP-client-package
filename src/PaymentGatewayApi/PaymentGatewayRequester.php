@@ -32,7 +32,7 @@ final class PaymentGatewayRequester
         string $token
     )
     {
-        Utils::checkValueUrl($link, 'link');
+        Utils::CheckValueUrl($link, 'link');
         $this->link = $link;
         $this->token = htmlspecialchars($token);
     }

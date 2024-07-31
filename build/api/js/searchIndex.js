@@ -31,6 +31,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableLengthException.html#method___construct"
         },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableMaxLengthException",
+            "name": "VariableMaxLengthException",
+            "summary": "VariableLengthException\u0020is\u0020thrown\u0020when\u0020trying\u0020to\u0020construct\u0020Helper\u0020object,\nand\u0020API\u0020has\u0020limited\u0020string\u0020or\u0020int\u0020field\u0020length\nFor\u0020example\u003A\nIf\u0020you\u0020are\u0020going\u0020to\u0020use\u0020PaymentRequest,\nyou\u0020need\u0020currency\u0020value\u0020for\u0020object\u0020construction.",
+            "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableMaxLengthException.html"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableMaxLengthException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableMaxLengthException.html#method___construct"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableMinLengthException",
+            "name": "VariableMinLengthException",
+            "summary": "VariableLengthException\u0020is\u0020thrown\u0020when\u0020trying\u0020to\u0020construct\u0020Helper\u0020object,\nand\u0020API\u0020has\u0020limited\u0020string\u0020or\u0020int\u0020field\u0020length\nFor\u0020example\u003A\nIf\u0020you\u0020are\u0020going\u0020to\u0020use\u0020PaymentRequest,\nyou\u0020need\u0020currency\u0020value\u0020for\u0020object\u0020construction.",
+            "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableMinLengthException.html"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableMinLengthException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Exception-VariableMinLengthException.html#method___construct"
+        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Exception\\VariableNotContainsException",
             "name": "VariableNotContainsException",
             "summary": "VariableNotContainsException\u0020is\u0020thrown\u0020when\u0020there\u0020are\u0020some\u0020allowed\u0020values.",
@@ -1121,30 +1141,40 @@ Search.appendIndex(
             "summary": "Utils\u0020class",
             "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AcheckVariableLen\u0028\u0029",
-            "name": "checkVariableLen",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003ACheckVariableLen\u0028\u0029",
+            "name": "CheckVariableLen",
             "summary": "Checks\u0020for\u0020range\u0020of\u0020minimum\u0020or\u0020maximum\u0020length\u0020of\u0020characters\u0020\/\u0020number",
-            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_checkVariableLen"
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_CheckVariableLen"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AcheckValueContainsArgs\u0028\u0029",
-            "name": "checkValueContainsArgs",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AClearAndTruncateVariableLen\u0028\u0029",
+            "name": "ClearAndTruncateVariableLen",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_ClearAndTruncateVariableLen"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AClearAndTruncateText\u0028\u0029",
+            "name": "ClearAndTruncateText",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_ClearAndTruncateText"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003ACheckValueContainsArgs\u0028\u0029",
+            "name": "CheckValueContainsArgs",
             "summary": "Checks\u0020value\u0020if\u0020is\u0020one\u0020of\u0020contains\u0020parameter\u0020values",
-            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_checkValueContainsArgs"
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_CheckValueContainsArgs"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AcheckValueContains\u0028\u0029",
-            "name": "checkValueContains",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003ACheckValueContains\u0028\u0029",
+            "name": "CheckValueContains",
             "summary": "Checks\u0020value\u0020if\u0020is\u0020one\u0020of\u0020array\u0020value",
-            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_checkValueContains"
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_CheckValueContains"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AcheckValueGuid\u0028\u0029",
-            "name": "checkValueGuid",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003ACheckValueGuid\u0028\u0029",
+            "name": "CheckValueGuid",
             "summary": "Checks\u0020if\u0020value\u0020is\u0020Guid",
-            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_checkValueGuid"
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_CheckValueGuid"
         },                {
-            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AcheckValueUrl\u0028\u0029",
-            "name": "checkValueUrl",
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003ACheckValueUrl\u0028\u0029",
+            "name": "CheckValueUrl",
             "summary": "Checks\u0020if\u0020value\u0020match\u0020Url\u0020structure",
-            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_checkValueUrl"
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_CheckValueUrl"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest",
             "name": "PaymentGatewayRequesterTest",
@@ -1165,6 +1195,31 @@ Search.appendIndex(
             "name": "testPaymentGatewayRequestNotAuthorized",
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_testPaymentGatewayRequestNotAuthorized"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AtestVariableMinLengthException\u0028\u0029",
+            "name": "testVariableMinLengthException",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_testVariableMinLengthException"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AtestVariableMaxLengthException\u0028\u0029",
+            "name": "testVariableMaxLengthException",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_testVariableMaxLengthException"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AtestVariableLengthException\u0028\u0029",
+            "name": "testVariableLengthException",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_testVariableLengthException"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AtestVariableHtmlCleanAndTruncate\u0028\u0029",
+            "name": "testVariableHtmlCleanAndTruncate",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_testVariableHtmlCleanAndTruncate"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AtestVariableMinHtmlCleanAndTruncateException\u0028\u0029",
+            "name": "testVariableMinHtmlCleanAndTruncateException",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Tests-PaymentGatewayApi-PaymentGatewayRequesterTest.html#method_testVariableMinHtmlCleanAndTruncateException"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Tests\\PaymentGatewayApi\\PaymentGatewayRequesterTest\u003A\u003AtestPaymentGatewayRequest\u0028\u0029",
             "name": "testPaymentGatewayRequest",

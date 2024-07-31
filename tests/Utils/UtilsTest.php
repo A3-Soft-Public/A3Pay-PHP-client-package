@@ -17,150 +17,150 @@ class UtilsTest extends TestCase
     public string $text = "123456789"; //9 chars
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableMaxLenException()
     {
         $this->expectException(VariableLengthException::class);
-        Utils::checkVariableLen($this->text, 'text', strlen($this->text) - 1);
+        Utils::CheckVariableLen($this->text, 'text', strlen($this->text) - 1);
     }
 
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableMaxLen()
     {
         $this->expectNotToPerformAssertions();
-        Utils::checkVariableLen($this->text, 'text', strlen($this->text));
+        Utils::CheckVariableLen($this->text, 'text', strlen($this->text));
     }
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableMinLenException()
     {
         $this->expectException(VariableLengthException::class);
-        Utils::checkVariableLen($this->text, 'text', null, false, strlen($this->text) + 1);
+        Utils::CheckVariableLen($this->text, 'text', null, false, strlen($this->text) + 1);
     }
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableMinLen()
     {
         $this->expectNotToPerformAssertions();
-        Utils::checkVariableLen($this->text, 'text', null, false, strlen($this->text));
+        Utils::CheckVariableLen($this->text, 'text', null, false, strlen($this->text));
     }
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableMinMaxLenException()
     {
         $this->expectException(VariableLengthException::class);
-        Utils::checkVariableLen($this->text, 'text', strlen($this->text) - 1, false, strlen($this->text));
+        Utils::CheckVariableLen($this->text, 'text', strlen($this->text) - 1, false, strlen($this->text));
     }
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableMinMaxLen()
     {
         $this->expectNotToPerformAssertions();
-        Utils::checkVariableLen($this->text, 'text', strlen($this->text), false, strlen($this->text));
+        Utils::CheckVariableLen($this->text, 'text', strlen($this->text), false, strlen($this->text));
     }
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableLenNull()
     {
         $this->expectNotToPerformAssertions();
-        Utils::checkVariableLen(null, 'text', strlen($this->text) - 1, true, strlen($this->text) + 1);
+        Utils::CheckVariableLen(null, 'text', strlen($this->text) - 1, true, strlen($this->text) + 1);
     }
 
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableLenInt()
     {
         $this->expectNotToPerformAssertions();
-        Utils::checkVariableLen(12, 'text', 2, true, 1);
+        Utils::CheckVariableLen(12, 'text', 2, true, 1);
     }
 
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableLenIntMaxException()
     {
         $this->expectException(VariableLengthException::class);
-        Utils::checkVariableLen(12, 'text', 1, true, 1);
+        Utils::CheckVariableLen(12, 'text', 1, true, 1);
 
     }
 
     /**
-     * @covers \A3Soft\A3PayPhpClient\Util\Utils::checkVariableLen
+     * @covers \A3Soft\A3PayPhpClient\Util\Utils::CheckVariableLen
      */
     public function testCheckVariableLenIntMinException()
     {
         $this->expectException(VariableLengthException::class);
-        Utils::checkVariableLen(12, 'text', 4, false, 3);
+        Utils::CheckVariableLen(12, 'text', 4, false, 3);
 
     }
 
     public function testCheckValueContainsArgsException()
     {
         $this->expectException(VariableNotContainsException::class);
-        Utils::checkValueContainsArgs('E', 'E', 'Y', 'N');
+        Utils::CheckValueContainsArgs('E', 'E', 'Y', 'N');
     }
 
     public function testCheckValueContainsException()
     {
         $this->expectException(VariableNotContainsException::class);
-        Utils::checkValueContains('E', 'E', ['Y', 'N']);
+        Utils::CheckValueContains('E', 'E', ['Y', 'N']);
     }
 
     public function testCheckValueContainsArgs()
     {
         $this->expectNotToPerformAssertions();
-        Utils::checkValueContainsArgs('Y', 'Y', 'Y', 'N');
+        Utils::CheckValueContainsArgs('Y', 'Y', 'Y', 'N');
     }
 
     public function testCheckValueContains()
     {
         $this->expectNotToPerformAssertions();
-        Utils::checkValueContains('Y', 'Y', ['Y', 'N']);
+        Utils::CheckValueContains('Y', 'Y', ['Y', 'N']);
     }
 
     public function testCheckValueGuidException()
     {
         $guid = 'A98C5A1E-A742-4808-96FA-6F409E7999';
         $this->expectException(VariableNotGuidException::class);
-        Utils::checkValueGuid($guid, 'guid');
+        Utils::CheckValueGuid($guid, 'guid');
     }
     public function testCheckValueGuid()
     {
         $guid = 'a98C5A1E-a742-48c8-96fA-6F409e799937';
         $guidBrackets = '{A98C5A1E-A742-4808-96FA-6F409E799937}';
         $this->expectNotToPerformAssertions();
-        Utils::checkValueGuid($guid, 'guid');
-        Utils::checkValueGuid($guidBrackets, 'guidBrackets');
+        Utils::CheckValueGuid($guid, 'guid');
+        Utils::CheckValueGuid($guidBrackets, 'guidBrackets');
     }
 
     public function testCheckValueUrl()
     {
         $this->expectNotToPerformAssertions();
         $url = 'https://example.com';
-        Utils::checkValueUrl($url, 'url');
+        Utils::CheckValueUrl($url, 'url');
     }
 
     public function testCheckValueUrlException()
     {
         $this->expectException(VariableNotUrlException::class);
         $url = 'a';
-        Utils::checkValueUrl($url, 'url');
+        Utils::CheckValueUrl($url, 'url');
     }
 }

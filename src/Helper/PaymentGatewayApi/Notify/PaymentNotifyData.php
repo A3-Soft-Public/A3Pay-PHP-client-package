@@ -27,7 +27,7 @@ final class PaymentNotifyData extends AbstractToArray
      */
     public function __construct(string $paymentId, string $status)
     {
-        Utils::checkValueContains($status, 'status', PaymentInfoResponse::Statuses);
+        Utils::CheckValueContains($status, 'status', PaymentInfoResponse::Statuses);
         $this->paymentId = $paymentId;
         $this->status = $status;
     }
