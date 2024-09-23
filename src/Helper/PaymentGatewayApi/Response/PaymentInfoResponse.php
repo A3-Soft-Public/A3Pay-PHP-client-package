@@ -20,14 +20,17 @@ class PaymentInfoResponse extends AbstractToArray
     const StatusCaptured = 'Captured';
     const StatusError = 'Error';
 
+    const StatusExpired = 'Expired';
+
     const Statuses = [
-      self::StatusCreated,
-      self::StatusNew,
-      self::StatusAuthorized,
-      self::StatusDeclined,
-      self::StatusReversed,
-      self::StatusCaptured,
-      self::StatusError,
+        self::StatusCreated,
+        self::StatusNew,
+        self::StatusAuthorized,
+        self::StatusDeclined,
+        self::StatusReversed,
+        self::StatusCaptured,
+        self::StatusError,
+        self::StatusExpired,
     ];
     private string $status;
     private ?string $errorMessage;
@@ -45,7 +48,7 @@ class PaymentInfoResponse extends AbstractToArray
      * @throws Exception
      */
     public function __construct(
-        string  $status,
+        string $status,
         ?string $errorMessage = null
     )
     {
@@ -78,10 +81,12 @@ class PaymentInfoResponse extends AbstractToArray
             case self::StatusReversed:
             case self::StatusCaptured:
             case self::StatusError:
+            case self::StatusExpired:
             {
                 break;
             }
-            default: {
+            default:
+            {
                 throw new Exception("Unknown status \"$status\" passed in constructor!");
             }
         }
