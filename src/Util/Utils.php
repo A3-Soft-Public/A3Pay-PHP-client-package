@@ -29,11 +29,13 @@ class Utils
      */
     public static function CheckVariableLen($value, string $varName, ?int $maxLen = null, bool $checkIfNull = false, ?int $minLen = null)
     {
-        if (gettype($value) === 'integer')
-            $value = (string)$value;
+        if (gettype($value) === 'integer') {
+            $value = (string) $value;
+        }
 
-        if ($checkIfNull && $value === null)
+        if ($checkIfNull && $value === null) {
             return;
+        }
 
         if ($minLen !== null && $minLen > strlen($value)) {
             throw new VariableMinLengthException($varName, $minLen);
@@ -50,22 +52,55 @@ class Utils
      * @param int|null $maxLen
      * @param bool $checkIfNull
      * @param int|null $minLen
-     * @throws VariableMinLengthException
      * @return void
+     * @throws VariableMinLengthException
      */
     public static function ClearAndTruncateVariableLen(?string &$value, string $varName, ?int $maxLen = null, bool $checkIfNull = false, ?int $minLen = null): void
     {
-        if($value == null)
+        if ($value == null) {
             return;
+        }
 
-        $value = self::ClearAndTruncateText($value, $maxLen);
+        self::ClearAndTruncateText($value, $maxLen);
+
+        // Check for MinLengthException, we ignore VariableMaxLengthException, because it is not possible to happen.
         try {
             static::CheckVariableLen($value, $varName, $maxLen, $checkIfNull, $minLen);
-        }catch (VariableMaxLengthException $maxLengthException) {}
+        } catch (VariableMaxLengthException $maxLengthException) {
+        }
     }
 
-    public static function ClearAndTruncateText(string $text, int $maxLength): string
+    /**
+     * Removes html tags and double spaces from text, also trim text to $maxLength
+     * @param string|null $text
+     * @param int $maxLength Max length, when string has to be trimmed
+     * @return void
+     */
+    public static function ClearAndTruncateText(?string &$text, int $maxLength)
     {
+        if ($text == null) {
+            return;
+        }
+
+        static::ClearText($text);
+
+        // Truncate the text if it exceeds the specified length
+        if (strlen($text) > $maxLength) {
+            $text = substr($text, 0, $maxLength - 3) . '...';
+        }
+
+    }
+
+    /**
+     * Removes html tags and double spaces from text
+     * @param string|null $text
+     * @return void
+     */
+    public static function ClearText(?string &$text): void
+    {
+        if ($text == null) {
+            return;
+        }
         $text = preg_replace('#<style(.*?)>(.*?)</style>#is', '', $text);
 
         // Remove all other HTML tags
@@ -73,14 +108,8 @@ class Utils
 
         // Remove double spaces
         $text = preg_replace('/\s+/', ' ', $text);
+
         $text = trim($text);
-
-        // Truncate the text if it exceeds the specified length
-        if (strlen($text) > $maxLength) {
-            $text = substr($text, 0, $maxLength - 3) . '...';
-        }
-
-        return $text;
     }
 
 

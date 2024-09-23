@@ -157,6 +157,7 @@ final class BasketItem extends AbstractToArray
         Utils::ClearAndTruncateVariableLen($ean, 'ean', 20, true);
         Utils::ClearAndTruncateVariableLen($externalUId, 'externalUId', 50, true);
         Utils::ClearAndTruncateVariableLen($text1, 'text1', 256, true);
+        $text1Long = Utils::ClearText($text1Long);
 
         $this->name = $name;
         $this->vatRate = $vatRate;
