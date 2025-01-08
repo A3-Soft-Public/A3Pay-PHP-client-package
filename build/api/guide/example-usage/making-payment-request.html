@@ -317,6 +317,7 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
 
     $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
     $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+    $pluginDetail = &#039;My Requester Identification&#039;;
 
     return new PaymentRequest(
         $merchantPaymentId,
@@ -333,7 +334,8 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
         $language,
         PaymentReferenceType::Direct,
         $email,
-        $message
+        $message,
+        $pluginDetail
     );
 }</code></pre>
             <div class="phpdocumentor-admonition note">
@@ -406,6 +408,8 @@ $paymentGatewayRequester = new PaymentGatewayRequester(&quot;https://api_url_fro
     <li>email - null or email address where the document will be send, just valid when <code class="php:variable">A3SoftA3PayPhpClientHelperPaymentGatewayApiRequestPaymentReferenceType</code> has been set to Email</li>
 
     <li>message - null or string, body of email, just valid when <code class="php:variable">A3SoftA3PayPhpClientHelperPaymentGatewayApiRequestPaymentReferenceType</code> has been set to Email</li>
+
+    <li>pluginDetail - null or string of max 100 chars, requester identification</li>
 
 </ul>
 
@@ -978,6 +982,7 @@ function createPaymentGatewayRequest(): PaymentRequest
 
         $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
         $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+        $pluginDetail = &#039;My Requester Identification&#039;;
 
         return new PaymentRequest(
             $merchantPaymentId,
@@ -994,7 +999,8 @@ function createPaymentGatewayRequest(): PaymentRequest
             $language,
             PaymentReferenceType::Direct,
             $email,
-            $message
+            $message,
+            $pluginDetail
         );
     }
 

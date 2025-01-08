@@ -866,6 +866,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getMessage"
         },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003AgetPluginDetail\u0028\u0029",
+            "name": "getPluginDetail",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#method_getPluginDetail"
+        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024merchantPaymentId",
             "name": "merchantPaymentId",
             "summary": "",
@@ -915,6 +920,11 @@ Search.appendIndex(
             "name": "message",
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_message"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Request\\PaymentRequest\u003A\u003A\u0024pluginDetail",
+            "name": "pluginDetail",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Request-PaymentRequest.html#property_pluginDetail"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Response\\CurlResponse",
             "name": "CurlResponse",
@@ -1046,6 +1056,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html#constant_StatusError"
         },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Response\\PaymentInfoResponse\u003A\u003AStatusExpired",
+            "name": "StatusExpired",
+            "summary": "",
+            "url": "classes/A3Soft-A3PayPhpClient-Helper-PaymentGatewayApi-Response-PaymentInfoResponse.html#constant_StatusExpired"
+        },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Helper\\PaymentGatewayApi\\Response\\PaymentInfoResponse\u003A\u003AStatuses",
             "name": "Statuses",
             "summary": "",
@@ -1153,8 +1168,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AClearAndTruncateText\u0028\u0029",
             "name": "ClearAndTruncateText",
-            "summary": "",
+            "summary": "Removes\u0020html\u0020tags\u0020and\u0020double\u0020spaces\u0020from\u0020text,\u0020also\u0020trim\u0020text\u0020to\u0020\u0024maxLength",
             "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_ClearAndTruncateText"
+        },                {
+            "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003AClearText\u0028\u0029",
+            "name": "ClearText",
+            "summary": "Removes\u0020html\u0020tags\u0020and\u0020double\u0020spaces\u0020from\u0020text",
+            "url": "classes/A3Soft-A3PayPhpClient-Util-Utils.html#method_ClearText"
         },                {
             "fqsen": "\\A3Soft\\A3PayPhpClient\\Util\\Utils\u003A\u003ACheckValueContainsArgs\u0028\u0029",
             "name": "CheckValueContainsArgs",

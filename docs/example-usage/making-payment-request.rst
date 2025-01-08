@@ -79,6 +79,7 @@ Code
 
         $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
         $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+        $pluginDetail = 'My Requester Identification';
 
         return new PaymentRequest(
             $merchantPaymentId,
@@ -95,7 +96,8 @@ Code
             $language,
             PaymentReferenceType::Direct,
             $email,
-            $message
+            $message,
+            $pluginDetail
         );
     }
 
@@ -128,6 +130,7 @@ Code
 * :php:variable:`\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType` constant
 * email - null or email address where the document will be send, just valid when :php:variable:`\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType` has been set to Email
 * message - null or string, body of email, just valid when :php:variable:`\A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request\PaymentReferenceType` has been set to Email
+* pluginDetail - null or string of max 100 chars, requester identification
 
 -------
 
@@ -608,6 +611,7 @@ Full code
 
             $email = null; // email where the the notice should be send, only available when PaymentReferenceType is set to PaymentReferenceType::Email
             $message = null // // body of email sent when payment realized, only available when PaymentReferenceType is set to PaymentReferenceType::Email
+            $pluginDetail = 'My Requester Identification';
 
             return new PaymentRequest(
                 $merchantPaymentId,
@@ -624,7 +628,8 @@ Full code
                 $language,
                 PaymentReferenceType::Direct,
                 $email,
-                $message
+                $message,
+                $pluginDetail
             );
         }
 

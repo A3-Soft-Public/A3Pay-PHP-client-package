@@ -5,7 +5,6 @@ namespace A3Soft\A3PayPhpClient\Helper\PaymentGatewayApi\Request;
 
 use A3Soft\A3PayPhpClient\Exception\VariableLengthException;
 use A3Soft\A3PayPhpClient\Exception\VariableNotContainsException;
-use A3Soft\A3PayPhpClient\Exception\VariableNotGuidException;
 use A3Soft\A3PayPhpClient\Exception\VariableNotInRangeException;
 use A3Soft\A3PayPhpClient\Exception\VariableNotUrlException;
 use A3Soft\A3PayPhpClient\Util\AbstractToArray;
@@ -57,6 +56,9 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
     /** @var string|null Custom message for client. */
     private ?string $message;
 
+    /** @var string|null ApiRequester identifier (max length 100). */
+    private ?string $pluginDetail;
+
     /**
      * @param string $merchantPaymentId Merchant payment ID.
      * @param string $amount The amount of funds requested in the
@@ -96,7 +98,8 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
         ?string $language = null,
         ?string $paymentReferenceType = PaymentReferenceType::Direct,
         ?int $emailTtl = null,
-        ?string $message = null
+        ?string $message = null,
+        ?string $pluginDetail = null
     )
     {
 
@@ -106,7 +109,7 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
         Utils::CheckValueUrl($redirectUrl, 'redirectUrl', 16, 1024);
 
         Utils::CheckVariableLen($language, 'language', 36, true);
-
+        Utils::ClearAndTruncateVariableLen($pluginDetail, 'pluginDetail', 100, true);
 
         if ($paymentReferenceType !== null) {
             switch ($paymentReferenceType) {
@@ -138,6 +141,7 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
         $this->paymentReferenceType = $paymentReferenceType;
         $this->emailTtl = $emailTtl;
         $this->message = $message;
+        $this->pluginDetail = $pluginDetail;
     }
 
 
@@ -215,6 +219,13 @@ final class PaymentRequest extends AbstractToArray implements PaymentGatewayRequ
     {
         return $this->message;
     }
+
+    public function getPluginDetail(): ?string
+    {
+        return $this->pluginDetail;
+    }
+
+
 
 
 
