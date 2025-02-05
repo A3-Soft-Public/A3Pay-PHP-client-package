@@ -1,0 +1,7 @@
+.gitlab-ci.yml export-ignore
+tests/ export-ignore
+docs/ export-ignore
+example/ export-ignore
+.phpdoc/ export-ignore
+build/ export-ignore
+phpdoc.dist export-ignore

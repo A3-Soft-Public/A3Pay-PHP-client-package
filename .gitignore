@@ -1,5 +1,6 @@
 .idea/
 vendor/
 build/cache
+build/documentation.zip
 requesterTestCredentials.neon
 .phpunit.result.cache
