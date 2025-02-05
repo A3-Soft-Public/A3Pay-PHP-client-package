@@ -1,5 +1,5 @@
-/.idea
-/vendor/
-/build/cache
+.idea/
+vendor/
+build/cache
 requesterTestCredentials.neon
-/.phpunit.result.cache
+.phpunit.result.cache
