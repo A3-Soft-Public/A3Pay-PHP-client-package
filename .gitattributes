@@ -5,3 +5,6 @@ example/ export-ignore
 .phpdoc/ export-ignore
 build/ export-ignore
 phpdoc.dist export-ignore
+phpdoc.dist export-ignore
+phpdoc.dist.xml export-ignore
+rundocker.bat export-ignore
