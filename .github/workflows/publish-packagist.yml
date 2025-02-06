@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Send request to Packagist
         run: |
-          curl -XPOST -H'content-type:application/json' "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&api_token=${{ secrets.PACKAGIST_API_TOKEN }}" -d'{"repository":{"url":"https://packagist.org/packages/a3soft/a3pay-php-client"}}'
+          curl -XPOST -H'content-type:application/json' "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}" -d'{"repository":{"url":"https://packagist.org/packages/a3soft/a3pay-php-client"}}'
