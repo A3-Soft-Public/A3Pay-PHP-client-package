@@ -2,7 +2,8 @@
     "name": "a3soft/a3pay-php-client",
     "type": "library",
     "version":"1.4.6",
-    "description": "A3Pay payment gateway service",
+    "license": "Apache-2.0",
+    "description": "FiskalPAY payment gateway client",
     "autoload": {
         "psr-4": {
             "A3Soft\\A3PayPhpClient\\": "src/",
@@ -16,7 +17,7 @@
     },
     "authors": [
         {
-            "name": "A3Soft s.r.o"
+            "name": "A3 Soft s.r.o"
         }
     ],
     "require": {
