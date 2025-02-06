@@ -1,5 +1,6 @@
 {
     "name": "a3soft/a3pay-php-client",
+    "type": "library",
     "version":"1.4.6",
     "description": "A3Pay payment gateway service",
     "autoload": {
@@ -15,7 +16,7 @@
     },
     "authors": [
         {
-            "name": "A3Pay s.r.o"
+            "name": "A3Soft s.r.o"
         }
     ],
     "require": {
