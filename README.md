@@ -50,35 +50,9 @@ There are two ways of installing this package.
 2. In the other way you just download this package, and use require statement to include in your php script.
 
 ## Install using composer
-- **Important! This guide can be used only in case you have read permissons on this git repository.**
 1. [Download composer](https://getcomposer.org/download/)
-2. Create your own composer.json
-3. Add repository your composer.json
-```json lines
-//composer.json
-{
-  "repositories":[
-    {
-      "type":"composer",
-      "url":"https://gitlab.a3soft.eu/api/v4/group/171/-/packages/composer/packages.json"
-    }
-  ]
-}
-```
-4. Create file called `auth.json` and write the credentials there
-```json lines
-//auth.json
-{
-  "http-basic": {
-    "gitlab.a3soft.eu": {
-      "username": "__token__",
-      "password": "YOUR_AUTH_TOKEN"
-    }
-  }
-}
-```
-5. Run command `composer require a3soft/a3pay-php-client`.
-This command will automatically install the newest version of A3 Pay client using credentials passed to `auth.json` file.
+2. Run command `composer require a3soft/a3pay-php-client`.
+   This command will automatically install the newest version of A3 Pay client.
 ## Getting started
 
 ### Package classes
@@ -93,7 +67,7 @@ This command will automatically install the newest version of A3 Pay client usin
 - [DanubePay](/src/Helper/PaymentGatewayApi/Request/Basket.php)
 - [Payment](/src/Helper/PaymentGatewayApi/Request/Basket.php)
 - [PaymentInfoRequest](/src/Helper/PaymentGatewayApi/Request/Basket.php)
-#### Response 
+#### Response
 - [CurlResponse](/src/Helper/PaymentGatewayApi/Response/CurlResponse.php)
 - [PaymentInfoResponse](/src/Helper/PaymentGatewayApi/Response/PaymentInfoResponse.php)
 - [PaymentResponse](/src/Helper/PaymentGatewayApi/Response/PaymentResponse.php)
